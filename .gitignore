@@ -1,0 +1,69 @@
+.DS_Store
+qr-code-component/node_modules
+qr-code-component/.pnp
+qr-code-component/.pnp.js
+qr-code-component/.yarn/install-state.gz
+
+# testing
+qr-code-component/coverage
+
+# next.js
+qr-code-component/.next/
+qr-code-component/out/
+
+# production
+qr-code-component/build
+
+# misc
+qr-code-component/.DS_Store
+qr-code-component/*.pem
+
+# debug
+qr-code-component/npm-debug.log*
+qr-code-component/yarn-debug.log*
+qr-code-component/yarn-error.log*
+
+# local env files
+qr-code-component/.env*.local
+
+# vercel
+qr-code-component/.vercel
+
+# typescript
+qr-code-component/*.tsbuildinfo
+qr-code-component/next-env.d.ts
+
+
+blog-preview/node_modules
+blog-preview/.pnp
+blog-preview/.pnp.js
+blog-preview/.yarn/install-state.gz
+
+# testing
+blog-preview/coverage
+
+# next.js
+blog-preview/.next/
+blog-preview/out/
+
+# production
+blog-preview/build
+
+# misc
+blog-preview/.DS_Store
+blog-preview/*.pem
+
+# debug
+blog-preview/npm-debug.log*
+blog-preview/yarn-debug.log*
+blog-preview/yarn-error.log*
+
+# local env files
+blog-preview/.env*.local
+
+# vercel
+blog-preview/.vercel
+
+# typescript
+blog-preview/*.tsbuildinfo
+blog-preview/next-env.d.ts
