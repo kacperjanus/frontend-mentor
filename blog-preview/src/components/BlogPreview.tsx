@@ -9,11 +9,11 @@ interface BlogPreviewProps {
 }
 
 function BlogPreview(props: BlogPreviewProps) {
-    return <div className=" group bg-white m-10 md:w-[384px] h-auto border-black border text-black rounded-2xl hover:shadow-[10px_10px_0px_0px_rgba(0,0,0)] shadow-[5px_5px_0px_0px_rgba(0,0,0)] w-[327px]">
+    return <div className=" group bg-white m-10 min-[375px]:w-[384px] h-auto border-black border text-black rounded-2xl hover:shadow-[10px_10px_0px_0px_rgba(0,0,0)] shadow-[5px_5px_0px_0px_rgba(0,0,0)] w-[327px]">
         <div className="m-[24px]">
             <img className="rounded-2xl" alt="Blog thumbnail preview" src={props.imagePath}/>
             <div className="my-[24px] grid gap-y-[12px]">
-                <div className="font-bold py-[4px] px-[12px] bg-yellow-300 w-min rounded-md">{props.entryType}</div>
+                <div className="font-bold py-[4px] px-[12px] bg-[#f4d04e] w-min rounded-md">{props.entryType}</div>
                 <div>Published {props.publishDate}</div>
                 <div className="font-extrabold text-2xl group-hover:text-yellow-300">{props.entryTitle}</div>
                 <div className="text-slate-400">{props.previewText}</div>
