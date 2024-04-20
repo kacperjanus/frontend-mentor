@@ -6,6 +6,11 @@
   --foreground-rgb: 0, 0, 0;
 }
 
+@font-face {
+  font-family: "Figtree";
+  src: url("../../public/fonts/Figtree-VariableFont_wght.ttf")
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

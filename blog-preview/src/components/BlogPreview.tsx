@@ -13,14 +13,14 @@ function BlogPreview(props: BlogPreviewProps) {
         <div className="m-[24px]">
             <img className="rounded-2xl" alt="Blog thumbnail preview" src={props.imagePath}/>
             <div className="my-[24px] grid gap-y-[12px]">
-                <div className="font-bold py-[4px] px-[12px] bg-[#f4d04e] w-min rounded-md">{props.entryType}</div>
-                <div>Published {props.publishDate}</div>
-                <div className="font-extrabold text-2xl group-hover:text-yellow-300">{props.entryTitle}</div>
-                <div className="text-slate-400">{props.previewText}</div>
+                <div className="font-figtree font-bold py-[4px] px-[12px] bg-[#f4d04e] w-min rounded-md">{props.entryType}</div>
+                <div className="font-figtree">Published {props.publishDate}</div>
+                <div className="font-extrabold font-figtree text-2xl group-hover:text-yellow-300">{props.entryTitle}</div>
+                <div className="font-figtree text-slate-400">{props.previewText}</div>
             </div>
             <div className="flex items-center gap-x-[12px]">
                 <img className="size-[32px]" alt="Author's avatar" src={props.avatarPath} />
-                <p className="font-bold">{props.author}</p>
+                <p className="font-figtree font-extrabold">{props.author}</p>
             </div>
         </div>
     </div>
