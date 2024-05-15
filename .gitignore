@@ -1,3 +1,8 @@
+# idea folders
+qr-code-component/.idea
+blog-preview/.idea
+newsletter-sign-up-form/.idea
+
 .DS_Store
 qr-code-component/node_modules
 qr-code-component/.pnp
