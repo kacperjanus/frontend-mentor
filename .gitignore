@@ -67,3 +67,38 @@ blog-preview/.vercel
 # typescript
 blog-preview/*.tsbuildinfo
 blog-preview/next-env.d.ts
+
+# dependencies
+newsletter-sign-up-form/node_modules
+newsletter-sign-up-form/.pnp
+newsletter-sign-up-form/.pnp.js
+newsletter-sign-up-form/.yarn/install-state.gz
+
+# testing
+newsletter-sign-up-form/coverage
+
+# next.js
+newsletter-sign-up-form/.next/
+newsletter-sign-up-form/out/
+
+# production
+newsletter-sign-up-form/build
+
+# misc
+newsletter-sign-up-form/.DS_Store
+newsletter-sign-up-form/*.pem
+
+# debug
+newsletter-sign-up-form/npm-debug.log*
+newsletter-sign-up-form/yarn-debug.log*
+newsletter-sign-up-form/yarn-error.log*
+
+# local env files
+newsletter-sign-up-form/.env*.local
+
+# vercel
+newsletter-sign-up-form/.vercel
+
+# typescript
+newsletter-sign-up-form/*.tsbuildinfo
+newsletter-sign-up-form/next-env.d.ts
