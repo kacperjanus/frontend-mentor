@@ -27,7 +27,7 @@ function Form({setEmail, email, setSuccess}: FormProps) {
     }
 
     return (
-        <div className="bg-white sm:pt-6 sm:min-w-[666px] sm:px-8 pb-6 m-4 sm:rounded-3xl max-w-[57rem]">
+        <div className="bg-white sm:pt-6 sm:min-w-[666px] sm:px-6 pb-6 m-4 sm:rounded-3xl max-w-[57rem]">
             <div className="flex flex-col sm:flex-row-reverse items-center justify-between">
                 {/*<img className="sm:w-[50%]" src={document.documentElement.clientWidth > 670 ? "/images/illustration-sign-up-desktop.svg" : "/images/illustration-sign-up-mobile.svg"} alt="Sign up illustration"/>*/}
                 <img className="sm:w-[50%]" src="/images/illustration-sign-up-desktop.svg" alt="Sign up illustration"/>
@@ -37,15 +37,15 @@ function Form({setEmail, email, setSuccess}: FormProps) {
                     <p className="pb-5 text-md">Join 60,000+ product managers receiving monthly updates on:</p>
                     <ul className="flex flex-col gap-2 mb-10">
                         <li className={"flex gap-4"}>
-                            <img src="/images/icon-list.svg"/>
+                            <img src="/images/icon-list.svg" alt="Check icon"/>
                             <span className="text-md">Product discovery and building what matters</span>
                         </li>
                         <li className={"flex gap-4"}>
-                            <img src="/images/icon-list.svg"/>
+                            <img src="/images/icon-list.svg" alt="Check icon"/>
                             <span className="text-md">Measuring to ensure updates are a success</span>
                         </li>
                         <li className={"flex gap-4"}>
-                            <img src="/images/icon-list.svg"/>
+                            <img src="/images/icon-list.svg" alt="Check icon"/>
                             <span className="text-md">And much more!</span>
                         </li>
                     </ul>
