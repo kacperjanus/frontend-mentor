@@ -15,7 +15,7 @@ const config: Config = {
       "tomato": "hsl(4, 100%, 67%)",
     },
     screens: {
-      'sm': '480px'
+      'sm': '670px'
     }
   },
   plugins: [],

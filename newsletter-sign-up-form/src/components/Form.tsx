@@ -27,11 +27,11 @@ function Form({setEmail, email, setSuccess}: FormProps) {
     }
 
     return (
-        <div className="bg-white sm:pt-6 sm:min-w-[666px] pb-6 px-6 m-4 sm:rounded-3xl max-w-[57rem]">
+        <div className="bg-white sm:pt-6 sm:min-w-[666px] sm:px-8 pb-6 m-4 sm:rounded-3xl max-w-[57rem]">
             <div className="flex flex-col sm:flex-row-reverse items-center justify-between">
-                {/*<img className="sm:w-[50%]" src={document.documentElement.clientWidth > 600 ? "/images/illustration-sign-up-desktop.svg" : "/images/illustration-sign-up-mobile.svg"} alt="Sign up illustration"/>*/}
+                {/*<img className="sm:w-[50%]" src={document.documentElement.clientWidth > 670 ? "/images/illustration-sign-up-desktop.svg" : "/images/illustration-sign-up-mobile.svg"} alt="Sign up illustration"/>*/}
                 <img className="sm:w-[50%]" src="/images/illustration-sign-up-desktop.svg" alt="Sign up illustration"/>
-                {/*<img className="sm:w-[50%]" src="/images/illustration-sign-up-mobile.svg" alt="Sign up illustration"/>*/}
+                {/*<img className="sm:w-[50%] w-full" src="/images/illustration-sign-up-mobile.svg" alt="Sign up illustration"/>*/}
                 <div className="px-8 py-8 sm:px-12 my-13">
                     <h1 className="text-darkslategray font-bold text-5xl pb-5">Stay updated!</h1>
                     <p className="pb-5 text-md">Join 60,000+ product managers receiving monthly updates on:</p>
