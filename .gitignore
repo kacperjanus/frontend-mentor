@@ -107,3 +107,42 @@ newsletter-sign-up-form/.vercel
 # typescript
 newsletter-sign-up-form/*.tsbuildinfo
 newsletter-sign-up-form/next-env.d.ts
+
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+news-homepage/node_modules
+news-homepage/.pnp
+news-homepage/.pnp.js
+news-homepage/.yarn/install-state.gz
+
+# testing
+news-homepage/coverage
+
+# next.js
+news-homepage/.next/
+news-homepage/out/
+
+# production
+news-homepage/build
+
+# misc
+news-homepage/.DS_Store
+news-homepage/*.pem
+
+# debug
+news-homepage/npm-debug.log*
+news-homepage/yarn-debug.log*
+news-homepage/yarn-error.log*
+
+# local env files
+news-homepage/.env*.local
+
+# vercel
+news-homepage/.vercel
+
+# typescript
+news-homepage/*.tsbuildinfo
+news-homepage/next-env.d.ts
+news-homepage/.idea
