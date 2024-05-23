@@ -146,3 +146,42 @@ news-homepage/.vercel
 news-homepage/*.tsbuildinfo
 news-homepage/next-env.d.ts
 news-homepage/.idea
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+multi-step-form/node_modules
+multi-step-form/.pnp
+multi-step-form/.pnp.js
+multi-step-form/.yarn/install-state.gz
+
+# testing
+multi-step-form/coverage
+
+# next.js
+multi-step-form/.next/
+multi-step-form/.idea/
+multi-step-form/out/
+
+# production
+multi-step-form/build
+
+# misc
+multi-step-form/.DS_Store
+multi-step-form/*.pem
+
+# debug
+multi-step-form/npm-debug.log*
+multi-step-form/yarn-debug.log*
+multi-step-form/yarn-error.log*
+
+# local env files
+multi-step-form/.env*.local
+
+# vercel
+multi-step-form/.vercel
+
+# typescript
+multi-step-form/*.tsbuildinfo
+multi-step-form/next-env.d.ts
+
