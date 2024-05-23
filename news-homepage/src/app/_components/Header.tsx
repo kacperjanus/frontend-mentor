@@ -4,7 +4,7 @@ import Navigation from "@/app/_components/Navigation";
 
 function Header() {
     return (
-        <div className="max-w-7xl mx-auto pt-20 pb-16 flex justify-between items-center bg-off-white px-5">
+        <div className="max-w-[68rem] mx-auto pt-20 pb-16 flex justify-between items-center bg-off-white px-4">
             <Logo/>
             <Navigation/>
         </div>

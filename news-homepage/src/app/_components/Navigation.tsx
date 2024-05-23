@@ -4,7 +4,7 @@ import Link from "next/link";
 function Navigation() {
     return (
         <div>
-            <ul className="flex gap-10 text-dark-grayish-blue">
+            <ul className="flex text-lg gap-10 text-dark-grayish-blue">
                 <li className="hover:text-soft-orange"><Link href="/">Home</Link></li>
                 <li className="hover:text-soft-orange"><Link href={'/'}>New</Link></li>
                 <li className="hover:text-soft-orange"><Link href={'/'}>Popular</Link></li>
