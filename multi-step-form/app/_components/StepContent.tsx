@@ -1,36 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Input from "@/app/_components/Input";
 import Button from "@/app/_components/Button";
+import StepOne from "@/app/_components/steps/StepOne";
+import StepThree from "@/app/_components/steps/StepThree";
+import StepTwo from "@/app/_components/steps/StepTwo";
+import StepFour from "@/app/_components/steps/StepFour";
 
 interface StepContentProps {
-    title: string,
-    description: string,
+    stepNumber: number
 }
 
-function StepContent({ title, description }: StepContentProps): JSX.Element {
+function StepContent({stepNumber }: StepContentProps): JSX.Element {
+    const stepsContent = [{title: "Personal info", description: "Please provide your name, email address, and phone number." },
+        {title: "Select your plan", description: "You have the option of monthly or yearly billing"},
+        {title: "Pick add-ons", description: "Add-ons help enhance your gaming experience"},
+        {title: "Finishing up", description: "Double check everything looks OK before confirming"}]
+
+    const [isMonthly, setIsMonthly] = useState(true)
+
     return (
-        <div className="mx-auto flex flex-col">
+        // <div className="mx-auto flex flex-col">
+        <div className="mx-[6.6rem] flex flex-col w-full">
             <div className="pt-12 pb-6">
                 <div className="pb-3">
                     <h1 className="text-3xl font-extrabold text-marine-blue">
-                        {title}
+                        {stepsContent[stepNumber-1].title}
                     </h1>
                 </div>
                 <div>
                     <p className="text-cool-gray text-lg">
-                        {description}
+                        {stepsContent[stepNumber-1].description}
                     </p>
                 </div>
             </div>
-            <div>
-                <form className="flex flex-col">
-                    <Input label="Name" placeholder="e.g. Stephen King"/>
-                    <Input label="Email Address" placeholder="e.g. stephenking@lorem.com"/>
-                    <Input label="Phone Number" placeholder="e.g. +1 234 567 890"/>
-                    <div className="self-end mt-16">
-                        <Button content="Next Step"/>
-                    </div>
-                </form>
+            <div className="h-full mb-4">
+                {stepNumber === 1 && <StepOne/>}
+                {stepNumber === 2 && <StepTwo isMonthly={isMonthly} setIsMonthly={setIsMonthly} />}
+                {stepNumber === 3 && <StepThree isMonthly={isMonthly}/>}
+                {stepNumber === 4 && <StepFour/>}
             </div>
 
         </div>
