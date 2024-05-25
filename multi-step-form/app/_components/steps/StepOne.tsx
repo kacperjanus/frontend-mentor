@@ -2,7 +2,11 @@ import React from 'react';
 import Input from "@/app/_components/Input";
 import Button from "@/app/_components/Button";
 
-function StepOne() {
+function StepOne({setStepNumber}: {setStepNumber: React.Dispatch<React.SetStateAction<number>>}) {
+    const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
+        setStepNumber((s)=>s+1)
+    }
+
     return (
         <form className="flex flex-col h-full justify-between">
             <div>
@@ -11,7 +15,7 @@ function StepOne() {
             <Input label="Phone Number" placeholder="e.g. +1 234 567 890"/>
             </div>
             <div className="self-end">
-                <Button content="Next Step"/>
+                <Button setStepNumber={increaseStep} content="Next Step"/>
             </div>
         </form>
     );

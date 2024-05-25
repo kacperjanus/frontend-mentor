@@ -4,7 +4,17 @@ import React from 'react';
 import Button from "@/app/_components/Button";
 import PlanPricingOption from "@/app/_components/PlanPricingOption";
 
-function StepTwo({isMonthly, setIsMonthly}: {isMonthly: boolean, setIsMonthly: React.Dispatch<React.SetStateAction<boolean>>}) {
+
+
+function StepTwo({isMonthly, setIsMonthly, setStepNumber}: {isMonthly: boolean, setIsMonthly: React.Dispatch<React.SetStateAction<boolean>>, setStepNumber: React.Dispatch<React.SetStateAction<number>>}) {
+
+    const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
+        setStepNumber((s)=>s+1)
+    }
+
+    const decreaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
+        setStepNumber((s)=>s-1)
+    }
 
     return (
         <div className="flex flex-col mt-4 h-full justify-between">
@@ -25,11 +35,11 @@ function StepTwo({isMonthly, setIsMonthly}: {isMonthly: boolean, setIsMonthly: R
             </div>
             <div className="flex justify-between items-center">
             <div>
-                    <p className="text-cool-gray">Go Back</p>
+                    <Button setStepNumber={decreaseStep} content="Go Back" backButton={true}/>
                 </div>
                 <div className="mb-4">
 
-                <Button content="Next Step"/>
+                <Button setStepNumber={increaseStep} content="Next Step"/>
                 </div>
             </div>
         </div>

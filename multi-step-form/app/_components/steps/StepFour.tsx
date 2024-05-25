@@ -1,7 +1,15 @@
 import React from 'react';
 import Button from "@/app/_components/Button";
 
-function StepFour() {
+function StepFour({setStepNumber}: {setStepNumber: React.Dispatch<React.SetStateAction<number>>}) {
+    const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
+        setStepNumber((s)=>s+1)
+    }
+
+    const decreaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
+        setStepNumber((s)=>s-1)
+    }
+
     return (
         <div className="flex flex-col mt-4 h-full justify-between">
             <div className="flex flex-col gap-8">
@@ -31,11 +39,11 @@ function StepFour() {
             </div>
             <div className="flex justify-between items-center">
                 <div>
-                    <p className="text-cool-gray">Go Back</p>
+                    <Button setStepNumber={decreaseStep} content="Go Back" backButton={true}/>
                 </div>
                 <div className="mb-4">
 
-                    <Button confirm={true} content="Confirm"/>
+                    <Button setStepNumber={increaseStep} confirm={true} content="Confirm"/>
                 </div>
             </div>
         </div>

@@ -6,10 +6,11 @@ import StepFour from "@/app/_components/steps/StepFour";
 import ThankYou from "@/app/_components/steps/ThankYou";
 
 interface StepContentProps {
-    stepNumber: number
+    stepNumber: number,
+    setStepNumber: React.Dispatch<React.SetStateAction<number>>;
 }
 
-function StepContent({stepNumber }: StepContentProps): JSX.Element {
+function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Element {
     const stepsContent = [{title: "Personal info", description: "Please provide your name, email address, and phone number." },
         {title: "Select your plan", description: "You have the option of monthly or yearly billing"},
         {title: "Pick add-ons", description: "Add-ons help enhance your gaming experience"},
@@ -33,10 +34,10 @@ function StepContent({stepNumber }: StepContentProps): JSX.Element {
                 </div>
             </div>
             <div className="h-full mb-4">
-                {stepNumber === 1 && <StepOne/>}
-                {stepNumber === 2 && <StepTwo isMonthly={isMonthly} setIsMonthly={setIsMonthly} />}
-                {stepNumber === 3 && <StepThree isMonthly={isMonthly}/>}
-                {stepNumber === 4 && <StepFour/>}
+                {stepNumber === 1 && <StepOne setStepNumber={setStepNumber} />}
+                {stepNumber === 2 && <StepTwo setStepNumber={setStepNumber} isMonthly={isMonthly} setIsMonthly={setIsMonthly} />}
+                {stepNumber === 3 && <StepThree setStepNumber={setStepNumber} isMonthly={isMonthly}/>}
+                {stepNumber === 4 && <StepFour setStepNumber={setStepNumber}/>}
             </div>
         </div>)
 }
