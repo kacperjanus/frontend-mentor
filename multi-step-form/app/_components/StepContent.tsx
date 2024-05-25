@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import Input from "@/app/_components/Input";
-import Button from "@/app/_components/Button";
 import StepOne from "@/app/_components/steps/StepOne";
 import StepThree from "@/app/_components/steps/StepThree";
 import StepTwo from "@/app/_components/steps/StepTwo";
 import StepFour from "@/app/_components/steps/StepFour";
+import ThankYou from "@/app/_components/steps/ThankYou";
 
 interface StepContentProps {
     stepNumber: number
@@ -14,12 +13,12 @@ function StepContent({stepNumber }: StepContentProps): JSX.Element {
     const stepsContent = [{title: "Personal info", description: "Please provide your name, email address, and phone number." },
         {title: "Select your plan", description: "You have the option of monthly or yearly billing"},
         {title: "Pick add-ons", description: "Add-ons help enhance your gaming experience"},
-        {title: "Finishing up", description: "Double check everything looks OK before confirming"}]
+        {title: "Finishing up", description: "Double check everything looks OK before confirming"},
+        ]
 
     const [isMonthly, setIsMonthly] = useState(true)
 
-    return (
-        // <div className="mx-auto flex flex-col">
+    return stepNumber === 5 ? <div className="h-full mb-4"><ThankYou/></div> : (
         <div className="mx-[6.6rem] flex flex-col w-full">
             <div className="pt-12 pb-6">
                 <div className="pb-3">
@@ -39,9 +38,7 @@ function StepContent({stepNumber }: StepContentProps): JSX.Element {
                 {stepNumber === 3 && <StepThree isMonthly={isMonthly}/>}
                 {stepNumber === 4 && <StepFour/>}
             </div>
-
-        </div>
-    );
+        </div>)
 }
 
 export default StepContent;
