@@ -4,9 +4,17 @@ import React from 'react';
 import Button from "@/app/_components/Button";
 import PlanPricingOption from "@/app/_components/PlanPricingOption";
 
+interface StepTwoProps {
+    isMonthly: boolean,
+    setIsMonthly: React.Dispatch<React.SetStateAction<boolean>>,
+    setStepNumber: React.Dispatch<React.SetStateAction<number>>,
+    selectedPlan: string,
+    setSelectedPlan: React.Dispatch<React.SetStateAction<string>>,
+}
 
 
-function StepTwo({isMonthly, setIsMonthly, setStepNumber}: {isMonthly: boolean, setIsMonthly: React.Dispatch<React.SetStateAction<boolean>>, setStepNumber: React.Dispatch<React.SetStateAction<number>>}) {
+
+function StepTwo({isMonthly, setIsMonthly, setStepNumber}: StepTwoProps) {
 
     const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
         setStepNumber((s)=>s+1)

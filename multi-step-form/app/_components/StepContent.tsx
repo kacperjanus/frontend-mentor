@@ -4,6 +4,7 @@ import StepThree from "@/app/_components/steps/StepThree";
 import StepTwo from "@/app/_components/steps/StepTwo";
 import StepFour from "@/app/_components/steps/StepFour";
 import ThankYou from "@/app/_components/steps/ThankYou";
+import {AddOn} from "@/app/interfaces";
 
 interface StepContentProps {
     stepNumber: number,
@@ -17,7 +18,14 @@ function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Elemen
         {title: "Finishing up", description: "Double check everything looks OK before confirming"},
         ]
 
+    const addOns : AddOn[] = [{title: "Online services", description: "Access to multiplayer online", price: {monthly: 9, yearly: 90} },
+        {title: "Larger storage", description: "Extra 1TB on cloud save", price: {monthly: 12, yearly: 120}},
+        {title: "Customizable profile", description: "Custom theme on your profile", price: {monthly: 15, yearly: 150}},
+    ]
+
     const [isMonthly, setIsMonthly] = useState(true)
+    const [selectedAddOns, setSelectedAddOns] = useState([0,0,0])
+    const [selectedPlan, setSelectedPlan] = useState("")
 
     return stepNumber === 5 ? <div className="h-full mb-4"><ThankYou/></div> : (
         <div className="mx-[6.6rem] flex flex-col w-full">
@@ -35,9 +43,9 @@ function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Elemen
             </div>
             <div className="h-full mb-4">
                 {stepNumber === 1 && <StepOne setStepNumber={setStepNumber} />}
-                {stepNumber === 2 && <StepTwo setStepNumber={setStepNumber} isMonthly={isMonthly} setIsMonthly={setIsMonthly} />}
-                {stepNumber === 3 && <StepThree setStepNumber={setStepNumber} isMonthly={isMonthly}/>}
-                {stepNumber === 4 && <StepFour setStepNumber={setStepNumber}/>}
+                {stepNumber === 2 && <StepTwo setStepNumber={setStepNumber} isMonthly={isMonthly} setIsMonthly={setIsMonthly} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />}
+                {stepNumber === 3 && <StepThree setStepNumber={setStepNumber} isMonthly={isMonthly} addOns={addOns} selectedAddOns={selectedAddOns} setSelectedAddOns={setSelectedAddOns}/>}
+                {stepNumber === 4 && <StepFour setStepNumber={setStepNumber} isMonthly={isMonthly} selectedPlan={selectedPlan} selectedAddOns={selectedAddOns}/>}
             </div>
         </div>)
 }

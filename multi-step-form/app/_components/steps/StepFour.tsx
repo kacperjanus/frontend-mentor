@@ -1,7 +1,14 @@
 import React from 'react';
 import Button from "@/app/_components/Button";
 
-function StepFour({setStepNumber}: {setStepNumber: React.Dispatch<React.SetStateAction<number>>}) {
+interface StepFourProps {
+    setStepNumber: React.Dispatch<React.SetStateAction<number>>,
+    selectedPlan: string,
+    selectedAddOns: number[],
+    isMonthly: boolean
+}
+
+function StepFour({setStepNumber}: StepFourProps) {
     const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
         setStepNumber((s)=>s+1)
     }

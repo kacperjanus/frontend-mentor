@@ -7,6 +7,7 @@ interface AddOnSelectorProps {
     description: string,
     isMonthly: boolean,
     price: {monthly: number, yearly: number}
+    key?: string
 }
 
 function AddOnSelector({title, description, isMonthly, price} : AddOnSelectorProps) {
