@@ -18,6 +18,10 @@ function StepFour({setStepNumber, selectedAddOns, selectedPlan, isMonthly}: Step
         setStepNumber((s)=>s-1)
     }
 
+    const goToSelectPlan: React.MouseEventHandler<HTMLButtonElement> = ()=>{
+        setStepNumber((s)=>s-2)
+    }
+
     const addOns : AddOn[] = [{title: "Online services", description: "Access to multiplayer online", price: {monthly: 1, yearly: 10} },
         {title: "Larger storage", description: "Extra 1TB on cloud save", price: {monthly: 2, yearly: 20}},
         {title: "Customizable profile", description: "Custom theme on your profile", price: {monthly: 2, yearly: 20}},
@@ -41,7 +45,7 @@ function StepFour({setStepNumber, selectedAddOns, selectedPlan, isMonthly}: Step
                     <div className={`flex justify-between items-center ${selectedAddOns.find(value=>value) ?" pb-6" : ""}`}>
                         <div>
                             <p className="text-marine-blue font-bold">{selectedPlan} ({isMonthly ? "Monthly" : "Yearly"})</p>
-                            <a className="text-cool-gray underline">Change</a>
+                            <button onClick={goToSelectPlan} className="text-cool-gray underline hover:text-purplish-blue">Change</button>
                         </div>
                             <p className="text-marine-blue font-bold">${planPrice}/{isMonthly ? "mo" : "year"}</p>
                     </div>

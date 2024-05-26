@@ -27,7 +27,7 @@ function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Elemen
 
     const [isMonthly, setIsMonthly] = useState(true)
     const [selectedAddOns, setSelectedAddOns] = useState([false,false,false])
-    const [selectedPlan, setSelectedPlan] = useState("")
+    const [selectedPlan, setSelectedPlan] = useState("Arcade")
 
     return stepNumber === 5 ? <div className="h-full mb-4"><ThankYou/></div> : (
         <div className="mx-[6.6rem] flex flex-col w-full">

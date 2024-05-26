@@ -12,7 +12,7 @@ interface StepThreeProps {
     setSelectedAddOns: React.Dispatch<React.SetStateAction<boolean[]>>
 }
 
-function StepThree({isMonthly, setStepNumber, addOns, setSelectedAddOns} : StepThreeProps) {
+function StepThree({isMonthly, setStepNumber, addOns, selectedAddOns, setSelectedAddOns} : StepThreeProps) {
     const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
         setStepNumber((s)=>s+1)
     }
@@ -26,7 +26,7 @@ function StepThree({isMonthly, setStepNumber, addOns, setSelectedAddOns} : StepT
             <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-4 justify-between">
                     {addOns.map((addOn: AddOn, i) => (<AddOnSelector index={i} key={addOn.title} isMonthly={isMonthly}  title={addOn.title}
-                                                                  price={addOn.price} description={addOn.description} setSelectedAddOns={setSelectedAddOns}/>))}
+                                                                  price={addOn.price} description={addOn.description} setSelectedAddOns={setSelectedAddOns} selectedAddOns={selectedAddOns}/>))}
                 </div>
             </div>
             <div className="flex justify-between items-center">
