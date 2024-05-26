@@ -3,6 +3,7 @@
 import React from 'react';
 import Button from "@/app/_components/Button";
 import PlanPricingOption from "@/app/_components/PlanPricingOption";
+import {Plan} from "@/app/interfaces";
 
 interface StepTwoProps {
     isMonthly: boolean,
@@ -12,9 +13,7 @@ interface StepTwoProps {
     setSelectedPlan: React.Dispatch<React.SetStateAction<string>>,
 }
 
-
-
-function StepTwo({isMonthly, setIsMonthly, setStepNumber}: StepTwoProps) {
+function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelectedPlan}: StepTwoProps) {
 
     const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
         setStepNumber((s)=>s+1)
@@ -24,13 +23,16 @@ function StepTwo({isMonthly, setIsMonthly, setStepNumber}: StepTwoProps) {
         setStepNumber((s)=>s-1)
     }
 
+    const plans : Plan[] = [{title: "Arcade", image: "/icon-arcade.svg", price: {monthly: 9, yearly: 90} },
+        {title: "Advanced", image: "/icon-advanced.svg", price: {monthly: 12, yearly: 120}},
+        {title: "Pro", image: "/icon-pro.svg", price: {monthly: 15, yearly: 150}},
+    ]
+
     return (
         <div className="flex flex-col mt-4 h-full justify-between">
             <div className="flex flex-col gap-8">
             <div className="flex justify-between">
-                <PlanPricingOption isMonthly={isMonthly} image="/icon-arcade.svg" title="Arcade" price={{monthly: 9, yearly: 90}} />
-                <PlanPricingOption isMonthly={isMonthly} image="/icon-advanced.svg" title="Advanced" price={{monthly: 12, yearly: 120}} />
-                <PlanPricingOption isMonthly={isMonthly} image="/icon-pro.svg" title="Pro" price={{monthly: 15, yearly: 150}} />
+                {plans.map((plan: Plan)=> <PlanPricingOption key={plan.title} isMonthly={isMonthly} image={plan.image} title={plan.title} price={plan.price} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />)}
             </div>
                 <div className="bg-magnolia rounded-lg h-12 flex justify-center items-center gap-6">
                     <p className={`${isMonthly ? "font-bold text-marine-blue": "text-cool-gray"}`}>Monthly</p>

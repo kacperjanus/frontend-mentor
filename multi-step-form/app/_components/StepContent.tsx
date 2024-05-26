@@ -1,3 +1,5 @@
+"use client"
+
 import React, {useState} from 'react';
 import StepOne from "@/app/_components/steps/StepOne";
 import StepThree from "@/app/_components/steps/StepThree";
@@ -18,13 +20,13 @@ function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Elemen
         {title: "Finishing up", description: "Double check everything looks OK before confirming"},
         ]
 
-    const addOns : AddOn[] = [{title: "Online services", description: "Access to multiplayer online", price: {monthly: 9, yearly: 90} },
-        {title: "Larger storage", description: "Extra 1TB on cloud save", price: {monthly: 12, yearly: 120}},
-        {title: "Customizable profile", description: "Custom theme on your profile", price: {monthly: 15, yearly: 150}},
+    const addOns : AddOn[] = [{title: "Online services", description: "Access to multiplayer online", price: {monthly: 1, yearly: 10} },
+        {title: "Larger storage", description: "Extra 1TB on cloud save", price: {monthly: 2, yearly: 20}},
+        {title: "Customizable profile", description: "Custom theme on your profile", price: {monthly: 2, yearly: 20}},
     ]
 
     const [isMonthly, setIsMonthly] = useState(true)
-    const [selectedAddOns, setSelectedAddOns] = useState([0,0,0])
+    const [selectedAddOns, setSelectedAddOns] = useState([false,false,false])
     const [selectedPlan, setSelectedPlan] = useState("")
 
     return stepNumber === 5 ? <div className="h-full mb-4"><ThankYou/></div> : (
