@@ -35,21 +35,22 @@ function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelec
                 {plans.map((plan: Plan)=> <PlanPricingOption key={plan.title} isMonthly={isMonthly} image={plan.image} title={plan.title} price={plan.price} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />)}
             </div>
                 <div className="bg-magnolia rounded-lg h-12 flex justify-center items-center gap-6">
-                    <p className={`${isMonthly ? "font-bold text-marine-blue": "text-cool-gray"}`}>Monthly</p>
-                    <label className="switch">
-                        <input value={isMonthly? "true" : "false"} onChange={()=>setIsMonthly(s=>!s)} type="checkbox"/>
-                        <span className="slider round"></span>
+                    <p className={`${isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"}`}>Monthly</p>
+                    <label className="inline-flex items-center cursor-pointer">
+                        <input type="checkbox" value={isMonthly ? "true" : "false"} onChange={() => setIsMonthly(s => !s)} className="sr-only peer" />
+                        <div
+                            className="relative w-9 h-5 bg-marine-blue rounded-full peer peer-checked:after:translate-x-[150%] after:content-[''] after:absolute after:top-1 after:start-[3px] after:bg-white  after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
                     </label>
-                    <p className={`${!isMonthly ? "font-bold text-marine-blue": "text-cool-gray"}`}>Yearly</p>
+                    <p className={`${!isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"}`}>Yearly</p>
                 </div>
             </div>
             <div className="flex justify-between items-center">
-            <div>
+                <div>
                     <Button setStepNumber={decreaseStep} content="Go Back" backButton={true}/>
                 </div>
                 <div className="mb-4">
 
-                <Button setStepNumber={increaseStep} content="Next Step"/>
+                    <Button setStepNumber={increaseStep} content="Next Step"/>
                 </div>
             </div>
         </div>
