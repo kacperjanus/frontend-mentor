@@ -37,9 +37,9 @@ function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelec
                 <div className="bg-magnolia rounded-lg h-12 flex justify-center items-center gap-6">
                     <p className={`${isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"}`}>Monthly</p>
                     <label className="inline-flex items-center cursor-pointer">
-                        <input type="checkbox" value={isMonthly ? "true" : "false"} onChange={() => setIsMonthly(s => !s)} className="sr-only peer" />
+                        <input type="checkbox" checked={isMonthly} onChange={() => setIsMonthly(s => !s)} className="sr-only peer" />
                         <div
-                            className="relative w-9 h-5 bg-marine-blue rounded-full peer peer-checked:after:translate-x-[150%] after:content-[''] after:absolute after:top-1 after:start-[3px] after:bg-white  after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
+                            className="relative w-9 h-5 bg-marine-blue rounded-full peer peer-checked:after:translate-x-[-150%] after:content-[''] after:absolute after:top-1 after:start-[21px] after:bg-white  after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
                     </label>
                     <p className={`${!isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"}`}>Yearly</p>
                 </div>
