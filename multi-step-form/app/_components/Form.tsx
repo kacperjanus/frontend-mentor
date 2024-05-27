@@ -8,7 +8,7 @@ function Form() {
     const [stepNumber, setStepNumber] = useState(1);
 
     return (
-        <div className="bg-white md:w-[50rem] lg:w-[54.8rem] xl:w-[64rem] rounded-2xl p-5 flex">
+        <div className="bg-white md:w-[50rem] lg:w-[54.8rem] lg:h-[38rem] xl:w-[64rem] rounded-2xl p-5 flex-col flex md:flex-row ">
             <Sidebar stepNumber={stepNumber}/>
             <StepContent stepNumber={stepNumber} setStepNumber={setStepNumber}/>
         </div>

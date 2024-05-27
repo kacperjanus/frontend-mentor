@@ -10,7 +10,7 @@ function PlanPricingOption({image, title, price, isMonthly, selectedPlan, setSel
     const setCurrentPlan: MouseEventHandler<HTMLDivElement> = ()=> setSelectedPlan(title);
 
     return (
-        <div onClick={setCurrentPlan} className={`border-solid border-light-gray border-[1px] p-4 rounded-lg w-[9.5rem] hover:border-marine-blue ${selectedPlan === title ? "border-marine-blue bg-magnolia":""} cursor-pointer`}>
+        <div onClick={setCurrentPlan} className={`border-solid border-light-gray border-[1px] p-4 rounded-lg w-[9.5rem] lg:w-[8rem] xl:w-[9.5rem] hover:border-marine-blue ${selectedPlan === title ? "border-marine-blue bg-magnolia":""} cursor-pointer`}>
             <img className="pb-14" src={image} alt={title} />
             <p className="font-semibold text-marine-blue">{title}</p>
             <p className="text-cool-gray">${isMonthly ? price.monthly : price.yearly}/{isMonthly ? "mo" : "year"}</p>
