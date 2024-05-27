@@ -30,7 +30,7 @@ function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Elemen
     const [selectedPlan, setSelectedPlan] = useState("Arcade")
 
     return stepNumber === 5 ? <div className="h-full mb-4"><ThankYou/></div> : (
-        <div className="xl:mx-[6.6rem] lg:mx-[4rem] md:mx-[1rem] flex flex-col w-full">
+        <div className="absolute md:static md:p-0 md:shadow-none p-6 left-3 shadow-xl top-24 bg-alabaster w-[21rem] xl:mx-[6.6rem] rounded-2xl md:rounded-none lg:mx-[4rem] md:mx-[1rem] flex flex-col md:w-full">
             <div className="md:pt-2 lg:pt-10 xl:pt-12 lg:pb-6">
                 <div className="pb-3">
                     <h1 className="text-3xl font-extrabold text-marine-blue">

@@ -12,7 +12,7 @@ function Input({label, placeholder, value, onChange, isSubmitted}: {label: strin
                 <label className="text-marine-blue">{label}</label>
                 {isSubmitted && value==="" ? <p className="font-bold text-strawberry-red"> This field is required</p>: ""}
             </div>
-            <input required value={value} onChange={handleChange} className={`${isSubmitted && value === "" ? "border-strawberry-red" :"border-light-gray"} p-3 border-solid border-light-gray border-[1px] rounded-xl active:border-marine-blue text-marine-blue font-bold placeholder:font-normal cursor-pointer`} placeholder={placeholder}/>
+            <input required value={value} onChange={handleChange} className={`${isSubmitted && value === "" ? "border-strawberry-red" :"border-light-gray"} p-3 border-solid border-[1px] rounded-xl active:border-marine-blue text-marine-blue font-bold placeholder:font-normal cursor-pointer`} placeholder={placeholder}/>
         </div>
     );
 }

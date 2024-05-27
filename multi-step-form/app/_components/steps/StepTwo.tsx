@@ -31,7 +31,7 @@ function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelec
     return (
         <div className="flex flex-col mt-4 h-full justify-between">
             <div className="flex flex-col gap-8">
-            <div className="flex justify-between">
+            <div className="flex md:flex-row flex-col gap-3 md:gap-0 justify-between">
                 {plans.map((plan: Plan)=> <PlanPricingOption key={plan.title} isMonthly={isMonthly} image={plan.image} title={plan.title} price={plan.price} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />)}
             </div>
                 <div className="bg-magnolia rounded-lg h-12 flex justify-center items-center gap-6">
@@ -44,7 +44,8 @@ function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelec
                     <p className={`${!isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"}`}>Yearly</p>
                 </div>
             </div>
-            <div className="flex justify-between items-center">
+
+            <div className="flex justify-between items-center absolute md:static top-[38rem] right-0 self-end md:bg-none w-full">
                 <div>
                     <Button setStepNumber={decreaseStep} content="Go Back" backButton={true}/>
                 </div>
