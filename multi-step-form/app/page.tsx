@@ -6,7 +6,7 @@ export const metadata = {
 }
 
 export default function Home() {
-  return <div className="bg-light-blue h-screen p-20">
+  return <div className="bg-light-blue md:w-[55rem] lg:w-[59.8rem] xl:w-[69rem] md:p-5 xl:p-18 lg:p-10">
     <Form/>
   </div>
 }
