@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import {Inter, Ubuntu} from "next/font/google";
+import {Ubuntu} from "next/font/google";
 import "./globals.css";
+import React from "react";
 
 const ubuntu = Ubuntu({ subsets: ["latin"], weight: ["300", "400", "500", "700"] });
 
