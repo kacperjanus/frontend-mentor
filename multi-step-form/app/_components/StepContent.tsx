@@ -29,7 +29,7 @@ function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Elemen
     const [selectedAddOns, setSelectedAddOns] = useState([false,false,false])
     const [selectedPlan, setSelectedPlan] = useState("Arcade")
 
-    return stepNumber === 5 ? <div className="absolute md:static md:p-0 md:shadow-none py-6 left-3 shadow-xl top-24 bg-alabaster w-[21rem] xl:mx-[6.6rem] rounded-2xl md:rounded-none lg:mx-[4rem] md:mx-[1rem] flex flex-col md:w-full"><ThankYou/></div> : (
+    return stepNumber === 5 ? <div className="absolute md:static md:p-0 md:shadow-none py-6 left-3 shadow-xl top-24 bg-alabaster md:bg-white w-[21rem] xl:mx-[6.6rem] rounded-2xl md:rounded-none lg:mx-[4rem] md:mx-[1rem] flex flex-col md:w-full"><ThankYou/></div> : (
         <div className="absolute md:static md:p-0 md:shadow-none p-6 left-3 shadow-xl top-24 bg-alabaster md:bg-white w-[21rem] xl:mx-[6.6rem] rounded-2xl md:rounded-none lg:mx-[4rem] md:mx-[1rem] flex flex-col md:w-full">
             <div className="md:pt-2 lg:pt-10 xl:pt-12 lg:pb-6">
                 <div className="pb-3">
