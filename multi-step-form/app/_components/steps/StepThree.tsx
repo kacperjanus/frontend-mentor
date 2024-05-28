@@ -29,7 +29,8 @@ function StepThree({isMonthly, setStepNumber, addOns, selectedAddOns, setSelecte
                                                                   price={addOn.price} description={addOn.description} setSelectedAddOns={setSelectedAddOns} selectedAddOns={selectedAddOns}/>))}
                 </div>
             </div>
-            <div className="flex justify-between items-center">
+            <div
+                className="flex md:justify-between items-center fixed bg-white justify-center gap-24 md:static bottom-0 right-0 self-end md:bg-none w-full">
                 <div>
                     <Button setStepNumber={decreaseStep} content="Go Back" backButton={true}/>
                 </div>

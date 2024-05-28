@@ -25,8 +25,10 @@ function StepOne({setStepNumber}: {setStepNumber: React.Dispatch<React.SetStateA
             <Input value={email} onChange={setEmail} isSubmitted={isSubmitted} label="Email Address" placeholder="e.g. stephenking@lorem.com"/>
             <Input value={phoneNumber} onChange={setPhoneNumber} isSubmitted={isSubmitted} label="Phone Number" placeholder="e.g. +1 234 567 890"/>
             </div>
-            <div className="absolute md:static top-[31em] right-0 self-end md:bg-none ">
+            <div className="md:static w-full fixed bg-white top-[31em] bottom-0 right-0 justify-center md:justify-end flex py-4 pr-4 md:py-0 md:pr-0 self-end md:bg-none ">
+                <div className="ml-[10.7rem] md:ml-0">
                 <Button setStepNumber={increaseStep} content="Next Step"/>
+                </div>
             </div>
         </form>
     );

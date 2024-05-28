@@ -60,10 +60,11 @@ function StepFour({setStepNumber, selectedAddOns, selectedPlan, isMonthly}: Step
                 </div>
                 <div className="flex justify-between px-6">
                     <p className="text-cool-gray">Total (per {isMonthly ? "month" : "year"})</p>
-                    <p className="text-xl text-purplish-blue font-bold">+${totalPrice}/{isMonthly ? "mo" : "year"}</p>
+                    <p className="text-xl text-purplish-blue font-bold">${totalPrice}/{isMonthly ? "mo" : "year"}</p>
                 </div>
             </div>
-            <div className="flex justify-between items-center">
+            <div
+                className="flex md:justify-between items-center fixed bg-white justify-center gap-24 md:static bottom-0 right-0 self-end md:bg-none w-full">
                 <div>
                     <Button setStepNumber={decreaseStep} content="Go Back" backButton={true}/>
                 </div>

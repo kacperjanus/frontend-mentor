@@ -45,7 +45,7 @@ function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelec
                 </div>
             </div>
 
-            <div className="flex justify-between items-center absolute md:static top-[38rem] right-0 self-end md:bg-none w-full">
+            <div className="flex md:justify-between items-center fixed bg-white justify-center gap-24 md:static bottom-0 right-0 self-end md:bg-none w-full">
                 <div>
                     <Button setStepNumber={decreaseStep} content="Go Back" backButton={true}/>
                 </div>
