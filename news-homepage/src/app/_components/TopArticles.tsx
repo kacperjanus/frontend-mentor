@@ -28,7 +28,7 @@ function TopArticles() {
     ];
 
     return (
-        <div className="flex gap-8 h-full">
+        <div className="flex flex-col lg:flex-row gap-8 h-full mb-14 md:mb-0 justify-center">
             {topArticles.map((topArticle: SingleTopArticle, i) => <TopArticle key={topArticle.title} title={topArticle.title} preview={topArticle.preview} image={topArticle.image} number={i}/>)}
         </div>
     );
