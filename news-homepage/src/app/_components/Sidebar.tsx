@@ -26,7 +26,7 @@ function Sidebar() {
         <div className="bg-very-dark-blue p-6 h-full flex flex-col w-full md:mb-0 mb-14">
         <h1 className="text-soft-orange font-[700] text-4xl">New</h1>
         <div className="text-white flex flex-col divide-y divide-dark-grayish-blue justify-between h-full">
-            {sideArticles.map((article: NewArticle, i) => <div className="font-semibold text-xl py-10 last:pb-4" key={article.title}><SideArticle title={article.title} preview={article.preview}/></div>)}
+            {sideArticles.map((article: NewArticle) => <div className="font-semibold text-xl py-10 last:pb-4" key={article.title}><SideArticle title={article.title} preview={article.preview}/></div>)}
         </div>
         </div>
     );

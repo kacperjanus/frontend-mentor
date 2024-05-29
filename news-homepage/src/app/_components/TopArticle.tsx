@@ -1,5 +1,4 @@
 import React from 'react';
-import SingleTopArticle from "@/app/_components/TopArticles";
 
 function TopArticle({title, preview, image, number}: {title: string, preview: string, image: string, number: number}) {
     return (

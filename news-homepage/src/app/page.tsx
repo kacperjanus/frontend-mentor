@@ -1,4 +1,3 @@
-import Image from "next/image";
 import MainArticle from "@/app/_components/MainArticle";
 import Sidebar from "@/app/_components/Sidebar";
 import TopArticles from "@/app/_components/TopArticles";
