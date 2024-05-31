@@ -14,9 +14,6 @@ const config: Config = {
       "white": "hsl(0, 0%, 100%)",
       "tomato": "hsl(4, 100%, 67%)",
     },
-    screens: {
-      'sm': '670px'
-    }
   },
   plugins: [],
 };

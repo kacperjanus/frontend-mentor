@@ -7,7 +7,7 @@ export default function Home() {
     const [success, setSuccess] = useState(false)
 
     return (
-        <div className="bg-charcoalgrey w-full h-full p-4">
+        <div className="bg-charcoalgrey w-full h-screen sm:p-4 flex justify-center items-center">
             {success ? <Thanks email={email} setSuccess={setSuccess} setEmail={setEmail}/> : <Form setEmail={setEmail} email={email} setSuccess={setSuccess} /> }
         </div>
     );

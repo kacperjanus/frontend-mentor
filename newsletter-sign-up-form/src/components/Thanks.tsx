@@ -13,7 +13,7 @@ function Thanks({email, setSuccess, setEmail}: ThanksProps) {
         setSuccess(false);
     }
     return (
-        <div className="div sm:h-[28rem] h-screen w-[28rem] bg-white sm:rounded-3xl flex justify-center">
+        <div className="div sm:h-[28rem] h-screen sm:w-[28rem] bg-white sm:rounded-3xl flex justify-center">
             <div className="flex flex-col justify-between py-10 px-12 gap-7 sm:justify-center mt-40 sm:mt-0">
                 <div className="flex flex-col gap-7">
                 <img className="w-14 mb-2" src="/images/icon-success.svg"/>

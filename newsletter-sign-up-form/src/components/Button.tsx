@@ -8,7 +8,7 @@ interface ButtonProps {
 function Button({children, onClick} : ButtonProps) {
     return (
         <div>
-            <button onClick={onClick} className="bg-darkslategray hover:bg-gradient-to-r from-[#FF5379] to-tomato hover:shadow-2xl hover:shadow-tomato/50 text-white px-2 py-4 rounded-lg font-semibold w-full"
+            <button onClick={onClick} className="bg-darkslategray md:text-base text-sm  hover:bg-gradient-to-r from-[#FF5379] to-tomato hover:shadow-2xl hover:shadow-tomato/50 text-white px-2 py-4 rounded-lg font-semibold w-full"
                     type="submit">{children}
             </button>
         </div>
