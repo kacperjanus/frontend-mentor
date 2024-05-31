@@ -9,7 +9,7 @@ export default function Home() {
     const previewText = "These languages are the backbone of every websites, defining structure, content, and presentation."
     const author = "Greg Hooper"
   return (
-    <div>
+    <div className="bg-yellow w-full h-screen flex justify-center items-center">
       <BlogPreview avatarPath={avatarPath} imagePath={imagePath} entryType={entryType} publishDate={publishDate} entryTitle={entryTitle} previewText={previewText} author={author} />
     </div>
   );
