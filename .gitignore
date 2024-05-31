@@ -185,3 +185,40 @@ multi-step-form/.vercel
 multi-step-form/*.tsbuildinfo
 multi-step-form/next-env.d.ts
 
+---
+
+# dependencies
+url-shortening-landing-page/node_modules
+url-shortening-landing-page/.pnp
+url-shortening-landing-page/.pnp.js
+url-shortening-landing-page/.yarn/install-state.gz
+
+# testing
+url-shortening-landing-page/coverage
+
+# next.js
+url-shortening-landing-page/.next/
+url-shortening-landing-page/.idea/
+url-shortening-landing-page/out/
+
+# production
+url-shortening-landing-page/build
+
+# misc
+url-shortening-landing-page/.DS_Store
+url-shortening-landing-page/*.pem
+
+# debug
+url-shortening-landing-page/npm-debug.log*
+url-shortening-landing-page/yarn-debug.log*
+url-shortening-landing-page/yarn-error.log*
+
+# local env files
+url-shortening-landing-page/.env*.local
+
+# vercel
+url-shortening-landing-page/.vercel
+
+# typescript
+url-shortening-landing-page/*.tsbuildinfo
+url-shortening-landing-page/next-env.d.ts
