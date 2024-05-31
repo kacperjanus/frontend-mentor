@@ -1,5 +1,9 @@
+import Header from "@/app/_components/Header";
+
 export default function Home() {
   return (
-    <div>Hello world</div>
+    <div className="w-full h-screen">
+      <Header/>
+    </div>
   );
 }
