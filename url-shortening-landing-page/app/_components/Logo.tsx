@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Logo() {
+function Logo({className}: {className?: string}) {
     return (
         <div>
-            <img src="/logo.svg" alt="logo" />
+            <img className={className} src="/logo.svg" alt="logo" />
         </div>
     );
 }
