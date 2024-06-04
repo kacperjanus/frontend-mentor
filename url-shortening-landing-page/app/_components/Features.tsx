@@ -13,7 +13,7 @@ function Features() {
         {title: "Fully Customizable", description: "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement." , image: "/icon-fully-customizable.svg"},]
 
     return (
-        <div className="w-full bg-[#F0F1F7] py-32">
+        <div className="w-full bg-[#F0F1F7] pt-40 pb-32">
             <div className="max-w-5xl text-center mx-auto">
                 <div>
                     <h1 className="text-3xl font-bold">Advanced statistics</h1>
