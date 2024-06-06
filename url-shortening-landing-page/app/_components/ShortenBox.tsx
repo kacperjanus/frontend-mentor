@@ -22,16 +22,17 @@ function ShortenBox() {
     async function handleClick() {
         if(!link) return;
         const data: TinyUrlResponse = await ShortenUrl(link)
-        console.log(data)
         if(data.tiny_url && data.url){
             if(localStorage.getItem("links")){
                 const links = JSON.parse(localStorage.getItem("links")!);
                 if(links.constructor === Array){
-
-                localStorage.setItem("links", JSON.stringify([{url: data.url, tiny_url: data.tiny_url}, ...links]))
+                    const newValue = JSON.stringify([{url: data.url, tiny_url: data.tiny_url}, ...links]);
+                    localStorage.setItem("links", newValue)
+                    window.dispatchEvent(new StorageEvent("storage", { key: "links", newValue }));
                 }else{
-                localStorage.setItem("links", JSON.stringify([{url: data.url, tiny_url: data.tiny_url}, links]))
-
+                    const newValue = JSON.stringify([{url: data.url, tiny_url: data.tiny_url}, links])
+                    localStorage.setItem("links", newValue)
+                    window.dispatchEvent(new StorageEvent("storage", { key: "links", newValue}));
                 }
             }else{
                 localStorage.setItem("links", JSON.stringify({url: data.url, tiny_url: data.tiny_url}))

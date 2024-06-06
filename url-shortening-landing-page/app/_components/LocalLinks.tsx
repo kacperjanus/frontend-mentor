@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useEffect, useState} from 'react';
+import React, {useSyncExternalStore} from 'react';
 import LocalLink from "@/app/_components/LocalLink";
 
 interface LLink {
@@ -9,9 +9,18 @@ interface LLink {
 }
 
 function LocalLinks() {
-    const [links , setLinks] = useState(localStorage.getItem("links") || []);
+    const store = {
+        getServerSnapshot: ()=> "",
+        getSnapshot: () => window.localStorage.getItem("links"),
+        subscribe: (listener: () => void) => {
+            window.addEventListener("storage", listener);
+            return () => void window.removeEventListener("storage", listener);
+        },
+    };
 
-    const parsedLinks = links.length > 0 ? JSON.parse(links) : [];
+    const links = useSyncExternalStore(store.subscribe, store.getSnapshot, store.getServerSnapshot);
+
+    const parsedLinks = (links ?? []).length > 0 ? JSON.parse(links!) : [];
 
     return ( <div className="pt-24 bg-[#F0F1F7] p-2  mx-auto w-full flex flex-col items-center gap-4">
         {parsedLinks ? parsedLinks.constructor === Array ? parsedLinks.map((link: LLink) => <LocalLink key={link.tiny_url} link={link} />) : <LocalLink link={parsedLinks}/> : "" }
