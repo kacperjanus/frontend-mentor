@@ -4,8 +4,8 @@ import Logo from "@/app/_components/Logo";
 function Footer() {
     return (
         <div className="bg-very-dark-violet">
-            <div className="text-white flex max-w-5xl mx-auto gap-20 pt-10 mb-10">
-                <div className="mr-20">
+            <div className="text-white flex flex-col md:flex-row items-center md:items-start text-center md:text-start max-w-5xl mx-auto gap-20 pt-10 mb-10">
+                <div className="mr-0 md:mr-20">
                     <Logo className="invert"/>
                 </div>
                 <div>

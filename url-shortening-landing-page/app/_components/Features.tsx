@@ -13,15 +13,15 @@ function Features() {
         {title: "Fully Customizable", description: "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement." , image: "/icon-fully-customizable.svg"},]
 
     return (
-        <div className="w-full bg-[#F0F1F7] pt-24 pb-32">
-            <div className="max-w-5xl text-center mx-auto">
+        <div className="w-full bg-[#F0F1F7] pt-24 pb-32 px-4">
+            <div className="md:max-w-5xl max-w-lg text-center mx-auto">
                 <div>
                     <h1 className="text-3xl font-bold">Advanced statistics</h1>
                     <p className="text-lg text-gray">Track how your links are performing across the web with our advanced statistics dashboard.</p>
                 </div>
-                <div className="flex gap-6 mt-20 relative items-start">
+                <div className="flex flex-col md:flex-row gap-6 mt-20 relative items-start">
                     {features.map((feature: Feature, i) => <FeatureBox key={feature.title} feature={feature} index={i}/>)}
-                    <span className="bg-cyan absolute text-cyan z-0 w-full text-[0.5rem] top-1/2 ">span</span>
+                    <span className="bg-cyan absolute text-cyan z-0 rotate-90 md:rotate-0 w-full text-[0.5rem] top-1/2 ">span</span>
                 </div>
             </div>
         </div>

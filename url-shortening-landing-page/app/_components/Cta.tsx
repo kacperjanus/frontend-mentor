@@ -2,13 +2,10 @@ import React from 'react';
 
 function Cta() {
     return (
-        <div className="bg-dark-violet relative">
-            <img src="/bg-boost-desktop.svg"/>
-            <div className="absolute w-96 flex flex-col gap-4 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] items-center">
-                <h2 className="text-3xl font-bold text-white">Boost your links today</h2>
+            <div className="w-full flex flex-col gap-4 items-center bg-boost-mobile mobile:bg-boost-desktop h-60 bg-dark-violet py-10 bg-cover">
+                <h2 className="text-2xl md:text-3xl font-bold text-center text-white">Boost your links today</h2>
                 <button className="bg-cyan px-6 py-2 rounded-full text-white hover:bg-[#9AE2E2]">Get Started</button>
             </div>
-        </div>
     );
 }
 

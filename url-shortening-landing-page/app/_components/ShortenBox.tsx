@@ -41,14 +41,15 @@ function ShortenBox() {
     }
 
     return (
-        <div className="absolute bottom-[-60%] left-[50%] translate-x-[-50%]">
-                <div className="containter bg-dark-violet w-[50rem] lg:w-[60rem] mx-auto rounded-md relative md:max-w-5xl">
-                    <img className="rounded-lg" src="/bg-shorten-desktop.svg"/>
-                    <div className="absolute top-[35%] left-[50%] translate-x-[-50%] flex gap-6">
-                        <input className="px-4 w-[30rem] lg:w-[40rem] py-3 rounded-lg outline-none" placeholder="Shorten a link here..." value={link} onChange={(e)=>setLink(e.target.value)}/>
-                        <button onClick={handleClick} className="bg-cyan text-white rounded-md px-4 py-2 w-40 hover:bg-[#9AE2E2]">Shorten it!</button>
+        <div className="absolute bottom-[-3.5rem] md:bottom-[-5.5rem] -right-3 -left-3 md:right-0 md:left-0">
+                    <div className="absolute md:w-[45rem] lg:w-[60rem] md:left-[50%] md:translate-x-[-50%] right-1 left-1 flex md:flex-row flex-col gap-4 md:gap-6 bg-shorten-desktop bg-cover p-4 bg-dark-violet rounded-lg ">
+                        <input className="px-4 w-full py-3 rounded-lg outline-none"
+                               placeholder="Shorten a link here..." value={link}
+                               onChange={(e) => setLink(e.target.value)}/>
+                        <button onClick={handleClick}
+                                className="bg-cyan w-full text-white rounded-md px-4 py-2 md:w-40 hover:bg-[#9AE2E2]">Shorten it!
+                        </button>
                     </div>
-                </div>
         </div>
     );
 }

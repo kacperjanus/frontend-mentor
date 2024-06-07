@@ -16,6 +16,14 @@ const config: Config = {
         "grayish-blue": "hsl(257, 7%, 63%)",
         "very-dark-blue": "hsl(255, 11%, 22%)",
         "very-dark-violet": "hsl(260, 8%, 14%)",
+      },
+      backgroundImage: {
+        "shorten-desktop": "url(/bg-shorten-desktop.svg)",
+        "boost-desktop": "url(/bg-boost-desktop.svg)",
+        "boost-mobile": "url(/bg-boost-mobile.svg)",
+      },
+      screens: {
+        "mobile": "380px",
       }
     },
   },
