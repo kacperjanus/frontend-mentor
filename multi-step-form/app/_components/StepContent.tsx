@@ -13,6 +13,8 @@ interface StepContentProps {
     setStepNumber: React.Dispatch<React.SetStateAction<number>>;
 }
 
+type PlanOption = "Pro" | "Arcade" | "Advanced"
+
 function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Element {
     const stepsContent = [{title: "Personal info", description: "Please provide your name, email address, and phone number." },
         {title: "Select your plan", description: "You have the option of monthly or yearly billing"},
@@ -27,7 +29,7 @@ function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Elemen
 
     const [isMonthly, setIsMonthly] = useState(true)
     const [selectedAddOns, setSelectedAddOns] = useState([false,false,false])
-    const [selectedPlan, setSelectedPlan] = useState("Arcade")
+    const [selectedPlan, setSelectedPlan] = useState("Arcade" as PlanOption)
 
     return stepNumber === 5 ? <div className="absolute md:static md:p-0 md:shadow-none py-6 left-3 shadow-xl top-24 bg-alabaster md:bg-white w-[21rem] xl:mx-[6.6rem] rounded-2xl md:rounded-none lg:mx-[4rem] md:mx-[1rem] flex flex-col md:w-full"><ThankYou/></div> : (
         <div className="absolute md:static md:p-0 md:shadow-none p-6 left-3 shadow-xl top-24 bg-alabaster md:bg-white w-[21rem] xl:mx-[6.6rem] rounded-2xl md:rounded-none lg:mx-[4rem] md:mx-[1rem] flex flex-col md:w-full">

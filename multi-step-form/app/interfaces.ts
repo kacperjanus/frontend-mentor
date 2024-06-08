@@ -1,3 +1,5 @@
+type PlanOption = "Pro" | "Arcade" | "Advanced"
+
 export interface AddOn {
     title: string,
     description: string,
@@ -5,7 +7,7 @@ export interface AddOn {
 }
 
 export interface Plan {
-    title: string,
+    title: PlanOption,
     image: string,
     price: {monthly: number, yearly: number}
 }

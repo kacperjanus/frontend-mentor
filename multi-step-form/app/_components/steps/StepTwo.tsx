@@ -5,12 +5,14 @@ import Button from "@/app/_components/Button";
 import PlanPricingOption from "@/app/_components/PlanPricingOption";
 import {Plan} from "@/app/interfaces";
 
+type PlanOption = "Pro" | "Arcade" | "Advanced"
+
 interface StepTwoProps {
     isMonthly: boolean,
     setIsMonthly: React.Dispatch<React.SetStateAction<boolean>>,
     setStepNumber: React.Dispatch<React.SetStateAction<number>>,
     selectedPlan: string,
-    setSelectedPlan: React.Dispatch<React.SetStateAction<string>>,
+    setSelectedPlan: React.Dispatch<React.SetStateAction<PlanOption>>,
 }
 
 function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelectedPlan}: StepTwoProps) {

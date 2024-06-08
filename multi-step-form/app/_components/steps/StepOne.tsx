@@ -15,7 +15,7 @@ function StepOne({setStepNumber}: {setStepNumber: React.Dispatch<React.SetStateA
 
     const handleSubmit: FormEventHandler<HTMLFormElement> = function(e){
         e.preventDefault();
-        setIsSubmitted((s)=>!s)
+        setIsSubmitted(true)
     }
 
     return (
