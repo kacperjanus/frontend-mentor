@@ -18,7 +18,7 @@ interface TinyUrlResponse {
 
 function ShortenBox() {
     const [link, setLink] = useState("")
-    const [error, setError] = useState(true)
+    const [error, setError] = useState(false)
 
     async function handleClick() {
         if(!link) {
