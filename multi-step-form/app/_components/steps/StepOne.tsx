@@ -2,14 +2,20 @@ import React, {FormEventHandler, useState} from 'react';
 import Input from "@/app/_components/Input";
 import Button from "@/app/_components/Button";
 
-function StepOne({setStepNumber}: {setStepNumber: React.Dispatch<React.SetStateAction<number>>}) {
+interface StepOneProps {
+    setStepNumber: React.Dispatch<React.SetStateAction<number>>;
+    email: string,
+    phoneNumber: string,
+    name: string,
+    setEmail: React.Dispatch<React.SetStateAction<string>>;
+    setPhoneNumber: React.Dispatch<React.SetStateAction<string>>;
+    setName: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function StepOne({setStepNumber, email, name, phoneNumber, setName, setPhoneNumber, setEmail}: StepOneProps) {
     const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
         if(name!=="" && email!=="" && phoneNumber!=="") setStepNumber((s)=>s+1)
     }
-
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [phoneNumber, setPhoneNumber] = useState("")
 
     const [isSubmitted, setIsSubmitted] = useState(false)
 

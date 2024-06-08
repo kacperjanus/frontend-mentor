@@ -1,4 +1,4 @@
-type PlanOption = "Pro" | "Arcade" | "Advanced"
+export type PlanOption = "Pro" | "Arcade" | "Advanced"
 
 export interface AddOn {
     title: string,

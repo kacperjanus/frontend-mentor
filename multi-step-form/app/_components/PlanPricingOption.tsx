@@ -1,11 +1,18 @@
 "use client"
 
 import React, {MouseEventHandler, SetStateAction} from 'react';
-
-type PlanOption = "Pro" | "Arcade" | "Advanced"
+import {PlanOption} from "@/app/interfaces";
 
 interface PlanPricingOptionProps {
-image: string; title: PlanOption, price: {monthly: number, yearly: number}, isMonthly: boolean, selectedPlan: string, setSelectedPlan: React.Dispatch<SetStateAction<PlanOption>>
+    image: string;
+    title: PlanOption;
+    price: {
+        monthly: number,
+        yearly: number
+    };
+    isMonthly: boolean;
+    selectedPlan: string;
+    setSelectedPlan: React.Dispatch<SetStateAction<PlanOption>>;
 }
 
 function PlanPricingOption({image, title, price, isMonthly, selectedPlan, setSelectedPlan}: PlanPricingOptionProps) {

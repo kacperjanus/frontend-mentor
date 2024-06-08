@@ -6,14 +6,12 @@ import StepThree from "@/app/_components/steps/StepThree";
 import StepTwo from "@/app/_components/steps/StepTwo";
 import StepFour from "@/app/_components/steps/StepFour";
 import ThankYou from "@/app/_components/steps/ThankYou";
-import {AddOn} from "@/app/interfaces";
+import {AddOn, PlanOption} from "@/app/interfaces";
 
 interface StepContentProps {
     stepNumber: number,
     setStepNumber: React.Dispatch<React.SetStateAction<number>>;
 }
-
-type PlanOption = "Pro" | "Arcade" | "Advanced"
 
 function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Element {
     const stepsContent = [{title: "Personal info", description: "Please provide your name, email address, and phone number." },
@@ -31,6 +29,10 @@ function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Elemen
     const [selectedAddOns, setSelectedAddOns] = useState([false,false,false])
     const [selectedPlan, setSelectedPlan] = useState("Arcade" as PlanOption)
 
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState("")
+
     return stepNumber === 5 ? <div className="absolute md:static md:p-0 md:shadow-none py-6 left-3 shadow-xl top-24 bg-alabaster md:bg-white w-[21rem] xl:mx-[6.6rem] rounded-2xl md:rounded-none lg:mx-[4rem] md:mx-[1rem] flex flex-col md:w-full"><ThankYou/></div> : (
         <div className="absolute md:static md:p-0 md:shadow-none p-6 left-3 shadow-xl top-24 bg-alabaster md:bg-white w-[21rem] xl:mx-[6.6rem] rounded-2xl md:rounded-none lg:mx-[4rem] md:mx-[1rem] flex flex-col md:w-full">
             <div className="md:pt-2 lg:pt-10 xl:pt-12 lg:pb-6">
@@ -46,7 +48,7 @@ function StepContent({stepNumber, setStepNumber }: StepContentProps): JSX.Elemen
                 </div>
             </div>
             <div className="h-full mb-4">
-                {stepNumber === 1 && <StepOne setStepNumber={setStepNumber} />}
+                {stepNumber === 1 && <StepOne name={name} email={email} phoneNumber={phoneNumber} setName={setName} setEmail={setEmail} setPhoneNumber={setPhoneNumber} setStepNumber={setStepNumber} />}
                 {stepNumber === 2 && <StepTwo setStepNumber={setStepNumber} isMonthly={isMonthly} setIsMonthly={setIsMonthly} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />}
                 {stepNumber === 3 && <StepThree setStepNumber={setStepNumber} isMonthly={isMonthly} addOns={addOns} selectedAddOns={selectedAddOns} setSelectedAddOns={setSelectedAddOns}/>}
                 {stepNumber === 4 && <StepFour setStepNumber={setStepNumber} isMonthly={isMonthly} selectedPlan={selectedPlan} selectedAddOns={selectedAddOns}/>}

@@ -3,9 +3,7 @@
 import React from 'react';
 import Button from "@/app/_components/Button";
 import PlanPricingOption from "@/app/_components/PlanPricingOption";
-import {Plan} from "@/app/interfaces";
-
-type PlanOption = "Pro" | "Arcade" | "Advanced"
+import {Plan, PlanOption} from "@/app/interfaces";
 
 interface StepTwoProps {
     isMonthly: boolean,
