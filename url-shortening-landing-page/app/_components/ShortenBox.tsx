@@ -49,11 +49,11 @@ function ShortenBox() {
         <div className="absolute bottom-[-2rem] md:bottom-[-5rem] -right-3 -left-3 md:right-0 md:left-0">
                     <div className="absolute md:w-[45rem] lg:w-[60rem] md:left-[50%] md:translate-x-[-50%] right-1 left-1 flex md:flex-row flex-col gap-8 md:gap-6 bg-shorten-desktop bg-cover p-8 md:p-6 bg-dark-violet rounded-lg ">
                         <div className="w-full relative">
-                            <input className={`px-4 w-full py-3 rounded-lg outline-none box-border ${error ? "border-red border-2": "border-transparent border-2"}`}
+                            <input className={`px-4 w-full py-3 rounded-lg outline-none box-border ${error && link==="" ? "border-red border-2": "border-transparent border-2"}`}
                                    placeholder="Shorten a link here..." value={link}
                                    disabled={loading}
                                    onChange={(e) => setLink(e.target.value)}/>
-                            {error && <span
+                            {error && link==="" && <span
                                 className="text-red text-sm italic absolute left-0 -bottom-5">Please add a link</span>}
                         </div>
                         <button onClick={handleClick}

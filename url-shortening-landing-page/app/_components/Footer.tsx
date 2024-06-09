@@ -4,10 +4,12 @@ import Logo from "@/app/_components/Logo";
 function Footer() {
     return (
         <div className="bg-very-dark-violet">
-            <div className="text-white flex flex-col md:flex-row items-center md:items-start text-center md:text-start max-w-5xl mx-auto gap-20 pt-10 mb-10">
-                <div className="mr-0 md:mr-20">
+            <div className="text-white flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-start max-w-5xl mx-auto gap-20 pt-10 mb-10">
+                <div className="mr-0 lg:mr-20">
                     <Logo className="invert"/>
                 </div>
+                <div className="flex sm:flex-row sm:gap-24 gap-12 flex-col">
+
                 <div>
                     <h3 className="text-sm mb-4">Features</h3>
                     <ul className="flex flex-col gap-2">
@@ -32,6 +34,7 @@ function Footer() {
                         <li className="text-xs text-gray hover:text-cyan cursor-pointer">Careers</li>
                         <li className="text-xs text-gray hover:text-cyan cursor-pointer">Contact</li>
                     </ul>
+                </div>
                 </div>
                 <div className="flex gap-6">
                     <img className="w-6 h-6 cursor-pointer" src="/icon-facebook.svg"/>

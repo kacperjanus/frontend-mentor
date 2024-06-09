@@ -22,9 +22,6 @@ const config: Config = {
         "boost-desktop": "url(/bg-boost-desktop.svg)",
         "boost-mobile": "url(/bg-boost-mobile.svg)",
       },
-      screens: {
-        "mobile": "380px",
-      }
     },
   },
   plugins: [],
