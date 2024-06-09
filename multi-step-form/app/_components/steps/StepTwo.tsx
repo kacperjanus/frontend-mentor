@@ -34,7 +34,7 @@ function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelec
             <div className="flex md:flex-row flex-col gap-3 md:gap-0 justify-between">
                 {plans.map((plan: Plan)=> <PlanPricingOption key={plan.title} isMonthly={isMonthly} image={plan.image} title={plan.title} price={plan.price} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />)}
             </div>
-                <div className="bg-magnolia rounded-lg h-12 flex justify-center items-center gap-6">
+                <div className={`${isMonthly ? "mt-[1.25rem]" : ""} bg-magnolia rounded-lg h-12 flex justify-center items-center gap-6`}>
                     <p className={`${isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"}`}>Monthly</p>
                     <label className="inline-flex items-center cursor-pointer">
                         <input type="checkbox" checked={isMonthly} onChange={() => setIsMonthly(s => !s)} className="sr-only peer" />
