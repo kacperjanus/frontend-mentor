@@ -65,4 +65,88 @@
         @apply tracking-[0px];
         @apply font-barlow;
     }
+
+    .mobile-heading-xl {
+        @apply text-[80px];
+        @apply leading-[171.9%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .mobile-heading-l{
+        @apply text-[56px];
+        @apply leading-[114.6%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .mobile-heading-m{
+        @apply text-[24px];
+        @apply leading-[64.2%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .mobile-heading-s{
+        @apply text-[18px];
+        @apply leading-[36.7%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .mobile-heading-xs{
+        @apply text-[16px];
+        @apply leading-[33.6%];
+        @apply tracking-[4px];
+        @apply font-barlow;
+    }
+
+    .mobile-nav-text{
+        @apply text-[14px];
+        @apply leading-[19.2%];
+        @apply tracking-[2px];
+        @apply font-barlow;
+    }
+
+    .mobile-body{
+        @apply text-[15px];
+        @apply leading-[180%];
+        @apply tracking-[0px];
+        @apply font-barlow;
+    }
+
+    .tablet-heading-l{
+        @apply text-[100px];
+        @apply leading-[114.6%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .tablet-heading-m{
+        @apply text-[56px];
+        @apply leading-[64.2%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .tablet-heading-s{
+        @apply text-[32px];
+        @apply leading-[36.7%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .tablet-heading-xs{
+        @apply text-[28px];
+        @apply leading-[33.6%];
+        @apply tracking-[4px];
+        @apply font-barlow;
+    }
+
+    .tablet-body{
+        @apply text-[18px];
+        @apply leading-[180%];
+        @apply tracking-[0px];
+        @apply font-barlow;
+    }
 }

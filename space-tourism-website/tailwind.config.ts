@@ -16,6 +16,16 @@ const config: Config = {
         barlow: ['var(--font-barlow)'],
         bellefair: ['var(--font-bellefair)'],
       },
+      screens: {
+        "mobile": "375px",
+        "tablet": "768px",
+        "desktop": "1024px"
+      },
+      backgroundImage: {
+        "home-mobile": "url('/home/background-home-mobile.jpg')",
+        "home-tablet": "url('/home/background-home-tablet.jpg')",
+        "home-desktop": "url('/home/background-home-desktop.jpg')",
+      }
     },
   },
   plugins: [],
