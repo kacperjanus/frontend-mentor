@@ -9,6 +9,7 @@ function SideStep({title, no, active}: {title: string; no: number | number[], ac
 
         return no[0] === active || no[1] === active ? "bg-pastel-blue text-marine-blue border-transparent" : "text-magnolia border-magnolia"
     }
+
     return (
         <div className="flex items-center md:gap-6 md:mx-6">
             <div>

@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "sidebar": "url('/bg-sidebar-desktop.svg')"
+        "sidebar": "url('/bg-sidebar-desktop.svg')",
+        "sidebarMobile": "url('/bg-sidebar-mobile.svg')"
       },
       colors: {
           "marine-blue": "hsl(213, 96%, 18%)",
