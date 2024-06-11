@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .heading-xl {
+        @apply text-[144px];
+        @apply leading-[171.9%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .heading-l{
+        @apply text-[100px];
+        @apply leading-[114.6%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .heading-m{
+        @apply text-[56px];
+        @apply leading-[64.2%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .heading-s{
+        @apply text-[32px];
+        @apply leading-[36.7%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .heading-xs{
+        @apply text-[28px];
+        @apply leading-[33.6%];
+        @apply tracking-[4px];
+        @apply font-barlow;
+    }
+
+    .subheading-l{
+        @apply text-[28px];
+        @apply leading-[32.1%];
+        @apply tracking-[0px];
+        @apply font-bellefair;
+    }
+
+    .subheading-s{
+        @apply text-[14px];
+        @apply leading-[16.8%];
+        @apply tracking-[2px];
+        @apply font-barlow;
+    }
+
+    .nav-text{
+        @apply text-[16px];
+        @apply leading-[19.2%];
+        @apply tracking-[2px];
+        @apply font-barlow;
+    }
+
+    .body{
+        @apply text-[18px];
+        @apply leading-[180%];
+        @apply tracking-[0px];
+        @apply font-barlow;
+    }
+}

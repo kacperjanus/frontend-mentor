@@ -222,3 +222,42 @@ url-shortening-landing-page/.vercel
 # typescript
 url-shortening-landing-page/*.tsbuildinfo
 url-shortening-landing-page/next-env.d.ts
+
+---
+
+# dependencies
+space-tourism-website/node_modules
+space-tourism-website/.pnp
+space-tourism-website/.pnp.js
+space-tourism-website/.yarn/install-state.gz
+
+# testing
+space-tourism-website/coverage
+
+# next.js
+space-tourism-website/.next/
+space-tourism-website/.idea/
+space-tourism-website/out/
+
+# production
+space-tourism-website/build
+
+# misc
+space-tourism-website/.DS_Store
+space-tourism-website/*.pem
+
+# debug
+space-tourism-website/npm-debug.log*
+space-tourism-website/yarn-debug.log*
+space-tourism-website/yarn-error.log*
+
+# local env files
+space-tourism-website/.env*.local
+
+# vercel
+space-tourism-website/.vercel
+
+# typescript
+space-tourism-website/*.tsbuildinfo
+space-tourism-website/next-env.d.ts
+
