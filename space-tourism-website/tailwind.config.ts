@@ -15,6 +15,7 @@ const config: Config = {
       fontFamily: {
         barlow: ['var(--font-barlow)'],
         bellefair: ['var(--font-bellefair)'],
+        barlowcondensed: ['var(--font-barlow-condensed)'],
       },
       screens: {
         "mobile": "375px",
@@ -25,6 +26,9 @@ const config: Config = {
         "home-mobile": "url('/home/background-home-mobile.jpg')",
         "home-tablet": "url('/home/background-home-tablet.jpg')",
         "home-desktop": "url('/home/background-home-desktop.jpg')",
+        "destination-mobile": "url('/destination/background-destination-mobile.jpg')",
+        "destination-tablet": "url('/destination/background-destination-tablet.jpg')",
+        "destination-desktop": "url('/destination/background-destination-desktop.jpg')",
       }
     },
   },

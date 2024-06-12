@@ -35,7 +35,7 @@
         @apply text-[28px];
         @apply leading-[33.6%];
         @apply tracking-[4px];
-        @apply font-barlow;
+        @apply font-barlowcondensed;
     }
 
     .subheading-l{
@@ -49,14 +49,14 @@
         @apply text-[14px];
         @apply leading-[16.8%];
         @apply tracking-[2px];
-        @apply font-barlow;
+        @apply font-barlowcondensed;
     }
 
     .nav-text{
         @apply text-[16px];
         @apply leading-[19.2%];
         @apply tracking-[2px];
-        @apply font-barlow;
+        @apply font-barlowcondensed;
     }
 
     .body{
