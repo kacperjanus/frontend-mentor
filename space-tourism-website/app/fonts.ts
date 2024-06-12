@@ -9,7 +9,7 @@ export const bellefair = Bellefair({
 
 export const barlow = Barlow({
     subsets: ["latin"],
-    weight: "400",
+    weight: ["400", "700"],
     display: "swap",
     variable: "--font-barlow"
 });

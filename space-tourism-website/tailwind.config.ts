@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         "very-dark-navy": "#0B0D17",
         "light-blue": "#D0D6F9",
+        "grey": "#85868A"
       },
       fontFamily: {
         barlow: ['var(--font-barlow)'],

@@ -98,7 +98,7 @@
         @apply text-[16px];
         @apply leading-[33.6%];
         @apply tracking-[4px];
-        @apply font-barlow;
+        @apply font-barlowcondensed;
     }
 
     .mobile-nav-text{
@@ -140,7 +140,7 @@
         @apply text-[28px];
         @apply leading-[33.6%];
         @apply tracking-[4px];
-        @apply font-barlow;
+        @apply font-barlowcondensed;
     }
 
     .tablet-body{
