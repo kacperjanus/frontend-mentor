@@ -43,31 +43,34 @@ function Page() {
             <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start">
                 01 PICK YOUR DESTINATION
             </h2>
-            <div className="h-[150px] w-[150px] tablet:h-[300px] tablet:w-[300px] desktop:h-[480px] desktop:w-[480px] mx-auto my-12 mb-[32px]">
-                <img src={`/destination/image-${curDestination}.png`} alt="Moon"/>
-            </div>
-            <div className="flex gap-[32px]">
-                <TabItem value={"moon"} onClick={setCurDestination}>Moon</TabItem>
-                <TabItem value={"mars"} onClick={setCurDestination}>Mars</TabItem>
-                <TabItem value={"europa"} onClick={setCurDestination}>Europa</TabItem>
-                <TabItem value={"titan"} onClick={setCurDestination}>Titan</TabItem>
-            </div>
-            <h2 className="mobile-heading-l tablet:tablet-heading-l uppercase mt-[16px]">
-                {DestinationData[curDestination].name}
-            </h2>
-            <p className="mobile-body mb-auto">
-                {DestinationData[curDestination].description}
-            </p>
-            <div className="flex flex-col tablet:flex-row gap-6 w-full justify-evenly">
-
-            <div className="mb-[16px]">
-                <h3 className="subheading-s mb-[12px]">AVG. DISTANCE</h3>
-                <span className="subheading-l">{DestinationData[curDestination].distance}</span>
-            </div>
-            <div>
-                <h3 className="subheading-s mb-[12px]">EST. TRAVEL TIME</h3>
-                <span className="subheading-l">{DestinationData[curDestination].time}</span>
-            </div>
+            <div className="flex flex-grow flex-col desktop:grid desktop:grid-cols-2 desktop:items-center desktop:my-auto desktop:flex-grow desktop:gap-[32px]">
+                <div className="h-[150px] w-[150px] tablet:h-[300px] tablet:w-[300px] desktop:h-[480px] desktop:w-[480px] mx-auto my-12 mb-[32px]">
+                    <img src={`/destination/image-${curDestination}.png`} alt="Moon"/>
+                </div>
+                <div className="flex flex-grow flex-col text-center items-center gap-[16px]">
+                    <div className="flex gap-[32px] desktop:self-start">
+                        <TabItem value={"moon"} onClick={setCurDestination}>Moon</TabItem>
+                        <TabItem value={"mars"} onClick={setCurDestination}>Mars</TabItem>
+                        <TabItem value={"europa"} onClick={setCurDestination}>Europa</TabItem>
+                        <TabItem value={"titan"} onClick={setCurDestination}>Titan</TabItem>
+                    </div>
+                    <h2 className="mobile-heading-l tablet:tablet-heading-l uppercase mt-[16px] desktop:self-start">
+                        {DestinationData[curDestination].name}
+                    </h2>
+                    <p className="mobile-body mb-auto desktop:text-start desktop:mb-10">
+                        {DestinationData[curDestination].description}
+                    </p>
+                    <div className="flex flex-col tablet:flex-row desktop:grid desktop:grid-cols-2 gap-6 w-full justify-evenly desktop:text-start desktop:mt-10">
+                        <div className="mb-[16px]">
+                            <h3 className="subheading-s mb-[12px]">AVG. DISTANCE</h3>
+                            <span className="subheading-l">{DestinationData[curDestination].distance}</span>
+                        </div>
+                        <div>
+                            <h3 className="subheading-s mb-[12px]">EST. TRAVEL TIME</h3>
+                            <span className="subheading-l">{DestinationData[curDestination].time}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
