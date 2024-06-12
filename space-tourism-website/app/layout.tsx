@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import {barlow, bellefair} from "@/app/fonts";
+import {barlow, barlowCondensed, bellefair} from "@/app/fonts";
 import Header from "@/app/_components/Header";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${barlow.variable} ${bellefair.variable} min-h-screen bg-home-mobile tablet:bg-home-tablet desktop:bg-home-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full`}>
+      <body className={`${barlow.variable} ${bellefair.variable} ${barlowCondensed.variable} min-h-screen bg-destination-mobile tablet:bg-destination-tablet desktop:bg-destination-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full`}>
           <Header/>
           {children}
       </body>
