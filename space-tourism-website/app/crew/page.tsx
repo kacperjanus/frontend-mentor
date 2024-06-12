@@ -28,22 +28,22 @@ const MembersData = {
 }
 
 function Page() {
-    const [curMember, setCurMember] = useState("douglas-hurley" as CrewMember)
+    const [curMember, setCurMember] = useState("victor-glover" as CrewMember)
 
     return (
-        <div className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px]">
-            <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start">
+        <div className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px] desktop:max-w-[1110px] desktop:mx-auto">
+            <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start ">
                 <span className="text-grey font-bold">02</span> MEET YOUR CREW
             </h2>
-            <div className="flex flex-grow flex-col desktop:grid desktop:grid-cols-2 desktop:items-center desktop:my-auto desktop:flex-grow desktop:gap-[32px]">
+            <div className="flex flex-grow flex-col desktop:grid desktop:grid-cols-2 desktop:items-center desktop:my-auto desktop:flex-grow desktop:gap-[32px] tablet:max-w-[512px] desktop:max-w-[1110px]">
                 <div className="flex flex-grow flex-col text-center items-center gap-[16px]">
                     <div
                         className="flex flex-col tablet:flex-row desktop:grid desktop:grid-cols-2 gap-6 w-full justify-evenly desktop:text-start desktop:mt-10">
                         <div className="mt-10">
-                            <span className="mobile-heading-s uppercase text-grey">{MembersData[curMember].position}</span>
+                            <span className="mobile-heading-s tablet:tablet-heading-s desktop:heading-s uppercase text-grey">{MembersData[curMember].position}</span>
                         </div>
                     </div>
-                    <h2 className="mobile-heading-m tablet:tablet-heading-l uppercase mb-[24px] desktop:self-start">
+                    <h2 className="mobile-heading-m tablet:tablet-heading-m desktop:heading-m uppercase tablet:mt-4 mb-[24px] desktop:self-start">
                         {MembersData[curMember].name}
                     </h2>
                     <p className="mobile-body desktop:text-start desktop:mb-10">
@@ -54,7 +54,7 @@ function Page() {
                     </div>
                 </div>
                 <div
-                    className="h-[340px] w-[271px] tablet:h-[300px] tablet:w-[300px] desktop:h-[480px] desktop:w-[480px] mx-auto  mb-[32px]">
+                    className="h-[340px] w-[271px] tablet:h-[560px] tablet:w-[447px] desktop:h-[676px] desktop:w-[539px] mx-auto mb-[32px] desktop:self-end desktop:mb-0">
                     <img src={`/crew/image-${curMember}.png`} alt="Moon"/>
                 </div>
             </div>
