@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${barlow.variable} ${bellefair.variable} min-h-screen bg-home-mobile tablet:bg-home-tablet desktop:bg-home-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right`}>
+      <body className={`${barlow.variable} ${bellefair.variable} min-h-screen bg-home-mobile tablet:bg-home-tablet desktop:bg-home-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full`}>
           <Header/>
           {children}
       </body>
