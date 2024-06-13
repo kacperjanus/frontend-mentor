@@ -1,6 +1,7 @@
 "use client"
 
 import React, {useState} from 'react';
+import SmallPaginationGroup from "@/app/_components/group-components/SmallPaginationGroup";
 
 type CrewMember  = "mark-shuttleworth" | "victor-glover" | "douglas-hurley" | "anousheh-ansari"
 
@@ -50,7 +51,7 @@ function Page() {
                         {MembersData[curMember].description}
                     </p>
                     <div className="mt-10 desktop:self-start">
-                        ****
+                        <SmallPaginationGroup/>
                     </div>
                 </div>
                 <div

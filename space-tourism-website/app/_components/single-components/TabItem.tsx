@@ -7,7 +7,7 @@ function TabItem({children, onClick, value}: {children: ReactNode, onClick: Reac
         onClick(value);
     }
     return (
-        <div onClick={onClickFunction} className="nav-text cursor-pointer uppercase pb-[16px] border-b-transparent border-b-2 hover:border-b-[#85868A] active:border-b-white">{children}</div>
+        <div onClick={onClickFunction} className="mobile-nav-text tablet:nav-text h-8 cursor-pointer uppercase pb-[16px] border-b-transparent border-b-[3px] hover:border-b-[#85868A] active:border-b-white">{children}</div>
     );
 }
 

@@ -2,6 +2,7 @@
 
 import React, {useState} from 'react';
 import TabItem from "@/app/_components/single-components/TabItem";
+import TabItemGroup from "@/app/_components/group-components/TabItemGroup";
 
 
 function Page() {
@@ -49,10 +50,7 @@ function Page() {
                 </div>
                 <div className="flex flex-grow flex-col text-center items-center gap-[16px]">
                     <div className="flex gap-[32px] desktop:self-start">
-                        <TabItem value={"moon"} onClick={setCurDestination}>Moon</TabItem>
-                        <TabItem value={"mars"} onClick={setCurDestination}>Mars</TabItem>
-                        <TabItem value={"europa"} onClick={setCurDestination}>Europa</TabItem>
-                        <TabItem value={"titan"} onClick={setCurDestination}>Titan</TabItem>
+                        <TabItemGroup onClick={setCurDestination}/>
                     </div>
                     <h2 className="mobile-heading-l tablet:tablet-heading-l uppercase mt-[16px] desktop:self-start">
                         {DestinationData[curDestination].name}
