@@ -3,6 +3,7 @@
 import React, {useState} from 'react';
 import TabItem from "@/app/_components/single-components/TabItem";
 import TabItemGroup from "@/app/_components/group-components/TabItemGroup";
+import Header from "@/app/_components/Header";
 
 
 function Page() {
@@ -40,6 +41,9 @@ function Page() {
     const [curDestination, setCurDestination] = useState("moon" as Destination);
 
     return (
+        <div
+            className="min-h-screen bg-destination-mobile tablet:bg-destination-tablet desktop:bg-destination-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
+            <Header/>
         <div className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px]">
             <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start">
                 01 PICK YOUR DESTINATION
@@ -70,6 +74,7 @@ function Page() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 }

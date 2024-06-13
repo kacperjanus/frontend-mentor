@@ -2,6 +2,7 @@
 
 import React, {useState} from 'react';
 import SmallPaginationGroup from "@/app/_components/group-components/SmallPaginationGroup";
+import Header from "@/app/_components/Header";
 
 type CrewMember  = "mark-shuttleworth" | "victor-glover" | "douglas-hurley" | "anousheh-ansari"
 
@@ -32,6 +33,9 @@ function Page() {
     const [curMember, setCurMember] = useState("victor-glover" as CrewMember)
 
     return (
+        <div
+            className="min-h-screen bg-crew-mobile tablet:bg-crew-tablet desktop:bg-crew-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
+            <Header/>
         <div className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px] desktop:max-w-[1110px] desktop:mx-auto">
             <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start ">
                 <span className="text-grey font-bold">02</span> MEET YOUR CREW
@@ -59,6 +63,7 @@ function Page() {
                     <img src={`/crew/image-${curMember}.png`} alt="Moon"/>
                 </div>
             </div>
+        </div>
         </div>
     );
 }

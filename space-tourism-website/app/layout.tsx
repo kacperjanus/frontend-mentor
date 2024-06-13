@@ -15,10 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${barlow.variable} ${bellefair.variable} ${barlowCondensed.variable} min-h-screen bg-destination-mobile tablet:bg-destination-tablet desktop:bg-destination-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full`}>
-          <Header/>
+      <body className={`${barlow.variable} ${bellefair.variable} ${barlowCondensed.variable}`}>
           {children}
       </body>
     </html>
   );
 }
+
+

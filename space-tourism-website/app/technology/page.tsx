@@ -2,6 +2,7 @@
 
 import React, {useState} from 'react';
 import LargePaginationGroup from "@/app/_components/group-components/LargePaginationGroup";
+import Header from "@/app/_components/Header";
 
 const TechnologyData = {
     "launch-vehicle": {
@@ -23,6 +24,9 @@ type technology = "launch-vehicle" | "spaceport" | "space-capsule";
 function Page() {
     const [curTechnology, setCurTechnology] = useState("launch-vehicle" as technology);
     return (
+        <div
+            className="min-h-screen bg-technology-mobile tablet:bg-technology-tablet desktop:bg-technology-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
+            <Header/>
         <div
             className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px] desktop:max-w-[1310px] desktop:mx-auto">
             <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start">
@@ -59,6 +63,7 @@ function Page() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 }
