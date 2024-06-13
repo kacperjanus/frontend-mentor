@@ -51,7 +51,7 @@ function Page() {
                         {MembersData[curMember].description}
                     </p>
                     <div className="mt-10 desktop:self-start">
-                        <SmallPaginationGroup/>
+                        <SmallPaginationGroup active={curMember} onClick={setCurMember}/>
                     </div>
                 </div>
                 <div

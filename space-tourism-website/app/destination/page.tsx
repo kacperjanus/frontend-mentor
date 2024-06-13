@@ -50,7 +50,7 @@ function Page() {
                 </div>
                 <div className="flex flex-grow flex-col text-center items-center gap-[16px]">
                     <div className="flex gap-[32px] desktop:self-start">
-                        <TabItemGroup onClick={setCurDestination}/>
+                        <TabItemGroup active={curDestination} onClick={setCurDestination}/>
                     </div>
                     <h2 className="mobile-heading-l tablet:tablet-heading-l uppercase mt-[16px] desktop:self-start">
                         {DestinationData[curDestination].name}
