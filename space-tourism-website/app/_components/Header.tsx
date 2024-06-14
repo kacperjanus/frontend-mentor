@@ -7,8 +7,6 @@ import {usePathname} from "next/navigation";
 
 function Header() {
     const pathname = usePathname()
-    console.log(pathname)
-
     const isActive = (href: string) => pathname === href;
 
     return (
