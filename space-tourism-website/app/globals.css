@@ -19,14 +19,14 @@
 
     .heading-m{
         @apply text-[56px];
-        @apply leading-[64.2%];
+        @apply leading-[100%];
         @apply tracking-[0px];
         @apply font-bellefair;
     }
 
     .heading-s{
         @apply text-[32px];
-        @apply leading-[36.7%];
+        @apply leading-[150%];
         @apply tracking-[0px];
         @apply font-bellefair;
     }
@@ -89,7 +89,6 @@
 
     .mobile-heading-s{
         @apply text-[18px];
-        @apply leading-[36.7%];
         @apply tracking-[0px];
         @apply font-bellefair;
     }
@@ -124,7 +123,7 @@
 
     .tablet-heading-m{
         @apply text-[56px];
-        @apply leading-[64.2%];
+        @apply leading-none;
         @apply tracking-[0px];
         @apply font-bellefair;
     }

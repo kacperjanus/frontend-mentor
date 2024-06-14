@@ -34,32 +34,26 @@ function Page() {
 
     return (
         <div
-            className="min-h-screen bg-crew-mobile tablet:bg-crew-tablet desktop:bg-crew-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
+            className="min-h-screen overflow-hidden bg-crew-mobile tablet:bg-crew-tablet desktop:bg-crew-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
             <Header/>
         <div className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px] desktop:max-w-[1110px] desktop:mx-auto">
             <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start ">
                 <span className="text-grey font-bold">02</span> MEET YOUR CREW
             </h2>
             <div className="flex flex-grow flex-col desktop:grid desktop:grid-cols-2 desktop:items-center desktop:my-auto desktop:flex-grow desktop:gap-[32px] tablet:max-w-[512px] desktop:max-w-[1110px]">
-                <div className="flex flex-grow flex-col text-center items-center gap-[16px]">
-                    <div
-                        className="flex flex-col tablet:flex-row desktop:grid desktop:grid-cols-2 gap-6 w-full justify-evenly desktop:text-start desktop:mt-10">
-                        <div className="mt-10">
-                            <span className="mobile-heading-s tablet:tablet-heading-s desktop:heading-s uppercase text-grey">{MembersData[curMember].position}</span>
-                        </div>
-                    </div>
-                    <h2 className="mobile-heading-m tablet:tablet-heading-m desktop:heading-m uppercase tablet:mt-4 mb-[24px] desktop:self-start">
+                <div className="flex flex-col text-center items-center desktop:text-left gap-[16px]">
+                    <span className="mobile-heading-s tablet:tablet-heading-s desktop:heading-s uppercase text-grey tablet:mt-10 desktop:self-start">{MembersData[curMember].position}</span>
+                    <h2 className="mobile-heading-m tablet:tablet-heading-m desktop:heading-m uppercase tablet:mt-4 mb-[24px] desktop:self-start tablet:h-20">
                         {MembersData[curMember].name}
                     </h2>
-                    <p className="mobile-body desktop:text-start desktop:mb-10">
+                    <p className="mobile-body desktop:body desktop:text-start desktop:mb-10 h-40 tablet:h-28">
                         {MembersData[curMember].description}
                     </p>
-                    <div className="mt-10 desktop:self-start">
+                    <div className="desktop:self-start">
                         <SmallPaginationGroup active={curMember} onClick={setCurMember}/>
                     </div>
                 </div>
-                <div
-                    className="h-[340px] w-[271px] tablet:h-[560px] tablet:w-[447px] desktop:h-[676px] desktop:w-[539px] mx-auto mb-[32px] desktop:self-end desktop:mb-0">
+                <div className="h-[340px] w-[271px] tablet:h-[560px] tablet:w-[447px] desktop:h-[676px] desktop:w-[539px] mx-auto mb-[32px] mt-8 desktop:my-0">
                     <img src={`/crew/image-${curMember}.png`} alt="Moon"/>
                 </div>
             </div>
