@@ -59,7 +59,7 @@ function Page() {
                     <h2 className="mobile-heading-l tablet:tablet-heading-l uppercase mt-[16px] desktop:self-start">
                         {DestinationData[curDestination].name}
                     </h2>
-                    <p className="mobile-body mb-auto desktop:text-start desktop:mb-10">
+                    <p className="mobile-body mb-auto desktop:text-start desktop:h-20">
                         {DestinationData[curDestination].description}
                     </p>
                     <div className="flex flex-col tablet:flex-row desktop:grid desktop:grid-cols-2 gap-6 w-full justify-evenly desktop:text-start desktop:mt-10">
