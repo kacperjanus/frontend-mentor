@@ -34,14 +34,14 @@ function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelec
             <div className="flex md:flex-row flex-col gap-3 md:gap-0 justify-between">
                 {plans.map((plan: Plan)=> <PlanPricingOption key={plan.title} isMonthly={isMonthly} image={plan.image} title={plan.title} price={plan.price} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />)}
             </div>
-                <div className={`${isMonthly ? "mt-[1.25rem]" : ""} bg-magnolia rounded-lg h-12 flex justify-center items-center gap-6`}>
-                    <p className={`${isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"}`}>Monthly</p>
+                <div className={`${isMonthly ? "md:mt-[1.25rem] mt-[3.75rem]" : ""} bg-magnolia rounded-lg h-12 flex justify-center items-center gap-6`}>
+                    <p className={`${isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"} w-16`}>Monthly</p>
                     <label className="inline-flex items-center cursor-pointer">
                         <input type="checkbox" checked={isMonthly} onChange={() => setIsMonthly(s => !s)} className="sr-only peer" />
                         <div
                             className="relative w-9 h-5 bg-marine-blue rounded-full peer peer-checked:after:translate-x-[-150%] after:content-[''] after:absolute after:top-1 after:start-[21px] after:bg-white  after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
                     </label>
-                    <p className={`${!isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"}`}>Yearly</p>
+                    <p className={`${!isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"} w-16`}>Yearly</p>
                 </div>
             </div>
 
