@@ -3,7 +3,7 @@ import ShortenBox from "@/app/_components/ShortenBox";
 
 function HeroSection() {
     return (
-        <div className="grid md:grid-cols-2 sm:grid-rows-[2fr_1fr] gap-4 md:grid-rows-1 mt-10 mb-32 lg:max-w-5xl mx-10 md:mx-auto relative items-center">
+        <div className="grid md:grid-cols-2 sm:grid-rows-[2fr_1fr] gap-4 md:grid-rows-1 mt-10 mb-32 lg:max-w-5xl mx-10 lg:mx-auto relative items-center">
             <div className="flex flex-col justify-center gap-4 md:gap-0">
                 <h1 className="text-center md:text-left text-4xl md:text-[2.8rem] lg:text-6xl font-bold leading-[1.1] mb-4">More than just shorter links</h1>
                 <p className="text-center md:text-left text-base text-gray md:mb-10">Build your own brand&apos;s recognition and get detailed insights on how your links are performing</p>
