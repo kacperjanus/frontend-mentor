@@ -41,40 +41,39 @@ function Page() {
     const [curDestination, setCurDestination] = useState("moon" as Destination);
 
     return (
-        <div
-            className="min-h-screen bg-destination-mobile tablet:bg-destination-tablet desktop:bg-destination-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
+        <div className="min-h-screen bg-destination-mobile tablet:bg-destination-tablet desktop:bg-destination-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
             <Header/>
-        <div className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px]">
-            <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start">
-                01 PICK YOUR DESTINATION
-            </h2>
-            <div className="flex flex-grow flex-col desktop:grid desktop:grid-cols-2 desktop:items-center desktop:my-auto desktop:flex-grow desktop:gap-[32px]">
-                <div className="h-[150px] w-[150px] tablet:h-[300px] tablet:w-[300px] desktop:h-[480px] desktop:w-[480px] mx-auto my-12 mb-[32px]">
-                    <img src={`/destination/image-${curDestination}.png`} alt="Moon"/>
-                </div>
-                <div className="flex flex-grow flex-col text-center items-center gap-[16px]">
-                    <div className="flex gap-[32px] desktop:self-start">
-                        <TabItemGroup active={curDestination} onClick={setCurDestination}/>
+            <div className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px] desktop:max-w-[1110px] desktop:mx-auto">
+                <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start">
+                    01 PICK YOUR DESTINATION
+                </h2>
+                <div className="flex flex-grow flex-col desktop:grid desktop:grid-cols-2 desktop:items-center desktop:my-auto desktop:flex-grow desktop:gap-[32px]">
+                    <div className="h-[150px] w-[150px] tablet:h-[300px] tablet:w-[300px] desktop:h-[480px] desktop:w-[480px] mx-auto my-12">
+                        <img src={`/destination/image-${curDestination}.png`} alt="Moon"/>
                     </div>
-                    <h2 className="mobile-heading-l tablet:tablet-heading-l uppercase mt-[16px] desktop:self-start">
-                        {DestinationData[curDestination].name}
-                    </h2>
-                    <p className="mobile-body mb-auto desktop:text-start desktop:h-20">
-                        {DestinationData[curDestination].description}
-                    </p>
-                    <div className="flex flex-col tablet:flex-row desktop:grid desktop:grid-cols-2 gap-6 w-full justify-evenly desktop:text-start desktop:mt-10">
-                        <div className="mb-[16px]">
-                            <h3 className="subheading-s mb-[12px]">AVG. DISTANCE</h3>
-                            <span className="subheading-l">{DestinationData[curDestination].distance}</span>
+                    <div className="flex flex-grow flex-col text-center items-center gap-[16px]">
+                        <div className="flex gap-[32px] desktop:self-start">
+                            <TabItemGroup active={curDestination} onClick={setCurDestination}/>
                         </div>
-                        <div>
-                            <h3 className="subheading-s mb-[12px]">EST. TRAVEL TIME</h3>
-                            <span className="subheading-l">{DestinationData[curDestination].time}</span>
+                        <h2 className="mobile-heading-l tablet:tablet-heading-l uppercase mt-[16px] desktop:self-start">
+                            {DestinationData[curDestination].name}
+                        </h2>
+                        <p className="mobile-body mb-auto desktop:text-start desktop:h-20">
+                            {DestinationData[curDestination].description}
+                        </p>
+                        <div className="flex flex-col tablet:flex-row desktop:grid desktop:grid-cols-2 gap-6 w-full justify-evenly desktop:text-start desktop:mt-10">
+                            <div className="mb-[16px]">
+                                <h3 className="subheading-s mb-[12px]">AVG. DISTANCE</h3>
+                                <span className="subheading-l">{DestinationData[curDestination].distance}</span>
+                            </div>
+                            <div>
+                                <h3 className="subheading-s mb-[12px]">EST. TRAVEL TIME</h3>
+                                <span className="subheading-l">{DestinationData[curDestination].time}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     );
 }
