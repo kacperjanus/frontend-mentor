@@ -43,7 +43,7 @@ function Page() {
     return (
         <div className="min-h-screen bg-destination-mobile tablet:bg-destination-tablet desktop:bg-destination-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
             <Header/>
-            <div className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px] desktop:max-w-[1110px] desktop:mx-auto">
+            <div className="text-white p-6 flex flex-col items-center flex-grow text-center tablet:gap-[16px] desktop:max-w-[1110px] desktop:mx-auto">
                 <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start">
                     01 PICK YOUR DESTINATION
                 </h2>
