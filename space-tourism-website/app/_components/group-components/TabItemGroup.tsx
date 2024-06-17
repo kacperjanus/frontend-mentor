@@ -1,7 +1,6 @@
 import React from 'react';
 import TabItem from "@/app/_components/single-components/TabItem";
-
-type Destination = "moon" | "mars" | "europa" | "titan";
+import {Destination} from "@/app/interfaces";
 
 function TabItemGroup({onClick, active, values}: {onClick: React.Dispatch<React.SetStateAction<string>>, active: Destination, values: string[]}) {
     return (
