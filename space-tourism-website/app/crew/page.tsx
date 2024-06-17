@@ -3,10 +3,17 @@
 import React, {useState} from 'react';
 import SmallPaginationGroup from "@/app/_components/group-components/SmallPaginationGroup";
 import Header from "@/app/_components/Header";
+import PageHeader from "@/app/_components/PageHeader";
 
 type CrewMember  = "mark-shuttleworth" | "victor-glover" | "douglas-hurley" | "anousheh-ansari"
 
-const MembersData = {
+interface MemberData {
+    name: string,
+    position: string,
+    description: string,
+}
+
+const MembersData: Record<CrewMember, MemberData> = {
     "douglas-hurley": {
         name: "Douglas Hurley",
         position: "commander",
@@ -30,16 +37,16 @@ const MembersData = {
 }
 
 function Page() {
-    const [curMember, setCurMember] = useState("victor-glover" as CrewMember)
+    const [curMember, setCurMember] = useState<CrewMember>("victor-glover")
 
     return (
         <div
             className="min-h-screen overflow-hidden bg-crew-mobile tablet:bg-crew-tablet desktop:bg-crew-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
             <Header/>
         <div className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px] desktop:max-w-[1110px] desktop:mx-auto">
-            <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start ">
-                <span className="text-grey font-bold">02</span> MEET YOUR CREW
-            </h2>
+            <PageHeader>
+                02 MEET YOUR CREW
+            </PageHeader>
             <div className="flex flex-grow flex-col desktop:grid desktop:grid-cols-2 desktop:items-center desktop:my-auto desktop:flex-grow desktop:gap-[32px] tablet:max-w-[512px] desktop:max-w-[1110px]">
                 <div className="flex flex-col text-center items-center desktop:text-left gap-[16px]">
                     <span className="mobile-heading-s tablet:tablet-heading-s desktop:heading-s uppercase text-grey tablet:mt-10 desktop:self-start">{MembersData[curMember].position}</span>
@@ -55,8 +62,7 @@ function Page() {
                 </div>
                 <div className="h-[340px] w-[271px] tablet:h-[560px] tablet:w-[447px] desktop:h-[676px] desktop:w-[539px] mx-auto mb-[32px] mt-8 desktop:my-0 relative">
                     <div className="before:bg-gradient-to-b before:from-transparent before:via-transparent before:via-90% before:to-[#0B0D17] before:absolute before:content-[''] before:z-10 before:w-full before:h-full before:block before:clip before:pointer-events-none before:inset-0"/>
-                    <img className="h-full w-full" src={`/crew/image-${curMember}.png`} alt="Moon"/>
-
+                    <img className="h-full w-full" src={`/crew/image-${curMember}.png`} alt="Crew member"/>
                 </div>
             </div>
         </div>

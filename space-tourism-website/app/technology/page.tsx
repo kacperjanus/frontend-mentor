@@ -3,8 +3,16 @@
 import React, {useState} from 'react';
 import LargePaginationGroup from "@/app/_components/group-components/LargePaginationGroup";
 import Header from "@/app/_components/Header";
+import PageHeader from "@/app/_components/PageHeader";
 
-const TechnologyData = {
+type Technology = "launch-vehicle" | "spaceport" | "space-capsule";
+
+interface TechnologyData {
+    title: string,
+    description: string,
+}
+
+const TechnologiesData: Record<Technology, TechnologyData> = {
     "launch-vehicle": {
         title: "Launch Vehicle",
         description: "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
@@ -19,24 +27,23 @@ const TechnologyData = {
     }
 }
 
-type technology = "launch-vehicle" | "spaceport" | "space-capsule";
-
 function Page() {
-    const [curTechnology, setCurTechnology] = useState("launch-vehicle" as technology);
+    const [curTechnology, setCurTechnology] = useState<Technology>("launch-vehicle");
+
     return (
         <div className="min-h-screen bg-technology-mobile tablet:bg-technology-tablet desktop:bg-technology-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
             <Header/>
             <div
                 className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px] desktop:max-w-[1310px] desktop:mx-auto">
-                <h2 className="mobile-heading-xs tablet:tablet-heading-xs desktop:heading-xs mb-6 mt-6 tablet:self-start">
-                    <span className="text-grey font-bold">03</span> SPACE LAUNCH 101
-                </h2>
+                <PageHeader>
+                    03 SPACE LAUNCH 101
+                </PageHeader>
                 <div className="flex flex-grow flex-col desktop:grid desktop:grid-cols-[1.25fr_1fr] desktop:gap-[32px] tablet:max-w-[512px] desktop:max-w-[1110px] desktop:items-center">
                     <div className="w-full desktop:order-1 mx-auto my-8 desktop:mb-0">
                         <img className="hidden desktop:block w-full" src={`/technology/image-${curTechnology}-portrait.jpg`}
-                             alt="Moon"/>
+                             alt="Technology used"/>
                         <img className="desktop:hidden block w-full" src={`/technology/image-${curTechnology}-landscape.jpg`}
-                             alt="Moon"/>
+                             alt="Technology used"/>
                     </div>
                     <div className="flex flex-grow flex-col desktop:h-[304px] desktop:flex-row text-center items-center desktop:items-start gap-[16px]">
                             <LargePaginationGroup active={curTechnology} onClick={setCurTechnology}/>
@@ -46,11 +53,11 @@ function Page() {
                                     <span className="mobile-heading-s tablet:tablet-heading-s desktop:heading-s uppercase text-grey">THE TERMINOLOGY...</span>
                                 </div>
                                 <h2 className="mobile-heading-m tablet:tablet-heading-m desktop:heading-m uppercase tablet:mt-4 mb-[24px] desktop:my-0 desktop:text-start">
-                                    {TechnologyData[curTechnology].title}
+                                    {TechnologiesData[curTechnology].title}
                                 </h2>
                             </div>
                             <p className="mobile-body desktop:body desktop:text-start">
-                                {TechnologyData[curTechnology].description}
+                                {TechnologiesData[curTechnology].description}
                             </p>
                         </div>
                     </div>
