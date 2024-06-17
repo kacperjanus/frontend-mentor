@@ -4,6 +4,7 @@ import SmallPaginationGroup from "@/app/_components/group-components/SmallPagina
 import {CrewMember} from "@/app/interfaces";
 
 function MemberDescription({curMember, setCurMember}: {curMember: CrewMember, setCurMember: React.Dispatch<SetStateAction<CrewMember>>}) {
+    const values: CrewMember[] = ["douglas-hurley", "anousheh-ansari", "victor-glover", "mark-shuttleworth"];
     return (
         <div className="flex flex-col text-center items-center desktop:text-left gap-[16px]">
             <span
@@ -15,7 +16,7 @@ function MemberDescription({curMember, setCurMember}: {curMember: CrewMember, se
                 {MembersData[curMember].description}
             </p>
             <div className="desktop:self-start">
-                <SmallPaginationGroup active={curMember} onClick={setCurMember}/>
+                <SmallPaginationGroup active={curMember} onClick={setCurMember as React.Dispatch<SetStateAction<string>>} values={values}/>
             </div>
         </div>
     );

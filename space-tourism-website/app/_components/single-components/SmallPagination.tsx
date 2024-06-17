@@ -1,6 +1,4 @@
-import React, {SetStateAction} from 'react';
-
-type CrewMember  = "mark-shuttleworth" | "victor-glover" | "douglas-hurley" | "anousheh-ansari"
+import React from 'react';
 
 function SmallPagination({active, onClick}: {active: boolean, onClick: ()=>void}) {
     return (

@@ -1,14 +1,11 @@
 import React, {SetStateAction} from 'react';
 import LargePagination from "@/app/_components/single-components/LargePagination";
+import {Technology} from "@/app/interfaces";
 
-type technology = "launch-vehicle" | "spaceport" | "space-capsule";
-
-function LargePaginationGroup({active, onClick}: {active: technology, onClick: React.Dispatch<SetStateAction<technology>>}) {
+function LargePaginationGroup({active, onClick, values}: {active: Technology, onClick: React.Dispatch<SetStateAction<string>>, values: string[]}) {
     return (
         <div className="flex gap-4 desktop:flex-col desktop:gap-8">
-            <LargePagination onClick={()=>onClick("launch-vehicle")} active={active==="launch-vehicle"}>1</LargePagination>
-            <LargePagination onClick={()=>onClick("spaceport")} active={active==="spaceport"}>2</LargePagination>
-            <LargePagination onClick={()=>onClick("space-capsule")} active={active==="space-capsule"}>3</LargePagination>
+            {values.map((value, index) => (<LargePagination key={value} active={active===value} onClick={()=>onClick(value)}>{index+1}</LargePagination>))}
         </div>
     );
 }

@@ -4,10 +4,12 @@ import TabItemGroup from "@/app/_components/group-components/TabItemGroup";
 import {DestinationsData} from "@/app/data";
 
 function DestinationDescription({curDestination, setCurDestination}: {curDestination: Destination, setCurDestination: React.Dispatch<SetStateAction<Destination>>}) {
+    const values: Destination[] = ["moon", "mars", "europa", "titan"];
+
     return (
         <div className="flex flex-grow flex-col text-center items-center gap-[16px]">
             <div className="flex gap-[32px] desktop:self-start">
-                <TabItemGroup active={curDestination} onClick={setCurDestination}/>
+                <TabItemGroup active={curDestination} onClick={setCurDestination as React.Dispatch<SetStateAction<string>>} values={values}/>
             </div>
             <h2 className="mobile-heading-l tablet:tablet-heading-l uppercase mt-[16px] desktop:self-start">
                 {DestinationsData[curDestination].name}
