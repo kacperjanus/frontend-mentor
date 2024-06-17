@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import {barlow, barlowCondensed, bellefair} from "@/app/fonts";
 import Header from "@/app/_components/Header";
+import {headers} from "next/headers";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,13 +15,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+    const pathname = headers().get('x-next-pathname') as string;
+    console.log(pathname.slice(1))
+
   return (
     <html lang="en">
-      <body className={`${barlow.variable} ${bellefair.variable} ${barlowCondensed.variable}`}>
-          {children}
-      </body>
+    <body className={`${barlow.variable} ${bellefair.variable} ${barlowCondensed.variable}`}>
+        <div className={`min-h-screen bg-${pathname.slice(1) === "" ? "home" : pathname.slice(1)}-mobile tablet:bg-${pathname.slice(1) === "" ? "home" : pathname.slice(1)}-tablet desktop:bg-${pathname.slice(1) === "" ? "home" : pathname.slice(1)}-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full`}>
+        <Header/>
+        {children}
+        </div>
+    </body>
     </html>
-  );
+);
 }
 
 
