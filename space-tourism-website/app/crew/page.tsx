@@ -2,47 +2,14 @@
 
 import React, {useState} from 'react';
 import SmallPaginationGroup from "@/app/_components/group-components/SmallPaginationGroup";
-import Header from "@/app/_components/Header";
 import PageHeader from "@/app/_components/PageHeader";
-
-type CrewMember  = "mark-shuttleworth" | "victor-glover" | "douglas-hurley" | "anousheh-ansari"
-
-interface MemberData {
-    name: string,
-    position: string,
-    description: string,
-}
-
-const MembersData: Record<CrewMember, MemberData> = {
-    "douglas-hurley": {
-        name: "Douglas Hurley",
-        position: "commander",
-        description: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2."
-    },
-    "mark-shuttleworth": {
-        name: "Mark Shuttleworth",
-        position: "mission specialist",
-        description: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist."
-    },
-    "victor-glover": {
-        name: "Victor Glover",
-        position: "pilot",
-        description: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer."
-    },
-    "anousheh-ansari": {
-        name: "Anousheh Ansari",
-        position: "flight engineer",
-        description: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space."
-    }
-}
+import {CrewMember} from "@/app/interfaces";
+import {MembersData} from "@/app/data";
 
 function Page() {
     const [curMember, setCurMember] = useState<CrewMember>("victor-glover")
 
     return (
-        <div
-            className="min-h-screen overflow-hidden bg-crew-mobile tablet:bg-crew-tablet desktop:bg-crew-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
-            <Header/>
         <div className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px] desktop:max-w-[1110px] desktop:mx-auto">
             <PageHeader>
                 02 MEET YOUR CREW
@@ -65,7 +32,6 @@ function Page() {
                     <img className="h-full w-full" src={`/crew/image-${curMember}.png`} alt="Crew member"/>
                 </div>
             </div>
-        </div>
         </div>
     );
 }

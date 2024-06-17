@@ -2,37 +2,14 @@
 
 import React, {useState} from 'react';
 import LargePaginationGroup from "@/app/_components/group-components/LargePaginationGroup";
-import Header from "@/app/_components/Header";
 import PageHeader from "@/app/_components/PageHeader";
-
-type Technology = "launch-vehicle" | "spaceport" | "space-capsule";
-
-interface TechnologyData {
-    title: string,
-    description: string,
-}
-
-const TechnologiesData: Record<Technology, TechnologyData> = {
-    "launch-vehicle": {
-        title: "Launch Vehicle",
-        description: "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
-    },
-    "spaceport": {
-        title: "Spaceport",
-        description: "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.",
-    },
-    "space-capsule": {
-        title: "Space Capsule",
-        description: "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.",
-    }
-}
+import {TechnologiesData} from "@/app/data";
+import {Technology} from "@/app/interfaces";
 
 function Page() {
     const [curTechnology, setCurTechnology] = useState<Technology>("launch-vehicle");
 
     return (
-        <div className="min-h-screen bg-technology-mobile tablet:bg-technology-tablet desktop:bg-technology-desktop bg-no-repeat bg-cover bg-bottom desktop:bg-right flex flex-col h-full">
-            <Header/>
             <div
                 className="text-white p-6 flex flex-col items-center flex-grow text-center gap-[16px] desktop:max-w-[1310px] desktop:mx-auto">
                 <PageHeader>
@@ -63,7 +40,6 @@ function Page() {
                     </div>
                 </div>
             </div>
-        </div>
     );
 }
 
