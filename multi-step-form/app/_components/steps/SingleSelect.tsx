@@ -3,17 +3,20 @@
 import React from 'react';
 import Button from "@/app/_components/Button";
 import PlanPricingOption from "@/app/_components/PlanPricingOption";
-import {Plan, PlanOption} from "@/app/interfaces";
+import {InitialValuesInterface, PlanOption, singleSelectOption} from "@/app/interfaces";
 
-interface StepTwoProps {
-    isMonthly: boolean,
-    setIsMonthly: React.Dispatch<React.SetStateAction<boolean>>,
+interface SingleSelectProps {
+    isMonthly?: boolean,
+    setIsMonthly?: React.Dispatch<React.SetStateAction<boolean>>,
     setStepNumber: React.Dispatch<React.SetStateAction<number>>,
-    selectedPlan: string,
-    setSelectedPlan: React.Dispatch<React.SetStateAction<PlanOption>>,
+    selectedPlan?: string,
+    setSelectedPlan?: React.Dispatch<React.SetStateAction<PlanOption>>,
+    fields: any,
+    values: any,
+    setValues: any
 }
 
-function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelectedPlan}: StepTwoProps) {
+function SingleSelect({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelectedPlan, fields, values, setValues}: SingleSelectProps) {
 
     const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
         setStepNumber((s)=>s+1)
@@ -23,25 +26,23 @@ function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelec
         setStepNumber((s)=>s-1)
     }
 
-    const plans : Plan[] = [{title: "Arcade", image: "/icon-arcade.svg", price: {monthly: 9, yearly: 90} },
-        {title: "Advanced", image: "/icon-advanced.svg", price: {monthly: 12, yearly: 120}},
-        {title: "Pro", image: "/icon-pro.svg", price: {monthly: 15, yearly: 150}},
-    ]
-
     return (
-        <div className="flex flex-col mt-4 h-full justify-between">
+        <div className="flex flex-col my-4 h-full justify-between">
             <div className="flex flex-col gap-8">
             <div className="flex md:flex-row flex-col gap-3 md:gap-0 justify-between">
-                {plans.map((plan: Plan)=> <PlanPricingOption key={plan.title} isMonthly={isMonthly} image={plan.image} title={plan.title} price={plan.price} selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />)}
+                {fields.map((option: singleSelectOption)=> <PlanPricingOption key={option.optionTitle} isMonthly={values.isMonthly} image={option.image} title={option.optionTitle} description={option.optionDescription} selectedPlan={values.selectedPlan} setSelectedPlan={(value)=>setValues({...values, selectedPlan: value})} />)}
             </div>
                 <div className={`${isMonthly ? "md:mt-[1.25rem] mt-[3.75rem]" : ""} bg-magnolia rounded-lg h-12 flex justify-center items-center gap-6`}>
                     <p className={`${isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"} w-16`}>Monthly</p>
                     <label className="inline-flex items-center cursor-pointer">
-                        <input type="checkbox" checked={isMonthly} onChange={() => setIsMonthly(s => !s)} className="sr-only peer" />
+                        <input type="checkbox" checked={values.isMonthly} onChange={() => setValues((s: InitialValuesInterface)=> {
+                            return {...s, "isMonthly": !s.isMonthly}
+                        })} className="sr-only peer" />
+                        <input type="checkbox" checked={values.isMonthly} className="sr-only peer" readOnly />
                         <div
                             className="relative w-9 h-5 bg-marine-blue rounded-full peer peer-checked:after:translate-x-[-150%] after:content-[''] after:absolute after:top-1 after:start-[21px] after:bg-white  after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
                     </label>
-                    <p className={`${!isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"} w-16`}>Yearly</p>
+                    <p className={`${!values.isMonthly ? "font-bold text-marine-blue" : "text-cool-gray"} w-16`}>Yearly</p>
                 </div>
             </div>
 
@@ -58,4 +59,4 @@ function StepTwo({isMonthly, setIsMonthly, setStepNumber, selectedPlan, setSelec
     );
 }
 
-export default StepTwo;
+export default SingleSelect;

@@ -1,24 +1,27 @@
 "use client"
 
 import React, {useState} from 'react';
+import {InitialValuesInterface} from "@/app/interfaces";
 
 interface AddOnSelectorProps {
     title: string,
     description: string,
     isMonthly: boolean,
-    price: {monthly: number, yearly: number}
+    primary: string,
     key?: string
     index: number
-    setSelectedAddOns: React.Dispatch<React.SetStateAction<boolean[]>>
-    selectedAddOns: boolean[]
+    setValues: React.Dispatch<React.SetStateAction<any>>
+    values: any
 }
 
-function AddOnSelector({title, description, isMonthly, price, index, setSelectedAddOns, selectedAddOns} : AddOnSelectorProps) {
-    const [isChecked, setIsChecked] = useState(selectedAddOns[index])
+function AddOnSelector({title, description, isMonthly, primary, index, setValues, values} : AddOnSelectorProps) {
+    const [isChecked, setIsChecked] = useState<boolean>(values.selectedAddOns[index])
 
     function handleCheck(){
-        setIsChecked(s=>!s);
-        setSelectedAddOns((s)=> s.map((value, i)=>(i===index ? !value : value)))
+        setIsChecked(s => !s);
+        setValues((s: InitialValuesInterface) => {
+            return {...s, "selectedAddOns": s["selectedAddOns"].map((value, i) => (i === index ? !value : value))}
+        })
     }
 
     return (
@@ -31,7 +34,7 @@ function AddOnSelector({title, description, isMonthly, price, index, setSelected
                     <p className="text-cool-gray">{description}</p>
                 </div>
             </div>
-            <p className="text-purplish-blue md:text-base text-xs">+${isMonthly ? price.monthly : price.yearly}/{isMonthly ? "mo" : "yr"}</p>
+            <p className="text-purplish-blue md:text-base text-xs">{primary}</p>
         </div>
     );
 }

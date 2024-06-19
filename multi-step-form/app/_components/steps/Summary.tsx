@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from "@/app/_components/Button";
 import {AddOn, Plan} from "@/app/interfaces";
+import StepHeader from "@/app/_components/StepHeader";
+import StepContainter from "@/app/_components/StepContainter";
 
 interface StepFourProps {
     setStepNumber: React.Dispatch<React.SetStateAction<number>>,
@@ -9,7 +11,7 @@ interface StepFourProps {
     isMonthly: boolean
 }
 
-function StepFour({setStepNumber, selectedAddOns, selectedPlan, isMonthly}: StepFourProps) {
+function Summary({setStepNumber, selectedAddOns, selectedPlan, isMonthly}: StepFourProps) {
     const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
         setStepNumber((s)=>s+1)
     }
@@ -39,6 +41,8 @@ function StepFour({setStepNumber, selectedAddOns, selectedPlan, isMonthly}: Step
     const totalPrice = addOnsPrice + (planPrice ? planPrice : 0);
 
     return (
+        <StepContainter>
+            <StepHeader stepTitle={"Finishing up"} stepDescription={"Double check everything looks OK before confirming"}/>
         <div className="flex flex-col mt-4 h-full justify-between">
             <div className="flex flex-col gap-8">
                 <div className="flex flex-col justify-between bg-magnolia rounded-lg p-5 divide-y divide-light-gray">
@@ -74,7 +78,8 @@ function StepFour({setStepNumber, selectedAddOns, selectedPlan, isMonthly}: Step
                 </div>
             </div>
         </div>
+        </StepContainter>
     );
 }
 
-export default StepFour;
+export default Summary;

@@ -1,21 +1,17 @@
 "use client"
 
 import React, {MouseEventHandler, SetStateAction} from 'react';
-import {PlanOption} from "@/app/interfaces";
 
 interface PlanPricingOptionProps {
     image: string;
-    title: PlanOption;
-    price: {
-        monthly: number,
-        yearly: number
-    };
+    title: string;
+    description: string,
     isMonthly: boolean;
     selectedPlan: string;
-    setSelectedPlan: React.Dispatch<SetStateAction<PlanOption>>;
+    setSelectedPlan: React.Dispatch<SetStateAction<string>>;
 }
 
-function PlanPricingOption({image, title, price, isMonthly, selectedPlan, setSelectedPlan}: PlanPricingOptionProps) {
+function PlanPricingOption({image, title, description, isMonthly, selectedPlan, setSelectedPlan}: PlanPricingOptionProps) {
     const setCurrentPlan: MouseEventHandler<HTMLDivElement> = ()=> setSelectedPlan(title);
 
     return (
@@ -23,7 +19,7 @@ function PlanPricingOption({image, title, price, isMonthly, selectedPlan, setSel
             <img className="md:pb-14" src={image} alt={title} />
             <div>
                 <p className="font-semibold text-marine-blue">{title}</p>
-                <p className="text-cool-gray">${isMonthly ? price.monthly : price.yearly}/{isMonthly ? "mo" : "year"}</p>
+                <p className="text-cool-gray">{description}</p>
                 {isMonthly ? "" : <p className="text-marine-blue text-sm">2 months free</p>}
             </div>
         </div>

@@ -12,42 +12,60 @@ export interface Plan {
     price: {monthly: number, yearly: number}
 }
 
+export type singleSelectOption = {
+    image: string,
+    optionTitle: string,
+    optionDescription: string,
+}
+
 type singleSelect = {
     type: "singleSelect"
     stepTitle: string,
     stepDescription: string,
-    fields: {
-        image: string,
-        optionTitle: string,
-        optionDescription: string,
-    }[]
+    sidebarText: string,
+    fields: singleSelectOption[]
+}
+
+export type multipleSelectOption = {
+    primary: string
+    optionTitle: string,
+    optionDescription: string,
 }
 
 type multipleSelect = {
     type: "multipleSelect",
     stepTitle: string,
     stepDescription: string,
-    fields: {
-        primary: string
-        optionTitle: string,
-        optionDescription: string,
-    }[]
+    sidebarText: string,
+    fields: multipleSelectOption[]
+}
+
+export type textInputField = {
+    label: string
+    placeholder: string,
+    regex: string,
 }
 
 type textInput = {
     type: "textInput",
     stepTitle: string,
     stepDescription: string,
-    fields: {
-        label: string
-        placeholder: string,
-        regex: string,
-    }[]
+    sidebarText: string,
+    fields: textInputField[]
 }
 
-type step = singleSelect | multipleSelect | textInput
+export type step = singleSelect | multipleSelect | textInput
 
 export interface FormData {
     form_id: number,
     steps: step[]
+}
+
+export interface InitialValuesInterface{
+    name: string,
+    email: string,
+    phoneNumber: string,
+    selectedAddOns: boolean[],
+    selectedPlan: PlanOption,
+    isMonthly: boolean
 }

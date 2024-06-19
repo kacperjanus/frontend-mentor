@@ -1,18 +1,17 @@
 import React from 'react';
 import Button from "@/app/_components/Button";
 import AddOnSelector from "@/app/_components/AddOnSelector";
-import {AddOn} from "@/app/interfaces"
+import {multipleSelectOption} from "@/app/interfaces"
 
 
-interface StepThreeProps {
-    isMonthly: boolean,
+interface MultipleSelectProps {
+    values: any,
+    setValues: any,
     setStepNumber: React.Dispatch<React.SetStateAction<number>>,
-    addOns: AddOn[],
-    selectedAddOns: boolean[]
-    setSelectedAddOns: React.Dispatch<React.SetStateAction<boolean[]>>
+    fields: any,
 }
 
-function StepThree({isMonthly, setStepNumber, addOns, selectedAddOns, setSelectedAddOns} : StepThreeProps) {
+function MultipleSelect({setValues, setStepNumber, values, fields} : MultipleSelectProps) {
     const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
         setStepNumber((s)=>s+1)
     }
@@ -22,11 +21,11 @@ function StepThree({isMonthly, setStepNumber, addOns, selectedAddOns, setSelecte
     }
 
     return (
-        <div className="flex flex-col mt-4 h-full justify-between">
+        <div className="flex flex-col my-4 h-full justify-between">
             <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-4 justify-between">
-                    {addOns.map((addOn: AddOn, i) => (<AddOnSelector index={i} key={addOn.title} isMonthly={isMonthly}  title={addOn.title}
-                                                                  price={addOn.price} description={addOn.description} setSelectedAddOns={setSelectedAddOns} selectedAddOns={selectedAddOns}/>))}
+                    {fields.map((option: multipleSelectOption, i: number) => (<AddOnSelector index={i} key={option.optionTitle} isMonthly={values.isMonthly}  title={option.optionTitle}
+                                                                  primary={option.primary} description={option.optionDescription} setValues={setValues} values={values}/>))}
                 </div>
             </div>
             <div
@@ -43,4 +42,4 @@ function StepThree({isMonthly, setStepNumber, addOns, selectedAddOns, setSelecte
     );
 }
 
-export default StepThree;
+export default MultipleSelect;
