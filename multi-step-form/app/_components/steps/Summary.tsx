@@ -12,8 +12,8 @@ interface StepFourProps {
 }
 
 function Summary({setStepNumber, values, formData, stepNumber}: StepFourProps) {
-    const goToSelectPlan: React.MouseEventHandler<HTMLButtonElement> = ()=>{
-        setStepNumber((s)=>s-2)
+    const goToSelectPlan = (i: number)=>{
+        setStepNumber(i+1)
     }
 
     return (
@@ -23,7 +23,10 @@ function Summary({setStepNumber, values, formData, stepNumber}: StepFourProps) {
                 <div>
                     {formData.steps.map((step, i)=>
                         <div className="mb-2" key={i}>
-                            <h1 className="font-bold text-marine-blue">Step {i+1}</h1>
+                            <div className="flex items-center gap-1">
+                                <h1 className="font-bold text-marine-blue">Step {i+1}</h1>
+                                <p className="text-cool-gray text-sm underline cursor-pointer" onClick={()=>goToSelectPlan(i)}>(Change)</p>
+                            </div>
                             {step.type==="textInput" ? step.fields.map((el, j)=> <p key={j}>{el.label}: {values[i][j]}</p>) : ""}
                             {step.type==="singleSelect" ? <p>{step.stepTitle}: {step.fields[values[i]].optionTitle}</p> : ""}
                             {step.type==="multipleSelect" ? <p>{step.stepTitle}: {values[i].map((value: boolean, i: number)=> value ? step.fields[i].optionTitle + " (" + step.fields[i].primary + ")" + ", " : "")}</p> : ""}
