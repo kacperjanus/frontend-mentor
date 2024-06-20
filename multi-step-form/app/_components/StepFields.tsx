@@ -1,5 +1,5 @@
 import React from 'react';
-import {step} from "@/app/interfaces";
+import {InitialValuesInterface, step} from "@/app/interfaces";
 import TextInputStep from "@/app/_components/steps/TextInputStep";
 import SingleSelect from "@/app/_components/steps/SingleSelect";
 import MultipleSelect from "@/app/_components/steps/MultipleSelect";
@@ -7,21 +7,22 @@ import MultipleSelect from "@/app/_components/steps/MultipleSelect";
 interface StepFieldsProps {
     stepData: step,
     setStepNumber: React.Dispatch<React.SetStateAction<number>>
-    values: any
-    setValues: React.Dispatch<React.SetStateAction<any>>
+    values: InitialValuesInterface
+    setValues: React.Dispatch<React.SetStateAction<InitialValuesInterface>>
+    stepNumber: number
 }
 
-function StepFields({stepData, setStepNumber, values, setValues}: StepFieldsProps) {
+function StepFields({stepData, setStepNumber, values, setValues, stepNumber}: StepFieldsProps) {
     if(stepData.type === "textInput"){
-        return <TextInputStep values={values} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
+        return <TextInputStep stepNumber={stepNumber} values={values} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
     }
 
     if(stepData.type === "singleSelect"){
-        return <SingleSelect values={values} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
+        return <SingleSelect stepNumber={stepNumber} values={values} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
     }
 
     if(stepData.type === "multipleSelect"){
-        return <MultipleSelect values={values} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
+        return <MultipleSelect stepNumber={stepNumber} values={values} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
     }
     return (
         <div>

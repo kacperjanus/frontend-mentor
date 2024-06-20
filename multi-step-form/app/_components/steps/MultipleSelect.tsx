@@ -1,17 +1,18 @@
 import React from 'react';
 import Button from "@/app/_components/Button";
 import AddOnSelector from "@/app/_components/AddOnSelector";
-import {multipleSelectOption} from "@/app/interfaces"
+import {InitialValuesInterface, multipleSelectOption} from "@/app/interfaces"
 
 
 interface MultipleSelectProps {
-    values: any,
-    setValues: any,
+    values: InitialValuesInterface,
+    setValues: React.Dispatch<React.SetStateAction<InitialValuesInterface>>,
     setStepNumber: React.Dispatch<React.SetStateAction<number>>,
-    fields: any,
+    fields: multipleSelectOption[],
+    stepNumber: number
 }
 
-function MultipleSelect({setValues, setStepNumber, values, fields} : MultipleSelectProps) {
+function MultipleSelect({setValues, setStepNumber, values, fields, stepNumber} : MultipleSelectProps) {
     const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
         setStepNumber((s)=>s+1)
     }
@@ -24,8 +25,8 @@ function MultipleSelect({setValues, setStepNumber, values, fields} : MultipleSel
         <div className="flex flex-col my-4 h-full justify-between">
             <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-4 justify-between">
-                    {fields.map((option: multipleSelectOption, i: number) => (<AddOnSelector index={i} key={option.optionTitle} isMonthly={values.isMonthly}  title={option.optionTitle}
-                                                                  primary={option.primary} description={option.optionDescription} setValues={setValues} values={values}/>))}
+                    {fields.map((option: multipleSelectOption, i: number) => (<AddOnSelector index={i} key={option.optionTitle} title={option.optionTitle}
+                                                                  primary={option.primary} description={option.optionDescription} setValues={setValues} values={values} stepNumber={stepNumber}/>))}
                 </div>
             </div>
             <div
@@ -34,7 +35,6 @@ function MultipleSelect({setValues, setStepNumber, values, fields} : MultipleSel
                     <Button setStepNumber={decreaseStep} content="Go Back" backButton={true}/>
                 </div>
                 <div className="mb-4">
-
                     <Button setStepNumber={increaseStep} content="Next Step"/>
                 </div>
             </div>

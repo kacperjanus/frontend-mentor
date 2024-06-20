@@ -1,17 +1,5 @@
 export type PlanOption = "Pro" | "Arcade" | "Advanced"
 
-export interface AddOn {
-    title: string,
-    description: string,
-    price: {monthly: number, yearly: number}
-}
-
-export interface Plan {
-    title: PlanOption,
-    image: string,
-    price: {monthly: number, yearly: number}
-}
-
 export type singleSelectOption = {
     image: string,
     optionTitle: string,
@@ -61,11 +49,4 @@ export interface FormData {
     steps: step[]
 }
 
-export interface InitialValuesInterface{
-    name: string,
-    email: string,
-    phoneNumber: string,
-    selectedAddOns: boolean[],
-    selectedPlan: PlanOption,
-    isMonthly: boolean
-}
+export type InitialValuesInterface = (string[] | number | boolean[])[]

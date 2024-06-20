@@ -6,22 +6,19 @@ import {InitialValuesInterface} from "@/app/interfaces";
 interface AddOnSelectorProps {
     title: string,
     description: string,
-    isMonthly: boolean,
     primary: string,
-    key?: string
     index: number
-    setValues: React.Dispatch<React.SetStateAction<any>>
-    values: any
+    setValues: React.Dispatch<React.SetStateAction<InitialValuesInterface>>
+    values: InitialValuesInterface
+    stepNumber: number
 }
 
-function AddOnSelector({title, description, isMonthly, primary, index, setValues, values} : AddOnSelectorProps) {
-    const [isChecked, setIsChecked] = useState<boolean>(values.selectedAddOns[index])
+function AddOnSelector({title, description, primary, index, setValues, values, stepNumber} : AddOnSelectorProps) {
+    const [isChecked, setIsChecked] = useState<boolean>(values[stepNumber-1][index])
 
     function handleCheck(){
         setIsChecked(s => !s);
-        setValues((s: InitialValuesInterface) => {
-            return {...s, "selectedAddOns": s["selectedAddOns"].map((value, i) => (i === index ? !value : value))}
-        })
+        setValues(values.with(stepNumber-1, values[stepNumber-1].map((value: boolean, i:number) => (i === index ? !value : value))))
     }
 
     return (

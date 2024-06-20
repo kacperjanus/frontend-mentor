@@ -6,7 +6,7 @@ import StepContent from "@/app/_components/StepContent";
 import {FormData} from "@/app/interfaces"
 
 function Form({formData}: {formData: FormData}) {
-    const [stepNumber, setStepNumber] = useState(1);
+    const [stepNumber, setStepNumber] = useState(3);
     if( stepNumber > formData.steps.length+2 ) throw new Error("Accessed step is outside the scope of this form")
 
     const stepsData = formData.steps.map((el, i)=> el.sidebarText)
