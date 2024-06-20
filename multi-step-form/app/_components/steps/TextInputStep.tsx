@@ -4,6 +4,7 @@ import Button from "@/app/_components/Button";
 import {z} from "zod";
 import validator from "validator";
 import {InitialValuesInterface, textInputField} from "@/app/interfaces";
+import NavigationButtons from "@/app/_components/NavigationButtons";
 
 interface StepOneProps {
     fields: textInputField[],
@@ -48,11 +49,7 @@ function TextInputStep({fields, setStepNumber, values, setValues, stepNumber}: S
                     onChange={(value)=>setValues(values.with(stepNumber-1, values[stepNumber-1].with(i, value)))}
                 />)}
             </div>
-            <div className="md:static w-full fixed bg-white top-[31em] bottom-0 right-0 justify-center md:justify-end flex py-4 pr-4 md:py-0 md:pr-0 self-end md:bg-none ">
-                <div className="ml-[10.7rem] md:ml-0">
-                <Button setStepNumber={increaseStep} content="Next Step"/>
-                </div>
-            </div>
+            <NavigationButtons step={stepNumber} setStepNumber={setStepNumber}/>
         </form>
         </div>
     );

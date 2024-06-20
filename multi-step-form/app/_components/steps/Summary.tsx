@@ -3,22 +3,16 @@ import Button from "@/app/_components/Button";
 import {FormData, InitialValuesInterface} from "@/app/interfaces";
 import StepHeader from "@/app/_components/StepHeader";
 import StepContainer from "@/app/_components/StepContainer";
+import NavigationButtons from "@/app/_components/NavigationButtons";
 
 interface StepFourProps {
     setStepNumber: React.Dispatch<React.SetStateAction<number>>,
     values: InitialValuesInterface
     formData: FormData
+    stepNumber: number
 }
 
-function Summary({setStepNumber, values, formData}: StepFourProps) {
-    const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
-        setStepNumber((s)=>s+1)
-    }
-
-    const decreaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
-        setStepNumber((s)=>s-1)
-    }
-
+function Summary({setStepNumber, values, formData, stepNumber}: StepFourProps) {
     const goToSelectPlan: React.MouseEventHandler<HTMLButtonElement> = ()=>{
         setStepNumber((s)=>s-2)
     }
@@ -26,7 +20,7 @@ function Summary({setStepNumber, values, formData}: StepFourProps) {
     return (
         <StepContainer>
             <StepHeader stepTitle={"Finishing up"} stepDescription={"Double check everything looks OK before confirming"}/>
-            <div className="flex flex-col mt-4 h-full justify-between">
+            <div className="flex flex-col my-4 h-full justify-between">
                 <div>
                     {formData.steps.map((step, i)=>
                         <div className="mb-2" key={i}>
@@ -37,16 +31,7 @@ function Summary({setStepNumber, values, formData}: StepFourProps) {
                         </div>
                     )}
                 </div>
-                <div
-                    className="flex md:justify-between items-center fixed bg-white justify-center gap-24 md:static bottom-0 right-0 self-end md:bg-none w-full">
-                    <div>
-                        <Button setStepNumber={decreaseStep} content="Go Back" backButton={true}/>
-                    </div>
-                    <div className="mb-4">
-
-                        <Button setStepNumber={increaseStep} confirm={true} content="Confirm"/>
-                    </div>
-                </div>
+                <NavigationButtons summary={true} step={stepNumber} setStepNumber={setStepNumber}/>
             </div>
         </StepContainer>
     );
