@@ -1,6 +1,6 @@
 import React, {ChangeEventHandler} from 'react';
 
-function Input({label, placeholder, value, onChange, isSubmitted, zodParse, index}: {index: number, label: string; placeholder: string, value: string, onChange: React.Dispatch<React.SetStateAction<string>>, isSubmitted: boolean, zodParse: boolean}) {
+function Input({label, placeholder, value, onChange, isSubmitted, zodParse}: {label: string; placeholder: string, value: string, onChange: React.Dispatch<React.SetStateAction<string>>, isSubmitted: boolean, zodParse: boolean}) {
     const handleChange: ChangeEventHandler<HTMLInputElement> = function(e){
         onChange(e?.target.value)
     }

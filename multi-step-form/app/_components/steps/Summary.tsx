@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from "@/app/_components/Button";
 import {FormData, InitialValuesInterface} from "@/app/interfaces";
 import StepHeader from "@/app/_components/StepHeader";
 import StepContainer from "@/app/_components/StepContainer";

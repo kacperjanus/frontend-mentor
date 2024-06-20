@@ -1,6 +1,5 @@
 import React, {FormEventHandler, useState} from 'react';
 import Input from "@/app/_components/Input";
-import Button from "@/app/_components/Button";
 import {z} from "zod";
 import validator from "validator";
 import {InitialValuesInterface, textInputField} from "@/app/interfaces";
@@ -15,12 +14,6 @@ interface StepOneProps {
 }
 
 function TextInputStep({fields, setStepNumber, values, setValues, stepNumber}: StepOneProps) {
-    const increaseStep: React.MouseEventHandler<HTMLButtonElement> = ()=>{
-        // if(nameParse && emailParse && phoneNumberParse){
-            setStepNumber((s)=>s+1)
-        // }
-    }
-
     const [isSubmitted, setIsSubmitted] = useState(false)
 
     const handleSubmit: FormEventHandler<HTMLFormElement> = function(e){

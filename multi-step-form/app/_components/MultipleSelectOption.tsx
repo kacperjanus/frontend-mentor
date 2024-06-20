@@ -13,7 +13,7 @@ interface AddOnSelectorProps {
     stepNumber: number
 }
 
-function AddOnSelector({title, description, primary, index, setValues, values, stepNumber} : AddOnSelectorProps) {
+function MultipleSelectOption({title, description, primary, index, setValues, values, stepNumber} : AddOnSelectorProps) {
     const [isChecked, setIsChecked] = useState<boolean>(values[stepNumber-1][index])
 
     function handleCheck(){
@@ -36,4 +36,4 @@ function AddOnSelector({title, description, primary, index, setValues, values, s
     );
 }
 
-export default AddOnSelector;
+export default MultipleSelectOption;
