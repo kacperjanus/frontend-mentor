@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .overline-element {
+        @apply text-[14px];
+        @apply uppercase;
+        @apply leading-[19px];
+        @apply tracking-[10px];
+        @apply text-earthy;
+    }
+
+    .subtitle-element {
+        @apply text-[13px];
+        @apply font-[700];
+        @apply uppercase;
+        @apply leading-[25px];
+        @apply tracking-[1px];
+        @apply text-earthy;
+    }
+}
