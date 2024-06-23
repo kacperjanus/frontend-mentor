@@ -261,3 +261,40 @@ space-tourism-website/.vercel
 space-tourism-website/*.tsbuildinfo
 space-tourism-website/next-env.d.ts
 
+---
+
+# dependencies
+audiophile-website/node_modules
+audiophile-website/.pnp
+audiophile-website/.pnp.js
+audiophile-website/.yarn/install-state.gz
+
+# testing
+audiophile-website/coverage
+
+# next.js
+audiophile-website/.next/
+audiophile-website/.idea/
+audiophile-website/out/
+
+# production
+audiophile-website/build
+
+# misc
+audiophile-website/.DS_Store
+audiophile-website/*.pem
+
+# debug
+audiophile-website/npm-debug.log*
+audiophile-website/yarn-debug.log*
+audiophile-website/yarn-error.log*
+
+# local env files
+audiophile-website/.env*.local
+
+# vercel
+audiophile-website/.vercel
+
+# typescript
+audiophile-website/*.tsbuildinfo
+audiophile-website/next-env.d.ts
