@@ -3,22 +3,22 @@
 import React, {useState} from 'react';
 import {InitialValuesInterface} from "@/app/interfaces";
 
-interface AddOnSelectorProps {
+interface MultipleSelectOptionProps {
     title: string,
     description: string,
     primary: string,
     index: number
     setValues: React.Dispatch<React.SetStateAction<InitialValuesInterface>>
-    values: InitialValuesInterface
+    values: boolean[]
     stepNumber: number
 }
 
-function MultipleSelectOption({title, description, primary, index, setValues, values, stepNumber} : AddOnSelectorProps) {
-    const [isChecked, setIsChecked] = useState<boolean>(values[stepNumber-1][index])
+function MultipleSelectOption({title, description, primary, index, setValues, values, stepNumber} : MultipleSelectOptionProps) {
+    const [isChecked, setIsChecked] = useState<boolean>(values[index])
 
     function handleCheck(){
         setIsChecked(s => !s);
-        setValues(values.with(stepNumber-1, values[stepNumber-1].map((value: boolean, i:number) => (i === index ? !value : value))))
+        setValues(s=>s.with(stepNumber-1, values.map((value: boolean, i:number) => (i === index ? !value : value))))
     }
 
     return (

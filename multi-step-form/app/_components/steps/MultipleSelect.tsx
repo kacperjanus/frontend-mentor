@@ -5,7 +5,7 @@ import NavigationButtons from "@/app/_components/NavigationButtons";
 
 
 interface MultipleSelectProps {
-    values: InitialValuesInterface,
+    values: boolean[],
     setValues: React.Dispatch<React.SetStateAction<InitialValuesInterface>>,
     setStepNumber: React.Dispatch<React.SetStateAction<number>>,
     fields: multipleSelectOption[],

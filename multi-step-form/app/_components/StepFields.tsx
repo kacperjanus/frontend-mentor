@@ -14,16 +14,17 @@ interface StepFieldsProps {
 
 function StepFields({stepData, setStepNumber, values, setValues, stepNumber}: StepFieldsProps) {
     if(stepData.type === "textInput"){
-        return <TextInputStep stepNumber={stepNumber} values={values} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
+        return <TextInputStep stepNumber={stepNumber} values={values[stepNumber-1] as string[]} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
     }
 
     if(stepData.type === "singleSelect"){
-        return <SingleSelect stepNumber={stepNumber} values={values} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
+        return <SingleSelect stepNumber={stepNumber} values={values[stepNumber-1] as number} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
     }
 
     if(stepData.type === "multipleSelect"){
-        return <MultipleSelect stepNumber={stepNumber} values={values} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
+        return <MultipleSelect stepNumber={stepNumber} values={values[stepNumber-1] as boolean[]} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
     }
+
     return (
         <div>
             Unsupported field

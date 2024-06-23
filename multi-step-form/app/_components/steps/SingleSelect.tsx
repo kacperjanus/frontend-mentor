@@ -8,7 +8,7 @@ import NavigationButtons from "@/app/_components/NavigationButtons";
 interface SingleSelectProps {
     setStepNumber: React.Dispatch<React.SetStateAction<number>>,
     fields: singleSelectOption[],
-    values: InitialValuesInterface,
+    values: number,
     setValues: React.Dispatch<SetStateAction<InitialValuesInterface>>,
     stepNumber: number
 }
@@ -18,7 +18,9 @@ function SingleSelect({setStepNumber, fields, values, setValues, stepNumber}: Si
         <div className="flex flex-col my-4 h-full justify-between">
             <div className="flex flex-col gap-8">
                 <div className="flex md:flex-row flex-col gap-3 md:gap-0 justify-between">
-                    {fields.map((option: singleSelectOption, i: number)=> <SingleSelectOption key={option.optionTitle} index={i} image={option.image} title={option.optionTitle} description={option.optionDescription} selectedOption={values[stepNumber-1]} setSelectedOption={(value)=>setValues(values.with(stepNumber-1, value))} />)}
+                    {fields.map((option: singleSelectOption, i: number)=> <SingleSelectOption key={option.optionTitle} index={i} image={option.image} title={option.optionTitle}
+                                                                                              description={option.optionDescription} selectedOption={values}
+                                                                                              setValues={setValues} stepNumber={stepNumber} />)}
                 </div>
             </div>
             <NavigationButtons step={stepNumber} setStepNumber={setStepNumber}/>

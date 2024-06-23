@@ -1,17 +1,7 @@
-export type PlanOption = "Pro" | "Arcade" | "Advanced"
-
 export type singleSelectOption = {
     image: string,
     optionTitle: string,
     optionDescription: string,
-}
-
-type singleSelect = {
-    type: "singleSelect"
-    stepTitle: string,
-    stepDescription: string,
-    sidebarText: string,
-    fields: singleSelectOption[]
 }
 
 export type multipleSelectOption = {
@@ -20,25 +10,30 @@ export type multipleSelectOption = {
     optionDescription: string,
 }
 
-type multipleSelect = {
-    type: "multipleSelect",
-    stepTitle: string,
-    stepDescription: string,
-    sidebarText: string,
-    fields: multipleSelectOption[]
-}
-
 export type textInputField = {
     label: string
     placeholder: string,
     regex: string,
 }
 
-type textInput = {
-    type: "textInput",
+interface FormStep {
     stepTitle: string,
     stepDescription: string,
     sidebarText: string,
+}
+
+interface multipleSelect extends FormStep {
+    type: "multipleSelect",
+    fields: multipleSelectOption[]
+}
+
+interface singleSelect extends FormStep {
+    type: "singleSelect"
+    fields: singleSelectOption[]
+}
+
+interface textInput extends FormStep {
+    type: "textInput",
     fields: textInputField[]
 }
 
