@@ -44,4 +44,9 @@ export interface FormData {
     steps: step[]
 }
 
+export interface FormAnswers {
+    form_id: number,
+    answers: InitialValuesInterface
+}
+
 export type InitialValuesInterface = (string[] | number | boolean[])[]
