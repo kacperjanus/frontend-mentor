@@ -17,7 +17,7 @@ function SingleSelect({setStepNumber, fields, values, setValues, stepNumber}: Si
     return (
         <div className="flex flex-col my-4 h-full justify-between">
             <div className="flex flex-col gap-8">
-                <div className="flex md:flex-row flex-col gap-3 md:gap-0 justify-between">
+                <div className="flex md:flex-row flex-col gap-3 md:gap-5 flex-wrap md:overflow-y-auto md:h-[300px]">
                     {fields.map((option: singleSelectOption, i: number)=> <SingleSelectOption key={option.optionTitle} index={i} image={option.image} title={option.optionTitle}
                                                                                               description={option.optionDescription} selectedOption={values}
                                                                                               setValues={setValues} stepNumber={stepNumber} />)}

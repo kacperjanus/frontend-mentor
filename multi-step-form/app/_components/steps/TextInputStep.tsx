@@ -19,7 +19,7 @@ function TextInputStep({fields, setStepNumber, values, setValues, stepNumber}: S
     return (
         <div className="h-full mb-4">
         <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between" noValidate>
-            <div>
+            <div className="md:overflow-y-auto md:h-[300px]">
                 {fields.map((el: textInputField, i: number)=><Input
                     el={el}
                     index={i}

@@ -16,9 +16,14 @@ function MultipleSelect({setValues, setStepNumber, values, fields, stepNumber} :
     return (
         <div className="flex flex-col my-4 h-full justify-between">
             <div className="flex flex-col gap-8">
-                <div className="flex flex-col gap-4 justify-between">
-                    {fields.map((option: multipleSelectOption, i: number) => (<MultipleSelectOption index={i} key={option.optionTitle} title={option.optionTitle}
-                                                                                                    primary={option.primary} description={option.optionDescription} setValues={setValues} values={values} stepNumber={stepNumber}/>))}
+                <div className="flex flex-col gap-4 justify-between md:h-[300px] md:overflow-y-auto">
+                    {fields.map((option: multipleSelectOption, i: number) => (<MultipleSelectOption index={i}
+                                                                                                    key={option.optionTitle}
+                                                                                                    title={option.optionTitle}
+                                                                                                    primary={option.primary}
+                                                                                                    description={option.optionDescription}
+                                                                                                    setValues={setValues} values={values}
+                                                                                                    stepNumber={stepNumber}/>))}
                 </div>
             </div>
             <NavigationButtons step={stepNumber} setStepNumber={setStepNumber}/>
