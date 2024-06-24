@@ -20,7 +20,7 @@ function Summary({setStepNumber, values, formData, stepNumber}: StepFourProps) {
         <StepContainer>
             <StepHeader stepTitle={"Finishing up"} stepDescription={"Double check everything looks OK before confirming"}/>
             <div className="flex flex-col my-4 h-full justify-between">
-                <div>
+                <div className="md:h-[300px] md:overflow-y-auto">
                     {formData.steps.map((step, i)=>
                         <div className="mb-2" key={i}>
                             <div className="flex items-center gap-1">
