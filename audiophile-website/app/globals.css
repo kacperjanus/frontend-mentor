@@ -19,4 +19,15 @@
         @apply tracking-[1px];
         @apply text-earthy;
     }
+
+    .nav-text {
+        @apply text-[13px];
+        @apply font-[700];
+        @apply uppercase;
+        @apply leading-[25px];
+        @apply tracking-[2px];
+        @apply text-white;
+        @apply hover:text-earthy;
+        @apply cursor-pointer;
+    }
 }

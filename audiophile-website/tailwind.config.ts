@@ -17,11 +17,16 @@ const config: Config = {
       },
       fontFamily: {
         manrope: ['var(--font-manrope)'],
-      }
+      },
+      screens: {
+        "mobile": "375px",
+        "tablet": "768px",
+        "desktop": "1024px"
+      },
     },
   },
   plugins: [
-    function ({ addBase }) {
+    function ({ addBase }: {addBase: any}) {
       addBase({
         'h1': {
           '@apply text-[56px] font-[700] uppercase leading-[58px] tracking-[2px]': {},
