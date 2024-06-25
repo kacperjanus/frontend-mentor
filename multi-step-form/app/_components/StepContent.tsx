@@ -20,7 +20,7 @@ function StepContent({stepNumber, setStepNumber, formData }: StepContentProps): 
 
     const [values, setValues] = useState(initialValues)
 
-    if(stepNumber === formData.steps.length+2) return <Confirmation/>
+    if(stepNumber === formData.steps.length+2) return <Confirmation values={values} formId={formData.form_id}/>
     if(stepNumber === formData.steps.length+1) return <Summary stepNumber={stepNumber} formData={formData} setStepNumber={setStepNumber} values={values}/>
 
     return (
