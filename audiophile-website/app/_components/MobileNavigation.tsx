@@ -28,7 +28,7 @@ function MobileNavigation() {
                     key="mobile-navigation"
                     initial="hidden"
                     animate="visible"
-                    className="absolute bg-white h-[750px] tablet:h-[340px] w-full flex flex-col tablet:flex-row justify-evenly items-center ">
+                    className="absolute bg-white h-[750px] tablet:h-[340px] w-full flex flex-col tablet:flex-row justify-evenly items-center rounded-b-lg">
             <motion.div variants={item} whileHover={{ scale: 1.05 }}>
                 <MobileNavigationSection to="/headphones" title="headphones" image="/assets/shared/desktop/image-category-thumbnail-headphones.png"/>
             </motion.div>
