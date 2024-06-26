@@ -3,10 +3,10 @@ import MobileNavigationSection from "@/app/_components/MobileNavigationSection";
 import {motion} from "framer-motion";
 
 const container = {
-    hidden: { opacity: 1, scale: 0 },
+    hidden: { opacity: 1, y: -500 },
     visible: {
         opacity: 1,
-        scale: 1,
+        y: 0,
         transition: {
             delayChildren: 0.3,
             staggerChildren: 0.2
@@ -28,7 +28,7 @@ function MobileNavigation() {
                     key="mobile-navigation"
                     initial="hidden"
                     animate="visible"
-                    className="h-[750px] tablet:h-[340px] w-full flex flex-col tablet:flex-row justify-evenly items-center ">
+                    className="absolute bg-white h-[750px] tablet:h-[340px] w-full flex flex-col tablet:flex-row justify-evenly items-center ">
             <motion.div variants={item} whileHover={{ scale: 1.05 }}>
                 <MobileNavigationSection to="/headphones" title="headphones" image="/assets/shared/desktop/image-category-thumbnail-headphones.png"/>
             </motion.div>

@@ -10,7 +10,7 @@ function Header() {
     return (
         <>
             <div className="w-full h-[90px] px-6 py-[32px] bg-black">
-                <div className="max-w-[1440px] mx-auto flex w-full items-center">
+                <div className="max-w-[1100px] mx-auto flex w-full items-center">
                     <img onClick={()=>setIsMobileNavOpen(s=>!s)} className="desktop:hidden" src="/assets/shared/tablet/icon-hamburger.svg" alt="Hamburger icon"/>
                     <Link href="/" className="mx-auto tablet:mr-auto tablet:ml-10 desktop:mx-0">
                         <img src="/assets/shared/desktop/logo.svg" alt="Logo"/>
@@ -35,7 +35,7 @@ function Header() {
                 </div>
             </div>
             <AnimatePresence>
-                {isMobileNavOpen && <motion.div key="mobile-nav" exit={{ opacity: 0 }}>
+                {isMobileNavOpen && <motion.div key="mobile-nav" className="relative z-10" exit={{ opacity: 0 }}>
                         <MobileNavigation/>
                     </motion.div>}
             </AnimatePresence>
