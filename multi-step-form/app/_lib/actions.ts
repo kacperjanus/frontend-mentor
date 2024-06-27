@@ -3,7 +3,7 @@ import {registerSchema, unregisterSchema, validate} from "@hyperjump/json-schema
 import {supabase} from "@/app/_lib/supabase";
 
 //FUNCTION THAT BASED ON PROVIDED FORM ID WILL GET VALIDATION SCHEMA FROM THE DATABASE AND THEN CHECK ALL THE FIELDS BEFORE MAKING A MUTATION ON THE SUPABASE OBJECT
-export async function AddFormAnswer(form_id: number, formAnswers: InitialValuesInterface): Promise<void> {
+export async function AddFormAnswer(form_id: number, formAnswers: InitialValuesInterface): Promise<boolean> {
 
     // 1. Get JSON schema for the form
     const link = `http://localhost:3000/api/schemas/${form_id}`
@@ -29,7 +29,9 @@ export async function AddFormAnswer(form_id: number, formAnswers: InitialValuesI
                 { form_id , answers: JSON.parse(JSON.stringify(formAnswers)) },
             ])
             .select()
+        return true
     }else{
-        throw new Error("Submitting answers unsuccessful!")
+        console.warn("Submitting answers unsuccessful!")
+        return false
     }
 }
