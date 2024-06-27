@@ -1,5 +1,5 @@
 import {InitialValuesInterface} from "@/app/interfaces";
-import {registerSchema, validate} from "@hyperjump/json-schema/draft-2020-12";
+import {registerSchema, unregisterSchema, validate} from "@hyperjump/json-schema/draft-2020-12";
 import {supabase} from "@/app/_lib/supabase";
 
 //FUNCTION THAT BASED ON PROVIDED FORM ID WILL GET VALIDATION SCHEMA FROM THE DATABASE AND THEN CHECK ALL THE FIELDS BEFORE MAKING A MUTATION ON THE SUPABASE OBJECT
@@ -8,19 +8,22 @@ export async function AddFormAnswer(form_id: number, formAnswers: InitialValuesI
     // 1. Get JSON schema for the form
     const link = `http://localhost:3000/api/schemas/${form_id}`
 
+    const response = await fetch(link);
+    if(!response.ok) {
+        throw new Error("Failed to fetch schema")
+    }
+
+    const schema = await response.json();
+
     // 2. Validate user's answers against the schema
-    registerSchema({
-        "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "type": "string"
-    }, link)
+    unregisterSchema(link);
+    registerSchema(schema, link)
 
-    const output = await validate(link, JSON.stringify(formAnswers));
-
-    console.log(output)
+    const output = await validate(link, formAnswers);
 
     // 3. If successful, post the values to form_answers table
     if(output.valid){
-        const { data, error } = await supabase
+        await supabase
             .from('form_answers')
             .insert([
                 { form_id , answers: JSON.parse(JSON.stringify(formAnswers)) },

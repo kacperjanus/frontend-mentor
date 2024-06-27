@@ -3,7 +3,7 @@ import Input from "@/app/_components/Input";
 import {InitialValuesInterface, textInputField} from "@/app/interfaces";
 import NavigationButtons from "@/app/_components/NavigationButtons";
 
-interface StepOneProps {
+interface TextInputStepProps {
     fields: textInputField[],
     setStepNumber: React.Dispatch<React.SetStateAction<number>>;
     values: string[]
@@ -11,27 +11,27 @@ interface StepOneProps {
     stepNumber: number
 }
 
-function TextInputStep({fields, setStepNumber, values, setValues, stepNumber}: StepOneProps) {
+function TextInputStep({fields, setStepNumber, values, setValues, stepNumber}: TextInputStepProps) {
     const handleSubmit: FormEventHandler<HTMLFormElement> = function(e){
         e.preventDefault();
     }
 
     return (
         <div className="h-full mb-4">
-        <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between" noValidate>
-            <div className="md:overflow-y-auto md:h-[300px]">
-                {fields.map((el: textInputField, i: number)=><Input
-                    el={el}
-                    index={i}
-                    key={fields[i].label}
-                    label={fields[i].label}
-                    placeholder={fields[i].placeholder}
-                    value={values[i]}
-                    onChange={(value)=>setValues(s=> s.with(stepNumber-1, values.with(i, value as string)))}
-                />)}
-            </div>
-            <NavigationButtons step={stepNumber} setStepNumber={setStepNumber}/>
-        </form>
+            <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between" noValidate>
+                <div className="md:overflow-y-auto md:h-[300px]">
+                    {fields.map((el: textInputField, i: number)=><Input
+                        el={el}
+                        index={i}
+                        key={fields[i].label}
+                        label={fields[i].label}
+                        placeholder={fields[i].placeholder}
+                        value={values[i]}
+                        onChange={(value)=>setValues(s=> s.with(stepNumber-1, values.with(i, value as string)))}
+                    />)}
+                </div>
+                <NavigationButtons step={stepNumber} setStepNumber={setStepNumber}/>
+            </form>
         </div>
     );
 }

@@ -10,7 +10,7 @@ function Confirmation({values, formId}: {values: InitialValuesInterface, formId:
         }
 
         submitAnswers();
-    }, [])
+    }, [formId, values])
 
     return (
         <StepContainer>

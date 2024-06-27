@@ -2,7 +2,6 @@ import {getFormSchema} from "@/app/_lib/data-service";
 
 export async function GET(request: Request, {params}: {params: {form_id: number}}) {
     const {form_id} = params;
-    console.log(form_id)
 
     try {
         const schema = await getFormSchema(form_id)
@@ -10,5 +9,4 @@ export async function GET(request: Request, {params}: {params: {form_id: number}
     } catch {
         return Response.json({message: "Schema not found"})
     }
-
 }
