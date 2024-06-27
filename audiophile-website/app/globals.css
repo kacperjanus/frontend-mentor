@@ -30,4 +30,32 @@
         @apply hover:text-earthy;
         @apply cursor-pointer;
     }
+
+    .heading-1 {
+        @apply text-[56px] font-[700] uppercase leading-[58px] tracking-[2px]
+    }
+
+    .heading-2 {
+        @apply text-[40px] font-[700] uppercase leading-[44px] tracking-[1.5px]
+    }
+
+    .heading-3 {
+        @apply text-[32px] font-[700] uppercase leading-[36px] tracking-[1.15px]
+    }
+
+    .heading-4 {
+        @apply text-[28px] font-[700] uppercase leading-[38px] tracking-[2px]
+    }
+
+    .heading-5 {
+        @apply text-[24px] uppercase font-[700] leading-[33px] tracking-[1.7px]
+    }
+
+    .heading-6 {
+        @apply text-[18px] font-[700] uppercase leading-[24px] tracking-[1.3px]
+    }
+
+    .paragraph {
+        @apply text-[15px] leading-[25px]
+    }
 }
