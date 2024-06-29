@@ -30,7 +30,7 @@ function ProductHighlight({name, description, image, type}: {
         </div>
     </div>
 
-    if (type === "tertiary") return <div className="flex my-6 flex-col tablet:flex-row">
+    if (type === "tertiary") return <div className="flex my-6 flex-col gap-6 tablet:flex-row">
         <div className="h-[200px] tablet:h-80 rounded-lg overflow-hidden tablet:w-[50%]">
             <img className="block tablet:hidden" src={image[0]} alt="Product highlight photo"/>
             <img className="hidden tablet:block" src={image[1]} alt="Product highlight photo"/>
