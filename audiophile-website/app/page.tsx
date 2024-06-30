@@ -11,7 +11,7 @@ export default function Home() {
                          description="Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
                          image={["/assets/home/mobile/image-header.jpg", "/assets/home/tablet/image-header.jpg", "/assets/home/desktop/image-hero.jpg"]}/>
             <div
-                className="bg-white h-[750px] tablet:h-[340px] w-full flex flex-col tablet:flex-row justify-evenly items-center ">
+                className="bg-white h-[750px] tablet:h-[340px] w-full flex flex-col tablet:flex-row justify-evenly items-center desktop:max-w-[1110px] desktop:mx-auto">
                 <MobileNavigationSection to="/headphones" title="headphones"
                                          image="/assets/shared/desktop/image-category-thumbnail-headphones.png"/>
                 <MobileNavigationSection to="/speakers" title="speakers"
