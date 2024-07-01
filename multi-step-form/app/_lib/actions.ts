@@ -6,7 +6,7 @@ import {supabase} from "@/app/_lib/supabase";
 export async function AddFormAnswer(form_id: number, formAnswers: InitialValuesInterface): Promise<boolean> {
 
     // 1. Get JSON schema for the form
-    const link = `/api/schemas/${form_id}`
+    const link = `${window.location.origin}/api/schemas/${form_id}`
 
     const response = await fetch(link);
     if(!response.ok) {
