@@ -27,8 +27,11 @@ function Summary({setStepNumber, values, formData, stepNumber}: StepFourProps) {
                                 <h1 className="font-bold text-marine-blue">Step {i+1}</h1>
                                 <p className="text-cool-gray text-sm underline cursor-pointer" onClick={()=>goToSelectPlan(i)}>(Change)</p>
                             </div>
+                            {/*@ts-ignore*/}
                             {step.type==="textInput" ? step.fields.map((el, j)=> <p key={j}>{el.label}: {values[i][j]}</p>) : ""}
+                            {/*@ts-ignore*/}
                             {step.type==="singleSelect" ? <p>{step.stepTitle}: {step.fields[values[i]].optionTitle}</p> : ""}
+                            {/*@ts-ignore*/}
                             {step.type==="multipleSelect" ? <p>{step.stepTitle}: {values[i].map((value: boolean, i: number)=> value ? step.fields[i].optionTitle + " (" + step.fields[i].primary + ")" + ", " : "")}</p> : ""}
                         </div>
                     )}
