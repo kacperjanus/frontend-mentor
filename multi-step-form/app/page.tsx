@@ -35,17 +35,17 @@ const formData: FormData = {
       "type": "singleSelect",
       "fields": [
         {
-          "image": "",
+          "image": "/icon-arcade.svg",
           "optionTitle": "Arcade",
           "optionDescription": "$9/mo"
         },
         {
-          "image": "",
+          "image": "/icon-advanced.svg",
           "optionTitle": "Advanced",
           "optionDescription": "$12/mo"
         },
         {
-          "image": "",
+          "image": "/icon-pro.svg",
           "optionTitle": "Pro",
           "optionDescription": "$15/mo"
         }
@@ -78,7 +78,7 @@ const formData: FormData = {
       "sidebarText": "Add-ons"
     }
   ],
-  "form_id": 456
+  "form_id": -1
 }
 
 export default function Home() {

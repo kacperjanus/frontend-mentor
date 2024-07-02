@@ -4,6 +4,8 @@ import {supabase} from "@/app/_lib/supabase";
 
 //FUNCTION THAT BASED ON PROVIDED FORM ID WILL GET VALIDATION SCHEMA FROM THE DATABASE AND THEN CHECK ALL THE FIELDS BEFORE MAKING A MUTATION ON THE SUPABASE OBJECT
 export async function AddFormAnswer(form_id: number, formAnswers: InitialValuesInterface): Promise<boolean> {
+    // Handling default case where there is no form number and the answers don't have to be stored
+    if(form_id === -1) return true
 
     // 1. Get JSON schema for the form
     const link = `${window.location.origin}/api/schemas/${form_id}`
