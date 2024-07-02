@@ -8,7 +8,7 @@ export async function AddFormAnswer(form_id: number, formAnswers: InitialValuesI
     if(form_id === -1) return true
 
     // 1. Get JSON schema for the form
-    const link = `${window.location.origin}/api/schemas/${form_id}`
+    const link = typeof window !== 'undefined' ? `${window.location.origin}/api/schemas/${form_id}` : `http://localhost:3000/api/schemas/${form_id}`
 
     const response = await fetch(link);
     if(!response.ok) {
