@@ -23,7 +23,7 @@ function SingleSelect({setStepNumber, fields, values, setValues, stepNumber}: Si
                                                                                               setValues={setValues} stepNumber={stepNumber} />)}
                 </div>
             </div>
-            <NavigationButtons step={stepNumber} setStepNumber={setStepNumber}/>
+            <NavigationButtons canGoNext={true} step={stepNumber} setStepNumber={setStepNumber}/>
         </div>
     );
 }

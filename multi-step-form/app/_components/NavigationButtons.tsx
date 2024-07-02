@@ -6,7 +6,7 @@ interface NavigationButtonsProps {
     setStepNumber: React.Dispatch<SetStateAction<number>>
     summary?: boolean
     onClick?: ()=>void;
-    canGoNext?: boolean
+    canGoNext: boolean
 }
 
 function NavigationButtons({step, setStepNumber, summary, onClick, canGoNext}: NavigationButtonsProps) {

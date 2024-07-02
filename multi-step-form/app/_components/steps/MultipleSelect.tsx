@@ -26,7 +26,7 @@ function MultipleSelect({setValues, setStepNumber, values, fields, stepNumber} :
                                                                                                     stepNumber={stepNumber}/>))}
                 </div>
             </div>
-            <NavigationButtons step={stepNumber} setStepNumber={setStepNumber}/>
+            <NavigationButtons canGoNext={true} step={stepNumber} setStepNumber={setStepNumber}/>
         </div>
     );
 }
