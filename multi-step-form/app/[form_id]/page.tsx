@@ -7,7 +7,7 @@ async function Page({params}: {params: {form_id: number}}) {
     revalidatePath(`/${params.form_id}`)
     const formData = await getFormData(params.form_id)
 
-    return typeof formData === "string" ? formData : <Form formData={formData}/>
+    return <Form formData={formData}/>
 }
 
 export default Page;
