@@ -22,7 +22,7 @@ function Input({value, onChange, el, index, isSubmitted, valid, setIsValid}: Inp
 
     useEffect(() => {
         setZodParse(el.regex === "name" ? nameParse(value) : el.regex === "email" ? emailParse(value) : el.regex === "phoneNumber" ? phoneNumberParse(value) : true)
-        setIsValid(s => s.with(index, zodParse))
+        setIsValid(s => s.with(index, zodParse && value!==""))
     }, [el.regex, index, setIsValid, zodParse, value])
 
     const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => onChange(e?.target.value)
