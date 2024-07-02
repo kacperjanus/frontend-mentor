@@ -14,15 +14,15 @@ interface StepFieldsProps {
 
 function StepFields({stepData, setStepNumber, values, setValues, stepNumber}: StepFieldsProps) {
     if(stepData.type === "textInput"){
-        return <TextInputStep stepNumber={stepNumber} values={values[stepNumber-1] as string[]} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
+        return <TextInputStep key={stepNumber} stepNumber={stepNumber} values={values[stepNumber-1] as string[]} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
     }
 
     if(stepData.type === "singleSelect"){
-        return <SingleSelect stepNumber={stepNumber} values={values[stepNumber-1] as number} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
+        return <SingleSelect key={stepNumber} stepNumber={stepNumber} values={values[stepNumber-1] as number} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
     }
 
     if(stepData.type === "multipleSelect"){
-        return <MultipleSelect stepNumber={stepNumber} values={values[stepNumber-1] as boolean[]} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
+        return <MultipleSelect key={stepNumber} stepNumber={stepNumber} values={values[stepNumber-1] as boolean[]} setValues={setValues} fields={stepData.fields} setStepNumber={setStepNumber}/>
     }
 
     return (

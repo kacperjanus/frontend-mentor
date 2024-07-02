@@ -5,9 +5,16 @@ interface NavigationButtonsProps {
     step: number,
     setStepNumber: React.Dispatch<SetStateAction<number>>
     summary?: boolean
+    onClick?: ()=>void;
+    canGoNext?: boolean
 }
 
-function NavigationButtons({step, setStepNumber, summary}: NavigationButtonsProps) {
+function NavigationButtons({step, setStepNumber, summary, onClick, canGoNext}: NavigationButtonsProps) {
+    function onClickNext() {
+        onClick && onClick();
+        if (canGoNext) setStepNumber(step + 1)
+    }
+
     return (
         <div
             className="flex md:justify-between items-center fixed bg-white justify-center gap-24 md:static bottom-0 right-0 self-end mt-auto md:bg-none w-full">
@@ -17,7 +24,7 @@ function NavigationButtons({step, setStepNumber, summary}: NavigationButtonsProp
                     content="Go Back" backButton={true}/>}
             </div>
             <div>
-                {summary ? <Button confirm={true} setStepNumber={()=>setStepNumber(step+1) as unknown as MouseEventHandler<HTMLButtonElement>} content="Confirm"/>: <Button  setStepNumber={()=>setStepNumber(step+1) as unknown as MouseEventHandler<HTMLButtonElement>} content="Next Step"/>}
+                {summary ? <Button confirm={true} setStepNumber={ onClickNext as unknown as MouseEventHandler<HTMLButtonElement>} content="Confirm"/>: <Button setStepNumber={ onClickNext as unknown as MouseEventHandler<HTMLButtonElement>} content="Next Step"/>}
             </div>
         </div>
     );
