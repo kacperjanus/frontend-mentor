@@ -28,7 +28,7 @@ function Input({value, onChange, el, index, isSubmitted, valid, setIsValid}: Inp
     const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => onChange(e?.target.value)
 
     return (
-        <div className="flex flex-col pt-5">
+        <div className="flex flex-col pt-5 transition-all duration-500">
             <div className="flex justify-between items-center">
                 <label className="text-marine-blue">{el.label}</label>
                 {isSubmitted && value === "" ?
@@ -36,7 +36,7 @@ function Input({value, onChange, el, index, isSubmitted, valid, setIsValid}: Inp
                         <p className="font-bold text-strawberry-red"> Incorrect format</p> : ""}
             </div>
             <input required value={value} onChange={handleChange}
-                   className={`${isSubmitted && (value === "" || !zodParse) ? "border-strawberry-red" : "border-light-gray"} p-3 border-solid border-[1px] rounded-xl active:border-marine-blue text-marine-blue font-bold placeholder:font-normal cursor-pointer`}
+                   className={`${isSubmitted && (value === "" || !zodParse) ? "border-strawberry-red" : "border-light-gray"} p-3 border-solid border-[1px] rounded-xl active:border-marine-blue text-marine-blue font-bold placeholder:font-normal cursor-pointer transition-all duration-500`}
                    placeholder={el.placeholder}/>
         </div>
     );

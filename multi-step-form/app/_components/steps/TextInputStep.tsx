@@ -20,8 +20,8 @@ function TextInputStep({fields, setStepNumber, values, setValues, stepNumber}: T
     const [isValid, setIsValid] = useState<boolean[]>(new Array(fields.length).fill(false))
 
     return (
-        <div className="h-full mb-4 flex flex-col justify-between">
-            <div className="md:overflow-y-auto md:h-[300px]">
+        <div className="h-full mb-4 flex flex-col justify-between transition-all duration-500">
+            <div className="md:overflow-y-auto md:h-[300px] transition-all duration-500">
                 {fields.map((el: textInputField, i: number) => <Input
                     el={el}
                     index={i}

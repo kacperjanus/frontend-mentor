@@ -18,7 +18,7 @@ function Form({formData}: {formData: FormData | string}) {
     return (
         <div className="bg-white md:bg-light-blue w-full h-screen md:items-center md:justify-center md:flex">
             <div
-                className="bg-white w-full md:w-[50rem] lg:w-[54.8rem] md:h-[32rem] lg:h-[38rem] xl:w-[64rem] md:rounded-2xl md:p-5 flex-col flex md:flex-row relative mx-auto md:mx-none ">
+                className="bg-white w-full md:w-[50rem] lg:w-[54.8rem] md:h-[32rem] lg:h-[38rem] xl:w-[64rem] md:rounded-2xl md:p-5 flex-col flex md:flex-row relative mx-auto md:mx-none transition-all duration-500 ">
                 <Sidebar stepNumber={stepNumber} stepsData={stepsData}/>
                 <StepContent stepNumber={stepNumber} setStepNumber={setStepNumber} formData={formData}/>
             </div>

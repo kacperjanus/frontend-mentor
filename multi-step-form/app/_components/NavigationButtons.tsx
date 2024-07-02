@@ -17,7 +17,7 @@ function NavigationButtons({step, setStepNumber, summary, onClick, canGoNext}: N
 
     return (
         <div
-            className="flex md:justify-between items-center fixed bg-white justify-center gap-24 md:static bottom-0 right-0 self-end mt-auto md:bg-none w-full">
+            className="flex md:justify-between items-center fixed bg-white justify-center gap-24 md:static bottom-0 right-0 self-end mt-auto md:bg-none w-full transition-all duration-500">
             <div>
                 {step > 1 && <Button
                     setStepNumber={() => setStepNumber(step - 1) as unknown as MouseEventHandler<HTMLButtonElement>}
