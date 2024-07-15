@@ -298,3 +298,4 @@ audiophile-website/.vercel
 # typescript
 audiophile-website/*.tsbuildinfo
 audiophile-website/next-env.d.ts
+*storybook.log
