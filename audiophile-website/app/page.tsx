@@ -1,13 +1,13 @@
 import HeroSection from "@/app/_components/HeroSection";
-import MobileNavigationSection from "@/app/_components/MobileNavigationSection";
 import React from "react";
 import ProductHighlight from "@/app/_components/ProductHighlight";
 import About from "@/app/_components/About";
 import QuickMenu from "@/app/_components/QuickMenu";
+import PageContainer from "@/app/_components/PageContainer";
 
 export default function Home() {
     return (
-        <div className="mx-6 tablet:mx-10">
+        <PageContainer>
             <HeroSection name="XX99 MARK II HEADPHONES" header="new product"
                          description="Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
                          image={["/assets/home/mobile/image-header.jpg", "/assets/home/tablet/image-header.jpg", "/assets/home/desktop/image-hero.jpg"]}/>
@@ -25,6 +25,6 @@ export default function Home() {
                               type={"tertiary"}/>
 
             <About/>
-        </div>
+        </PageContainer>
     );
 }
