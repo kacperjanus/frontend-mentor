@@ -4,10 +4,9 @@ import Link from "next/link";
 
 function Footer() {
     return (
-        <div
-            className="bg-[#101010] h-[654px] tablet:h-[400px] desktop:h-[365px]">
+        <div className="bg-[#101010] h-[654px] tablet:h-[400px] desktop:h-[365px] flex">
             <div
-                className=" relative desktop:max-w-[1110px] desktop:mx-auto flex flex-col justify-center items-center tablet:items-start gap-12 tablet:gap-8 text-white text-center tablet:text-start px-6 tablet:px-10 tablet:py-[53px]">
+                className="relative desktop:max-w-[1110px] desktop:mx-auto flex flex-col justify-center items-center tablet:items-start gap-12 tablet:gap-8 text-white text-center tablet:text-start px-6 tablet:px-10 tablet:py-[53px]">
                 <span className="absolute top-0 tablet:left-10 h-1 bg-earthy w-24"></span>
                 <div className="flex flex-col gap-12 desktop:flex-row desktop:w-full desktop:justify-between">
                     <Logo/>
