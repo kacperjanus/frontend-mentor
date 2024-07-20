@@ -41,7 +41,7 @@ function Footer() {
 
                 <div
                     className="flex flex-col items-center tablet:items-start tablet:flex-row gap-12 tablet:gap-auto  tablet:justify-between tablet:w-full tablet:mt-auto flex-wrap">
-                    <p className="text-[#878787] w-full desktop:w-1/2 text-[15px] leading-[25px] text-justify desktop:text-start">Audiophile
+                    <p className="text-[#878787] w-full desktop:w-1/2 text-[15px] leading-[25px] text-center tablet:text-justify desktop:text-start">Audiophile
                         is an all
                         in one
                         stop to
