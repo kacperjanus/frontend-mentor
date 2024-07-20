@@ -3,7 +3,7 @@ import React from 'react';
 function About() {
     return (
         <div
-            className="text-center desktop:text-start flex flex-col desktop:flex-row gap-10 desktop:gap-[125px] my-20 desktop:max-w-[1110px] desktop:mx-auto">
+            className="text-center desktop:text-start flex flex-col desktop:flex-row gap-10 desktop:gap-[125px] my-20">
             <img className="rounded-lg block tablet:hidden" src="/assets/shared/mobile/image-best-gear.jpg"
                  alt="Person wearing headphones"/>
             <img className="rounded-lg hidden tablet:block desktop:hidden"
