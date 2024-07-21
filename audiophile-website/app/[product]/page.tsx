@@ -23,10 +23,12 @@ async function Page({params}: { params: { product: string } }) {
                 <GoBackButton/>
 
                 <ProductOverview productData={productData}/>
+                
+                <div className="desktop:grid desktop:grid-cols-[3fr_2fr] desktop:gap-32 desktop:mb-32">
+                    <Features productData={productData}/>
 
-                <Features productData={productData}/>
-
-                <InTheBox productData={productData}/>
+                    <InTheBox productData={productData}/>
+                </div>
 
                 <Gallery productData={productData}/>
 
