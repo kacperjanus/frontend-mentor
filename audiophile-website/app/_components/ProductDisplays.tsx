@@ -7,12 +7,13 @@ async function ProductDisplays({category}: { category: string }) {
 
     return (
         <div>
-            {data.filter(item => item.category === category).map((product, index) => <ProductDisplay key={product.name}
-                                                                                                     index={index}
-                                                                                                     title={product.name}
-                                                                                                     description={product.description}
-                                                                                                     isNew={product.new}
-                                                                                                     image={product.categoryImage}/>
+            {data.filter(item => item.category === category).sort((a, b) => a.new ? -1 : 1).map((product, index) =>
+                <ProductDisplay key={product.name}
+                                index={index}
+                                title={product.name}
+                                description={product.description}
+                                isNew={product.new}
+                                image={product.categoryImage}/>
             )}
         </div>
     );
