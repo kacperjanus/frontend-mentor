@@ -1,12 +1,13 @@
 import React from 'react';
 import Button from "@/app/_components/Button";
 
-function ProductDisplay({title, description, isNew, image, index}: {
+function ProductDisplay({title, description, isNew, image, index, slug}: {
     title: string,
     description: string,
     isNew: boolean,
     image: { mobile: string, tablet: string, desktop: string }
-    index: number
+    index: number,
+    slug: string
 }) {
     return (
         <div className="text-center flex flex-col desktop:flex-row gap-8 items-center mb-20 desktop:basis-0">
@@ -19,7 +20,7 @@ function ProductDisplay({title, description, isNew, image, index}: {
                 {isNew && <span className="overline-element uppercase">new product</span>}
                 <h2 className="heading-4 tablet:heading-2 w-80 desktop:w-auto desktop:text-start">{title}</h2>
                 <p className="text-dark-grey desktop:text-start">{description}</p>
-                <Button type="primary">SEE PRODUCT</Button>
+                <Button link={slug} type="primary">SEE PRODUCT</Button>
             </div>
         </div>
     );

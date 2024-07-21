@@ -17,13 +17,13 @@ export default function Home() {
                 <ProductHighlight name={"zx9 speaker"}
                                   description={"Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."}
                                   image={["/assets/home/mobile/image-speaker-zx9.png", "/assets/home/tablet/image-speaker-zx9.png", "/assets/home/desktop/image-speaker-zx9.png"]}
-                                  type={"primary"}/>
+                                  type={"primary"} slug={"/zx9-speaker"}/>
                 <ProductHighlight name={"zx7 speaker"}
                                   image={["/assets/home/mobile/image-speaker-zx7.jpg", "/assets/home/tablet/image-speaker-zx7.jpg", "/assets/home/desktop/image-speaker-zx7.jpg"]}
-                                  type={"secondary"}/>
+                                  type={"secondary"} slug={"/zx7-speaker"}/>
                 <ProductHighlight name={"yx1 earphones"}
                                   image={["/assets/home/mobile/image-earphones-yx1.jpg", "/assets/home/tablet/image-earphones-yx1.jpg", "/assets/home/desktop/image-earphones-yx1.jpg"]}
-                                  type={"tertiary"}/>
+                                  type={"tertiary"} slug={"/yx1-earphones"}/>
 
                 <About/>
             </PageContainer>

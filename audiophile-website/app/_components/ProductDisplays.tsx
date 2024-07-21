@@ -13,7 +13,8 @@ async function ProductDisplays({category}: { category: string }) {
                                 title={product.name}
                                 description={product.description}
                                 isNew={product.new}
-                                image={product.categoryImage}/>
+                                image={product.categoryImage}
+                                slug={product.slug}/>
             )}
         </div>
     );
