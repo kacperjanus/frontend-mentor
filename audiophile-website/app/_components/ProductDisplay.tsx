@@ -18,7 +18,7 @@ function ProductDisplay({title, description, isNew, image, index}: {
             <div className="flex flex-col gap-8 tablet:max-w-[572px] items-center desktop:items-start desktop:p-20">
                 {isNew && <span className="overline-element uppercase">new product</span>}
                 <h2 className="heading-4 tablet:heading-2 w-80 desktop:w-auto desktop:text-start">{title}</h2>
-                <p className="text-[#7D7D7D] desktop:text-start">{description}</p>
+                <p className="text-dark-grey desktop:text-start">{description}</p>
                 <Button type="primary">SEE PRODUCT</Button>
             </div>
         </div>
