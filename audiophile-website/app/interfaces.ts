@@ -1,9 +1,25 @@
+interface ImageSet {
+    mobile: string,
+    tablet: string,
+    desktop: string
+}
+
 interface Product {
-    productName: string,
+    id: number,
+    slug: string,
+    name: string,
     new: boolean,
+    category: string,
+    categoryImage: ImageSet,
     description: string,
     price: number,
     features: string,
-    inTheBox: { quantity: number, name: string }[]
-    image: { mobile: string, tablet: string, desktop: string }
+    includes: { quantity: number, item: string }[]
+    image: ImageSet
+    gallery: {
+        first: ImageSet,
+        second: ImageSet,
+        third: ImageSet
+    }
+    others: { slug: string, name: string, image: ImageSet }[]
 }

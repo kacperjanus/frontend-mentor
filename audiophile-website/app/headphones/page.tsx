@@ -10,7 +10,7 @@ function Page() {
         <div>
             <PageHeader>headphones</PageHeader>
             <PageContainer>
-                <ProductDisplays route="headphones"/>
+                <ProductDisplays category="headphones"/>
 
                 <QuickMenu/>
                 <About/>
