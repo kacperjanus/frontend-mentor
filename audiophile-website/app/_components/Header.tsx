@@ -47,11 +47,14 @@ function Header() {
                     <MobileNavigation/>
                 </motion.div>}
             </AnimatePresence>
-            {isCartOpen && <div className="relative z-10">
-                <div onClick={() => setIsCartOpen(false)}
-                     className="fixed top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.5)]"></div>
-                <Cart/>
-            </div>}
+            <AnimatePresence>
+                {isCartOpen &&
+                    <motion.div className="relative z-20" exit={{y: -150, opacity: 0}} transition={{duration: 0.3}}>
+                        <div onClick={() => setIsCartOpen(false)}
+                             className="fixed top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.5)]"></div>
+                        <Cart/>
+                    </motion.div>}
+            </AnimatePresence>
         </>
     );
 }
