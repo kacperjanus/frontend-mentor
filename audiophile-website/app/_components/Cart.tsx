@@ -10,7 +10,7 @@ function Cart() {
 
     return (
         <motion.div initial={{scale: 0}} animate={{scale: 1}}
-                    className="absolute rounded-lg bg-white top-5 right-5 left-5 p-8">
+                    className="absolute rounded-lg z-20 tablet:w-[377px] bg-white top-5 right-5 tablet:right-10 desktop:right-40 left-5 tablet:left-auto p-8">
             <div className="flex justify-between items-center">
                 <h1 className="heading-6">CART ({cart?.length})</h1>
                 {cart.length > 0 &&
