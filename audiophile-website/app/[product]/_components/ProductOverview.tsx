@@ -1,6 +1,5 @@
-import Numbers from "@/app/_components/Numbers";
-import Button from "@/app/_components/Button";
 import React from "react";
+import AddToCart from "@/app/[product]/_components/AddToCart";
 
 function ProductOverview({productData}: { productData: Product }) {
     return <div
@@ -14,10 +13,7 @@ function ProductOverview({productData}: { productData: Product }) {
             <h1 className="heading-4 desktop:heading-2">{productData.name}</h1>
             <p className="text-dark-grey text-[15px] leading-[25px]">{productData.description}</p>
             <span className="font-bold text-[18px] tracking-[1.29px]">{`$ ${productData.price.toLocaleString()}`}</span>
-            <div className="flex gap-4">
-                <Numbers max={10}/>
-                <Button type="primary">Add to cart</Button>
-            </div>
+            <AddToCart productData={productData}/>
         </div>
     </div>;
 }

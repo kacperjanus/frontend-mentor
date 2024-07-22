@@ -23,3 +23,10 @@ interface Product {
     }
     others: { slug: string, name: string, image: ImageSet }[]
 }
+
+interface CartItem {
+    image: ImageSet
+    name: string,
+    quantity: number,
+    pricePerUnit: number,
+}

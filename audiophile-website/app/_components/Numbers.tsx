@@ -1,20 +1,25 @@
 "use client"
 
-import React, {useState} from 'react';
+import React, {SetStateAction} from 'react';
 
-interface NumbersProps{
+interface NumbersProps {
     max: number
+    count: number
+    setCount: React.Dispatch<SetStateAction<number>>
 }
 
-function Numbers({max}: NumbersProps) {
-    const [count, setCount] = useState(0)
+function Numbers({max, count, setCount}: NumbersProps) {
 
-    const increase = function(){
-        if(count < max){setCount(s=>s+1)}
+    const increase = function () {
+        if (count < max) {
+            setCount(s => s + 1)
+        }
     }
 
     const decrease = function () {
-        if(count != 0){setCount(s=>s-1)}
+        if (count != 0) {
+            setCount(s => s - 1)
+        }
     }
     return (
         <div className="w-[120px] h-12 bg-grey flex justify-evenly items-center">
