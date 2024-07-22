@@ -22,7 +22,7 @@ function AddToCart({productData}: { productData: Product }) {
 
     return (
         <div className="flex gap-4">
-            <Numbers count={count} setCount={setCount} max={10}/>
+            <Numbers count={count} minusFn={() => setCount(s => s - 1)} plusFn={() => setCount(s => s + 1)} max={10}/>
             <Button fn={addToCartFunction}
                     type="primary">Add to cart</Button>
         </div>

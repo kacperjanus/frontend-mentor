@@ -1,26 +1,28 @@
 "use client"
 
-import React, {SetStateAction} from 'react';
+import React from 'react';
 
 interface NumbersProps {
     max: number
     count: number
-    setCount: React.Dispatch<SetStateAction<number>>
+    minusFn: () => void
+    plusFn: () => void
 }
 
-function Numbers({max, count, setCount}: NumbersProps) {
+function Numbers({max, count, minusFn, plusFn}: NumbersProps) {
 
     const increase = function () {
         if (count < max) {
-            setCount(s => s + 1)
+            plusFn()
         }
     }
 
     const decrease = function () {
         if (count != 0) {
-            setCount(s => s - 1)
+            minusFn()
         }
     }
+
     return (
         <div className="w-[120px] h-12 bg-grey flex justify-evenly items-center">
             <button onClick={decrease} className="h-full w-[33.33333%] text-[#CFCFCF] hover:text-earthy">-</button>
