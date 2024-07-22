@@ -10,7 +10,8 @@ export default function Home() {
         <>
             <HeroSection name="XX99 MARK II HEADPHONES" header="new product"
                          description="Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
-                         image={["/assets/home/mobile/image-header.jpg", "/assets/home/tablet/image-header.jpg", "/assets/home/desktop/image-hero.jpg"]}/>
+                         image={["/assets/home/mobile/image-header.jpg", "/assets/home/tablet/image-header.jpg", "/assets/home/desktop/image-hero.jpg"]}
+                         slug={"/xx99-mark-two-headphones"}/>
             <PageContainer>
                 <QuickMenu/>
 
