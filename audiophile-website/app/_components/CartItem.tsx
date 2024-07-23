@@ -10,7 +10,8 @@ function CartItem({item}: { item: CartItem }) {
     return (
         <li key={item.name}
             className="grid grid-cols-[2fr_2fr_3fr] gap-2 items-center">
-            <img className="w-16 h-16 rounded-lg" src={item.image.mobile} alt={`${item.name} preview`}/>
+            <img className="w-16 h-16 rounded-lg" src={`/assets/cart/image-${item.name}.jpg`}
+                 alt={`${item.name} preview`}/>
             <div className="flex flex-col">
                 <p className="font-bold text-[15px] uppercase">{item.name.slice(0, 9)}</p>
                 <p className="text-[14px] font-bold text-dark-grey">$ {item.pricePerUnit}</p>
