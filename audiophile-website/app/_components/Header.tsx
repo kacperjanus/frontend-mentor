@@ -6,6 +6,7 @@ import MobileNavigation from "@/app/_components/MobileNavigation";
 import {motion, AnimatePresence} from "framer-motion";
 import Logo from "@/app/_components/Logo";
 import Cart from "@/app/_components/Cart";
+import Overlay from "@/app/_components/Overlay";
 
 function Header() {
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
@@ -36,22 +37,21 @@ function Header() {
                             </li>
                         </ul>
                     </nav>
-                    <img onClick={() => setIsCartOpen(s => !s)} src="/assets/shared/desktop/icon-cart.svg"
+                    <img className="cursor-pointer" onClick={() => setIsCartOpen(s => !s)}
+                         src="/assets/shared/desktop/icon-cart.svg"
                          alt="Cart icon"/>
                 </div>
             </div>
             <AnimatePresence>
                 {isMobileNavOpen && <motion.div key="mobile-nav" className="relative z-10" exit={{opacity: 0}}>
-                    <div onClick={() => setIsMobileNavOpen(false)}
-                         className="fixed top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.5)]"></div>
+                    <Overlay onClick={() => setIsMobileNavOpen(false)}/>
                     <MobileNavigation/>
                 </motion.div>}
             </AnimatePresence>
             <AnimatePresence>
                 {isCartOpen &&
-                    <motion.div className="relative z-20" exit={{y: -150, opacity: 0}} transition={{duration: 0.3}}>
-                        <div onClick={() => setIsCartOpen(false)}
-                             className="fixed top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.5)]"></div>
+                    <motion.div className="relative z-10" exit={{opacity: 0}} transition={{duration: 0.3}}>
+                        <Overlay onClick={() => setIsCartOpen(false)}/>
                         <Cart/>
                     </motion.div>}
             </AnimatePresence>
