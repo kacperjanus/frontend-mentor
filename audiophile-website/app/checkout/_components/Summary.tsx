@@ -1,11 +1,13 @@
 "use client"
 
-import React from 'react';
+import React, {useState} from 'react';
 import {useCart} from "@/app/_lib/contexts/CartContext";
 import Button from "@/app/_components/Button";
+import ThankYouModal from "@/app/checkout/_components/ThankYouModal";
 
 function Summary() {
     const {cart} = useCart()
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const shippingCost = 50
     const cartValue = cart.reduce((acc, item) => acc + item.quantity * item.pricePerUnit, 0)
@@ -51,7 +53,8 @@ function Summary() {
                 </div>
             </div>
 
-            <Button className="w-full" type="primary">Continue & Pay</Button>
+            <Button fn={() => setIsModalOpen((s) => !s)} className="w-full" type="primary">Continue & Pay</Button>
+            {isModalOpen && <ThankYouModal/>}
         </div>
     );
 }
