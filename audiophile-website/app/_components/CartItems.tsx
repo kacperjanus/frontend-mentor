@@ -19,7 +19,7 @@ function CartItems({cart}: { cart: CartItem[] }) {
                     className="font-bold text-[18px]">$ {cart?.reduce((acc, item) => acc + item.pricePerUnit * item.quantity, 0).toLocaleString()}</span>
             </div>
 
-            <Button type="primary" link="/checkout">Checkout</Button>
+            <Button className="w-full" type="primary" link="/checkout">Checkout</Button>
         </>
     );
 }
