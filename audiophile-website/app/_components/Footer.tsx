@@ -41,18 +41,16 @@ function Footer() {
 
                 <div
                     className="flex flex-col items-center tablet:items-start tablet:flex-row gap-12 tablet:gap-auto  tablet:justify-between tablet:w-full tablet:mt-auto flex-wrap">
-                    <p className="text-[#878787] w-full desktop:w-1/2 text-[15px] leading-[25px] text-center tablet:text-justify desktop:text-start">Audiophile
-                        is an all
-                        in one
-                        stop to
-                        fulfill your audio needs. We&apos;re a
-                        small team of music lovers and sound specialists who are devoted to helping you get the most out
-                        of
-                        personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
+                    <p className="text-[#878787] w-full desktop:w-1/2 text-[15px] leading-[25px] text-center tablet:text-justify desktop:text-start">
+                        Audiophile is an all in one stop to fulfill your audio needs. We&apos;re a small team of music
+                        lovers and sound specialists who are devoted to helping you get the most out of personal audio.
+                        Come and visit our demo facility - we’re open 7 days a week.
+                    </p>
 
-
-                    <p className="font-bold text-[#878787] desktop:order-2 desktop:w-full">Copyright 2021. All Rights
-                        Reserved</p>
+                    <p className="font-bold text-[#878787] desktop:order-2 desktop:w-full">
+                        Copyright 2021. All Rights
+                        Reserved
+                    </p>
 
                     <div className="flex gap-4 desktop:order-1 desktop:self-end">
                         <img src="/assets/shared/desktop/icon-facebook.svg"

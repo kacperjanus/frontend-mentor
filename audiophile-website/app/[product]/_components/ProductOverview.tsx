@@ -2,8 +2,7 @@ import React from "react";
 import AddToCart from "@/app/[product]/_components/AddToCart";
 
 function ProductOverview({productData}: { productData: Product }) {
-    return <div
-        className="flex flex-col tablet:grid tablet:grid-cols-[2fr_3fr] desktop:grid-cols-2 tablet:gap-16 desktop:gap-32 gap-8 mb-16 desktop:mb-32">
+    return <div className="flex flex-col tablet:grid tablet:grid-cols-[2fr_3fr] desktop:grid-cols-2 tablet:gap-16 desktop:gap-32 gap-8 mb-16 desktop:mb-32">
         <img className="rounded-lg block tablet:hidden" src={productData.image.mobile} alt={productData.name}/>
         <img className="rounded-lg hidden tablet:block desktop:hidden" src={productData.image.tablet}
              alt={productData.name}/>

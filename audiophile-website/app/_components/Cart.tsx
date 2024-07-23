@@ -14,8 +14,7 @@ function Cart() {
             <div className="flex justify-between items-center">
                 <h1 className="heading-6">CART ({cart?.length})</h1>
                 {cart.length > 0 &&
-                    <span className="font-medium text-[15px] underline text-dark-grey"
-                          onClick={clearCart}>Remove all</span>}
+                    <span className="font-medium text-[15px] underline text-dark-grey" onClick={clearCart}>Remove all</span>}
             </div>
 
             <CartItems cart={cart}/>

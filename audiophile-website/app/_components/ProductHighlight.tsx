@@ -8,8 +8,7 @@ function ProductHighlight({name, description, image, type, slug}: {
     type: string;
     slug: string
 }) {
-    if (type === "primary") return <div
-        className="relative h-[600px] tablet:h-[720px] bg-earthy mt-6 text-center desktop:text-start flex flex-col desktop:flex-row justify-center items-center rounded-lg gap-6 tablet:gap-24 p-6 overflow-hidden">
+    if (type === "primary") return <div className="relative h-[600px] tablet:h-[720px] bg-earthy mt-6 text-center desktop:text-start flex flex-col desktop:flex-row justify-center items-center rounded-lg gap-6 tablet:gap-24 p-6 overflow-hidden">
         <img className="w-[173px] z-20 block tablet:hidden" src={image[0]} alt="Product highlight photo"/>
         <img className="w-[173px] z-20 hidden tablet:block desktop:hidden" src={image[1]}
              alt="Product highlight photo"/>
@@ -25,8 +24,7 @@ function ProductHighlight({name, description, image, type, slug}: {
         </div>
     </div>
 
-    if (type === "secondary") return <div
-        className="relative h-[320px] mt-6 rounded-lg overflow-hidden">
+    if (type === "secondary") return <div className="relative h-[320px] mt-6 rounded-lg overflow-hidden">
         <img className="absolute -z-10 block tablet:hidden" src={image[0]} alt="Product highlight photo"/>
         <img className="absolute -z-10 h-full w-full object-cover hidden tablet:block desktop:hidden" src={image[1]}
              alt="Product highlight photo"/>
@@ -38,8 +36,7 @@ function ProductHighlight({name, description, image, type, slug}: {
         </div>
     </div>
 
-    if (type === "tertiary") return <div
-        className="flex my-6 flex-col gap-6 tablet:flex-row">
+    if (type === "tertiary") return <div className="flex my-6 flex-col gap-6 tablet:flex-row">
         <div className="h-[200px] tablet:h-80 rounded-lg overflow-hidden tablet:w-[50%]">
             <img className="block tablet:hidden" src={image[0]} alt="Product highlight photo"/>
             <img className="hidden tablet:block desktop:hidden" src={image[1]} alt="Product highlight photo"/>

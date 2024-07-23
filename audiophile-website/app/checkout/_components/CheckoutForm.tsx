@@ -7,6 +7,7 @@ function CheckoutForm() {
         <div className="bg-white rounded-lg p-8">
             <h1 className="heading-4 mb-10">checkout</h1>
 
+            {/*BILLING*/}
             <h2 className="subtitle-element mb-6">billing details</h2>
             <div className="tablet:grid tablet:grid-cols-2 tablet:gap-x-4">
                 <TextField label={"Name"} placeholder={"Alexei Ward"}/>
@@ -14,6 +15,7 @@ function CheckoutForm() {
                 <TextField label={"Phone Number"} placeholder={"+1 202-555-0136"}/>
             </div>
 
+            {/*SHIPPING*/}
             <h2 className="subtitle-element mb-6">shipping info</h2>
             <div className="tablet:grid tablet:grid-cols-2 tablet:gap-x-4">
                 <div className="col-span-2">
@@ -24,9 +26,11 @@ function CheckoutForm() {
                 <TextField label={"Country"} placeholder={"United States"}/>
             </div>
 
+            {/*PAYMENT*/}
             <h2 className="subtitle-element mb-6">payment details</h2>
             <RadioSelectGroup mainLabel="Payment Method" labels={["e-Money", "Cash on Delivery"]}/>
 
+            {/*PAYMENT INFO*/}
             <div className="tablet:grid tablet:grid-cols-2 tablet:gap-x-4">
                 <TextField label={"e-Money Number"} placeholder={"238521993"}/>
                 <TextField label={"e-Money PIN"} placeholder={"6891"}/>

@@ -15,8 +15,7 @@ function CartItems({cart}: { cart: CartItem[] }) {
 
             <div className="flex justify-between mb-8 items-center">
                 <span className="font-medium text-[15px] uppercase text-dark-grey">TOTAL</span>
-                <span
-                    className="font-bold text-[18px]">$ {cart?.reduce((acc, item) => acc + item.pricePerUnit * item.quantity, 0).toLocaleString()}</span>
+                <span className="font-bold text-[18px]">$ {cart?.reduce((acc, item) => acc + item.pricePerUnit * item.quantity, 0).toLocaleString()}</span>
             </div>
 
             <Button className="w-full" type="primary" link="/checkout">Checkout</Button>

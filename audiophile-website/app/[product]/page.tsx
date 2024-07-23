@@ -5,9 +5,9 @@ import Features from "@/app/[product]/_components/Features";
 import InTheBox from "@/app/[product]/_components/InTheBox";
 import Gallery from "@/app/[product]/_components/Gallery";
 import YouMayAlsoLike from "@/app/[product]/_components/YouMayAlsoLike";
-import GoBackButton from "@/app/_components/GoBackButton";
 import About from "@/app/_components/About";
 import QuickMenu from "@/app/_components/QuickMenu";
+import Button from "@/app/_components/Button";
 
 async function Page({params}: { params: { product: string } }) {
     const response = await fetch(`http://localhost:3000/api/products`)
@@ -19,7 +19,7 @@ async function Page({params}: { params: { product: string } }) {
     return (
         <div>
             <PageContainer>
-                <GoBackButton/>
+                <Button type="back"/>
 
                 <ProductOverview productData={productData}/>
 
