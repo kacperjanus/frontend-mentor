@@ -1,16 +1,24 @@
 "use client"
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from "next/link";
 import MobileNavigation from "@/app/_components/MobileNavigation";
 import {motion, AnimatePresence} from "framer-motion";
 import Logo from "@/app/_components/Logo";
 import Cart from "@/app/_components/Cart";
 import Overlay from "@/app/_components/Overlay";
+import {usePathname} from "next/navigation";
 
 function Header() {
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
     const [isCartOpen, setIsCartOpen] = useState(false)
+
+    const pathname = usePathname()
+
+    useEffect(() => {
+        setIsMobileNavOpen(false)
+        setIsCartOpen(false)
+    }, [pathname])
 
     return (
         <>
