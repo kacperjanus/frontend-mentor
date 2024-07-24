@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 function HeroSection({name, description, header, image, slug}: HeroSectionProps) {
     return (
-        <div className="bg-[#191919] -mx-6 tablet:-mx-10">
+        <div className="bg-[#191919]">
             <div className="w-full desktop:max-w-[1100px] desktop:mx-auto h-[510px] desktop:h-[639px] tablet:h-[729px] desktop: flex flex-col items-center justify-center text-center desktop:text-start desktop:items-start text-white relative overflow-hidden">
                 <img className="absolute tablet:hidden top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-1"
                      src={image[0]} alt="Headphones image"/>

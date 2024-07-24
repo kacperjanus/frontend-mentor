@@ -17,8 +17,8 @@ function ThankYouModal() {
 
     return (
         <>
-            <Overlay className="z-20"/>
-            <div className="absolute bg-white z-30 rounded-lg p-8 tablet:p-12 left-1/2 -translate-x-1/2 top-36 w-[327px] tablet:w-[540px] flex flex-col gap-4 tablet:gap-10">
+            <Overlay className="z-50"/>
+            <div className="absolute z-[60] bg-white rounded-lg p-8 tablet:p-12 left-1/2 -translate-x-1/2 top-36 w-[327px] tablet:w-[540px] flex flex-col gap-4 tablet:gap-10">
                 <img className="w-16 h-16" src="/assets/checkout/icon-order-confirmation.svg" alt="Order Confirmation icon"/>
                 <h1 className="heading-5 tablet:heading-3">Thank you for your order</h1>
                 <p className="text-dark-grey font-medium text-[15px]">You will receive an email confirmation
@@ -26,8 +26,7 @@ function ThankYouModal() {
 
                 <div className="rounded-lg overflow-hidden flex flex-col tablet:flex-row">
                     <div className="bg-grey p-8 desktop:p-4 relative">
-                        <div
-                            className="grid grid-cols-[auto_2fr_2fr] flex-1 tablet:grid-cols-[auto_7fr_3fr] desktop:grid-cols-[auto_7fr_3fr] gap-2 items-center">
+                        <div className="grid grid-cols-[auto_2fr_2fr] flex-1 tablet:grid-cols-[auto_7fr_3fr] desktop:grid-cols-[auto_7fr_3fr] gap-2 items-center">
                             <img className="w-16 h-16 rounded-lg" src={`/assets/cart/image-${cart[0].name}.jpg`}
                                  alt={`${cart[0].name} preview`}/>
                             <div className="flex flex-col">
