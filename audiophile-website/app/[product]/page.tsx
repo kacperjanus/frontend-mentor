@@ -9,10 +9,10 @@ import About from "@/app/_components/About";
 import QuickMenu from "@/app/_components/QuickMenu";
 import Button from "@/app/_components/Button";
 import {Product} from "@/app/interfaces";
+import {ProductData} from "@/public/data";
 
 async function Page({params}: { params: { product: string } }) {
-    const response = await fetch(`http://localhost:3000/api/products`)
-    const data: Product[] = await response.json();
+    const data: Product[] = ProductData
     const productData: Product | undefined = data.find(item => item.slug === params.product);
 
     if (!productData) return <div>Product not found</div>

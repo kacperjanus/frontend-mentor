@@ -1,10 +1,10 @@
 import React from 'react';
 import ProductDisplay from "@/app/_components/ProductDisplay";
 import {Product} from "@/app/interfaces";
-import {productData} from "@/public/data";
+import {ProductData} from "@/public/data";
 
 async function ProductDisplays({category}: { category: string }) {
-    const data: Product[] = productData
+    const data: Product[] = ProductData
 
     return (
         <div>

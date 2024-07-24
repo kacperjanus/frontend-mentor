@@ -1,4 +1,4 @@
-export const productData = [
+export const ProductData = [
     {
         "id": 1,
         "slug": "yx1-earphones",
