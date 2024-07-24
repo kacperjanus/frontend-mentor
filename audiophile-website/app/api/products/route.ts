@@ -1,3 +1,5 @@
+import {Product} from "@/app/interfaces";
+
 export function GET(req: Request, res: Response) {
     const data: Product[] = [
         {
