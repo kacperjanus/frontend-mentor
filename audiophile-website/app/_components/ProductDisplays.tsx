@@ -1,12 +1,10 @@
 import React from 'react';
 import ProductDisplay from "@/app/_components/ProductDisplay";
 import {Product} from "@/app/interfaces";
+import {productData} from "@/public/data";
 
 async function ProductDisplays({category}: { category: string }) {
-    const link = typeof window !== 'undefined' ? `${window.location.origin}/api/products` : `http://localhost:3000/api/products`
-    const response = await fetch(link)
-
-    const data: Product[] = await response.json();
+    const data: Product[] = productData
 
     return (
         <div>
