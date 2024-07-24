@@ -1,4 +1,5 @@
 import React from 'react';
+import {CartItem} from "@/app/interfaces";
 
 function SummaryItems({cart}: { cart: CartItem[] }) {
     return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductDisplay from "@/app/_components/ProductDisplay";
+import {Product} from "@/app/interfaces";
 
 async function ProductDisplays({category}: { category: string }) {
     const response = await fetch(`http://localhost:3000/api/products`)

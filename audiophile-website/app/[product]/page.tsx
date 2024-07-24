@@ -8,6 +8,7 @@ import YouMayAlsoLike from "@/app/[product]/_components/YouMayAlsoLike";
 import About from "@/app/_components/About";
 import QuickMenu from "@/app/_components/QuickMenu";
 import Button from "@/app/_components/Button";
+import {Product} from "@/app/interfaces";
 
 async function Page({params}: { params: { product: string } }) {
     const response = await fetch(`http://localhost:3000/api/products`)

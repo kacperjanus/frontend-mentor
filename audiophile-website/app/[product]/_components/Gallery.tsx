@@ -1,4 +1,5 @@
 import React from 'react';
+import {Product} from "@/app/interfaces";
 
 function Gallery({productData}: { productData: Product }) {
     return (

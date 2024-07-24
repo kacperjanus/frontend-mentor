@@ -1,8 +1,9 @@
 import React from 'react';
 import Button from "@/app/_components/Button";
 import CartItem from "@/app/_components/CartItem";
+import {CartItem as CartItemInterface} from "@/app/interfaces";
 
-function CartItems({cart}: { cart: CartItem[] }) {
+function CartItems({cart}: { cart: CartItemInterface[] }) {
     if (cart.length === 0) return <div className="my-10 uppercase text-center font-medium text-dark-grey">
         Cart is empty
     </div>

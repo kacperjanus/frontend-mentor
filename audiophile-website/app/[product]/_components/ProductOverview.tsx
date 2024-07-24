@@ -1,5 +1,6 @@
 import React from "react";
 import AddToCart from "@/app/[product]/_components/AddToCart";
+import {Product} from "@/app/interfaces";
 
 function ProductOverview({productData}: { productData: Product }) {
     return <div className="flex flex-col tablet:grid tablet:grid-cols-[2fr_3fr] desktop:grid-cols-2 tablet:gap-16 desktop:gap-32 gap-8 mb-16 desktop:mb-32">

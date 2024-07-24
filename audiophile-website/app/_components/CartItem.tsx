@@ -3,8 +3,9 @@
 import React from 'react';
 import Numbers from "@/app/_components/Numbers";
 import {useCart} from "@/app/_lib/contexts/CartContext";
+import {CartItem as CartItemInterface} from "@/app/interfaces";
 
-function CartItem({item}: { item: CartItem }) {
+function CartItem({item}: { item: CartItemInterface }) {
     const {updateQuantity, removeFromCart} = useCart()
 
     return (

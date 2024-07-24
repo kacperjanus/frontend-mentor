@@ -1,4 +1,5 @@
 import React from "react";
+import {Product} from "@/app/interfaces";
 
 function Features(props: { productData: Product }) {
     return <div className="flex flex-col gap-8 mb-16">

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Product} from "@/app/interfaces";
 
 function InTheBox({productData}: { productData: Product }) {
     return (

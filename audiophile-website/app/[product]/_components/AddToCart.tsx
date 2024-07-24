@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import Numbers from "@/app/_components/Numbers";
 import Button from "@/app/_components/Button";
 import {useCart} from "@/app/_lib/contexts/CartContext";
+import {Product} from "@/app/interfaces";
 
 function AddToCart({productData}: { productData: Product }) {
     const [count, setCount] = useState(1)

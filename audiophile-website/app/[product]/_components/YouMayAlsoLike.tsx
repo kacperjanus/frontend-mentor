@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from "@/app/_components/Button";
+import {Product} from "@/app/interfaces";
 
 function YouMayAlsoLike({productData}: { productData: Product }) {
     return (

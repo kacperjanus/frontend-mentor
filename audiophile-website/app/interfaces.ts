@@ -1,10 +1,10 @@
-interface ImageSet {
+export interface ImageSet {
     mobile: string,
     tablet: string,
     desktop: string
 }
 
-interface Product {
+export interface Product {
     id: number,
     slug: string,
     name: string,
@@ -24,9 +24,22 @@ interface Product {
     others: { slug: string, name: string, image: ImageSet }[]
 }
 
-interface CartItem {
+export interface CartItem {
     image: ImageSet
     name: string,
     quantity: number,
     pricePerUnit: number,
+}
+
+export type Inputs = {
+    name: string,
+    email: string,
+    phoneNumber: string
+    address: string
+    zipCode: string
+    city: string
+    country: string
+    paymentMethod: boolean
+    eMoneyNumber: number
+    eMoneyPIN: number
 }
