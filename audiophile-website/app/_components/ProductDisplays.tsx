@@ -3,7 +3,8 @@ import ProductDisplay from "@/app/_components/ProductDisplay";
 import {Product} from "@/app/interfaces";
 
 async function ProductDisplays({category}: { category: string }) {
-    const response = await fetch(typeof window !== 'undefined' ? `${window.location.origin}/api/products` : `http://localhost:3000/api/products`)
+    const link = typeof window !== 'undefined' ? `${window.location.origin}/api/products` : `http://localhost:3000/api/products`
+    const response = await fetch(link)
 
     const data: Product[] = await response.json();
 
