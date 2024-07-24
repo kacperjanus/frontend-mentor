@@ -4,6 +4,7 @@ import React from 'react';
 import TextField from "@/app/_components/TextField";
 import RadioSelectGroup from "@/app/_components/RadioSelectGroup";
 import {FieldErrors, UseFormRegister} from "react-hook-form";
+import {Inputs} from "@/app/interfaces";
 
 function CheckoutForm({register, errors}: {
     register: UseFormRegister<Inputs>,

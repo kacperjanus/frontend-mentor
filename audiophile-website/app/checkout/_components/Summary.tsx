@@ -7,6 +7,7 @@ import ThankYouModal from "@/app/checkout/_components/ThankYouModal";
 import SummaryItems from "@/app/checkout/_components/SummaryItems";
 import PaymentInfo from "@/app/checkout/_components/PaymentInfo";
 import {FieldErrors, SubmitHandler, UseFormHandleSubmit} from "react-hook-form";
+import {Inputs} from "@/app/interfaces";
 
 function Summary({handleSubmit, errors}: {
     handleSubmit: UseFormHandleSubmit<Inputs, undefined>,

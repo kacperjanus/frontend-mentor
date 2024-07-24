@@ -4,6 +4,7 @@ import React from 'react';
 import CheckoutForm from "@/app/checkout/_components/CheckoutForm";
 import Summary from "@/app/checkout/_components/Summary";
 import {useForm} from "react-hook-form";
+import {Inputs} from "@/app/interfaces";
 
 function Checkout() {
     const {register, handleSubmit, formState: {errors}} = useForm<Inputs>()
