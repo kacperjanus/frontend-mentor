@@ -11,7 +11,7 @@ function CartItems({cart}: { cart: CartItemInterface[] }) {
     return (
         <>
             <ul className="flex flex-col gap-4 my-10">
-                {cart.map((item: CartItem) => <CartItem key={item.name} item={item}/>)}
+                {cart.map((item: CartItemInterface) => <CartItem key={item.name} item={item}/>)}
             </ul>
 
             <div className="flex justify-between mb-8 items-center">
