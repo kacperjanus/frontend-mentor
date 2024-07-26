@@ -5,7 +5,7 @@ function ProductHighlight({name, description, image, type, slug}: {
     name: string;
     description?: string;
     image: string[];
-    type: string;
+    type: "primary" | "secondary" | "tertiary";
     slug: string
 }) {
     if (type === "primary") return <div className="relative h-[600px] tablet:h-[720px] bg-earthy mt-6 text-center desktop:text-start flex flex-col desktop:flex-row justify-center items-center rounded-lg gap-6 tablet:gap-24 p-6 overflow-hidden">
