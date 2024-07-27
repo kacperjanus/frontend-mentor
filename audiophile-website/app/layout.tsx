@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/app/_components/Footer";
 import {CartProvider} from "@/app/_lib/contexts/CartContext";
 import HeaderSection from "@/app/_components/HeaderSection";
+import {Toaster} from "react-hot-toast";
 
 const manrope = Manrope({subsets: ["latin"], variable: "--font-manrope"});
 
@@ -20,6 +21,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={manrope.className}>
+        <Toaster/>
         <CartProvider>
             <HeaderSection/>
             {children}

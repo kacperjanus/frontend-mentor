@@ -5,6 +5,7 @@ import Numbers from "@/app/_components/Numbers";
 import Button from "@/app/_components/Button";
 import {useCart} from "@/app/_lib/contexts/CartContext";
 import {Product} from "@/app/interfaces";
+import toast from "react-hot-toast";
 
 function AddToCart({productData}: { productData: Product }) {
     const [count, setCount] = useState(1)
@@ -18,6 +19,7 @@ function AddToCart({productData}: { productData: Product }) {
             quantity: count,
             pricePerUnit: productData.price
         }
+        toast.success(`Added ${item.quantity} ${item.quantity > 1 ? "items" : "item"} to cart`)
         addToCart(item)
     }
 
