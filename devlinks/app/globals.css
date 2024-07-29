@@ -15,3 +15,21 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+@layer components {
+  .heading-m {
+    @apply font-bold text-[32px] leading-[150%]
+  }
+
+  .heading-s {
+    @apply font-bold text-[16px] leading-[150%]
+  }
+
+  .body-m {
+    @apply text-[16px] leading-[150%]
+  }
+
+  .body-s {
+    @apply text-[12px] leading-[150%]
+  }
+}
