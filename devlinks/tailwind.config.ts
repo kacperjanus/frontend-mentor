@@ -12,6 +12,7 @@ const config: Config = {
         "dark-lavender": "#633CFF",
         "lavender": "#BEADFF",
         "light-lavender": "#EFEBFF",
+        "disabled-lavender": "#D3CAF9",
         "dark-gray": "#333",
         "gray": "#737373",
         "light-gray": "#D9D9D9",
