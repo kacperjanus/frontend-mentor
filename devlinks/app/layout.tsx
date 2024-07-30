@@ -16,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={instrument.className}>{children}</body>
+      <body className={instrument.className}>
+      <div className="min-h-screen w-full">
+        {children}
+      </div>
+      </body>
     </html>
   );
 }

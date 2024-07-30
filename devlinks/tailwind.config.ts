@@ -19,6 +19,11 @@ const config: Config = {
         "off-white": "#FAFAFA",
         "white": "#FFF",
         "tomato": "#FF3939",
+      },
+      screens: {
+        "mobile": "375px",
+        "tablet": "768px",
+        "desktop": "1024px"
       }
     },
   },
