@@ -4,6 +4,9 @@ This GitHub repo consists of my implementations to frontend challenges that can 
 Each challenge has its own folder and is a separate Next JS project, since I treat these challenges as a good way to practice both Next.JS framework as well as Tailwind CSS.
 
 The challenges have different level of difficulty and below you can find completed challenges with their difficulty levels:
+### Guru
+* [audiophile-website](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx): [[my implementation]](https://github.com/kacperjanus/frontend-mentor/tree/main/audiophile-website)
+
 ### Advanced
 * [multi-step-form](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ): [[my implementation]](https://github.com/kacperjanus/frontend-mentor/tree/main/multi-step-form)
 
@@ -19,7 +22,8 @@ The challenges have different level of difficulty and below you can find complet
 * [qr-code-component](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H): [[my implementation]](https://github.com/kacperjanus/frontend-mentor/tree/main/qr-code-component)
 
 ### UNDER DEVELOPEMENT:
-* [audiophile-website](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx): [[my implementation]](https://github.com/kacperjanus/frontend-mentor/tree/main/audiophile-website)
+* [devlinks](https://www.frontendmentor.io/challenges/linksharing-app-Fbt7yweGsT): [my implementation](https://github.com/kacperjanus/frontend-mentor/tree/main/devlinks)
+
 
 ## Getting Started
 
