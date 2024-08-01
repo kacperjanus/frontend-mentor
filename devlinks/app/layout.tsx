@@ -17,9 +17,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={instrument.className}>
-        <div className="min-h-screen w-full tablet:flex tablet:items-center tablet:justify-center tablet:bg-off-white">
-            {children}
-        </div>
+        {children}
         </body>
         </html>
     );
