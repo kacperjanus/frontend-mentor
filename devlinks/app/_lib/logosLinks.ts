@@ -31,3 +31,20 @@ export enum Colors {
     Hashnode = "#0934D0",
     StackOverflow = "#EB7306",
 }
+
+export enum PlaceholderLinks {
+    Github = "e.g. https://www.github.com",
+    FrontendMentor = "e.g. https://www.frontendmentor.com",
+    Twitter = "e.g. https://www.twitter.com",
+    LinkedIn = "e.g. https://www.linkedin.com",
+    YouTube = "e.g. https://www.youtube.com",
+    Facebook = "e.g. https://www.facebook.com",
+    Twitch = "e.g. https://www.twitch.com",
+    Devto = "e.g. https://www.devto.com",
+    Codewars = "e.g. https://www.codewars.com",
+    Codepen = "e.g. https://www.codepen.com",
+    freeCodeCamp = "e.g. https://www.freecodecamp.com",
+    GitLab = "e.g. https://www.gitlab.com",
+    Hashnode = "e.g. https://www.hashnode.com",
+    StackOverflow = "e.g. https://www.stackoverflow.com",
+}

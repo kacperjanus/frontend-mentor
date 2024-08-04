@@ -1,0 +1,1 @@
+export type Platform = "Github" | "FrontendMentor" | "Twitter" | "LinkedIn" | "YouTube" | "Facebook" | "Twitch" | "Devto" | "Codewars" | "Codepen" | "freeCodeCamp" | "GitLab" | "Hashnode" | "StackOverflow"
