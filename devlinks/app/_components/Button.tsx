@@ -19,5 +19,5 @@ export default function Button({
     }
 
     if (variant === "primary") return <button onClick={handleClick} className={`text-white w-[227px] h-[46px] px-[27px] py-[8px] rounded-[8px] heading-s ${disabled ? "bg-disabled-lavender" : "bg-dark-lavender"} ${active ? "bg-lavender" : "bg-dark-lavender"} ${className}`}>{children}</button>
-    if (variant === "secondary") return <button onClick={handleClick} className={`border-[1px] border-dark-lavender w-[227px] h-[46px] px-[27px] py-[8px] rounded-[8px] heading-s text-dark-lavender ${active ? "bg-light-lavender" : "bg-transparent"} ${disabled ? "text-disabled-lavender border-disabled-lavender" : ""} ${className}`}>{children}</button>
+    if (variant === "secondary") return <button onClick={handleClick} className={`border-[1px] border-dark-lavender w-[227px] h-[46px] px-[20px] py-[8px] rounded-[8px] heading-s text-dark-lavender ${active ? "bg-light-lavender" : "bg-transparent"} ${disabled ? "text-disabled-lavender border-disabled-lavender" : ""} ${className}`}>{children}</button>
 }
