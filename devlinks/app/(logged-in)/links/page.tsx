@@ -25,7 +25,7 @@ function Page() {
                                 <div className="bg-off-white flex-grow flex flex-col justify-center items-center gap-6 tablet:gap-10 p-5 rounded-xl">
                                     <Image className="block tablet:hidden" width={125} height={80} src="/assets/images/illustration-empty.svg" alt="Eye icon"/>
                                     <Image className="hidden tablet:block" width={250} height={160} src="/assets/images/illustration-empty.svg" alt="Eye icon"/>
-                                    <div className="flex flex-col gap-6 items-center w-[448px]">
+                                    <div className="flex flex-col gap-6 items-center tablet:w-[448px]">
                                         <h2 className="heading-m text-[24px] tablet:text-[32px]">Let&apos;s get you started</h2>
                                         <p className="body-m text-gray text-center">Use the “Add new link” button to get started. Once you have more
                                             than
